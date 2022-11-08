@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,36 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Admin.h" />
+		<Unit filename="include/Fabrica.h" />
+		<Unit filename="include/MCombustao.h" />
+		<Unit filename="include/MEletrico.h" />
+		<Unit filename="include/MIndocao.h" />
+		<Unit filename="include/Motor.h" />
+		<Unit filename="include/Normal.h" />
+		<Unit filename="include/Objetos.h" />
+		<Unit filename="include/Sensor.h" />
+		<Unit filename="include/Sfogo.h" />
+		<Unit filename="include/Smissel.h" />
+		<Unit filename="include/Stemperatura.h" />
+		<Unit filename="include/User.h" />
+		<Unit filename="include/Uteis.h" />
+		<Unit filename="include/Visitante.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Admin.cpp" />
+		<Unit filename="src/Fabrica.cpp" />
+		<Unit filename="src/MCombustao.cpp" />
+		<Unit filename="src/MEletrico.cpp" />
+		<Unit filename="src/MIndocao.cpp" />
+		<Unit filename="src/Motor.cpp" />
+		<Unit filename="src/Normal.cpp" />
+		<Unit filename="src/Objetos.cpp" />
+		<Unit filename="src/Sensor.cpp" />
+		<Unit filename="src/Sfogo.cpp" />
+		<Unit filename="src/Smissel.cpp" />
+		<Unit filename="src/Stemperatura.cpp" />
+		<Unit filename="src/User.cpp" />
+		<Unit filename="src/Visitante.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
