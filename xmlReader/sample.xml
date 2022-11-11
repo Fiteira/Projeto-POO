@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<DADOS>
+
+    <DEFINICOES>
+
+        <NOME>XPTO1</NOME>
+	  <IDADE>19</IDADE>
+    </DEFINICOES>
+
+    <DEFINICOES>
+
+        <NOME>XPTO2</NOME>
+	  <IDADE>20</IDADE>
+    </DEFINICOES>
+
+    <DEFINICOES>
+
+        <NOME>XPTO3</NOME>
+	  <IDADE>18</IDADE>
+
+    </DEFINICOES>
+
+</DADOS>
