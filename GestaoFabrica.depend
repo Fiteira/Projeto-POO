@@ -103,3 +103,111 @@
 1667921619 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
 	<User.h>
 
+1668289202 source:c:\users\leand\desktop\gestaofabrica\main.cpp
+	<iostream>
+	"Uteis.h"
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\admin.cpp
+	"Admin.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\admin.h
+	<User.h>
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\user.h
+	<iostream>
+	<string>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
+	"Fabrica.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\fabrica.h
+	<iostream>
+	<string>
+	<list>
+	<algorithm>
+	"User.h"
+	"Motor.h"
+	"Sensor.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\motor.h
+	<iostream>
+	<string>
+	<Objetos.h>
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\objetos.h
+	<iostream>
+	<string>
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\sensor.h
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
+	"MCombustao.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\mcombustao.h
+	<Motor.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
+	"MEletrico.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\meletrico.h
+	<Motor.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\mindocao.cpp
+	"MIndocao.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\mindocao.h
+	<Motor.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
+	"Motor.h"
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\normal.cpp
+	"Normal.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\normal.h
+	<User.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\sensor.cpp
+	"Sensor.h"
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\sfogo.cpp
+	"Sfogo.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\sfogo.h
+	<Sensor.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
+	"Smissel.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\smissel.h
+	<Sensor.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
+	"Stemperatura.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\stemperatura.h
+	<Sensor.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\user.cpp
+	"User.h"
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\visitante.cpp
+	"Visitante.h"
+
+1668163169 c:\users\leand\desktop\gestaofabrica\include\visitante.h
+	<User.h>
+
+1668163169 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
+	"Objetos.h"
+
+1668289248 c:\users\leand\desktop\gestaofabrica\include\uteis.h
+	<iostream>
+	<string>
+	<sstream>
+	<list>
+	<vector>
+	<stdlib.h>
+	<time.h>
+	<math.h>
+	<unistd.h>
+

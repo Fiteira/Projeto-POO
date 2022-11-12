@@ -1,4 +1,0 @@
-PORTO;Joao;21;
-VISEU;Ze;20;
-VISEU;Pedro;19;
-AVEIRO;Zezito;14;
