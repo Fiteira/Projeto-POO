@@ -1,7 +1,7 @@
 #ifndef MINDOCAO_H
 #define MINDOCAO_H
 
-#include <Motor.h>
+#include "Motor.h"
 
 
 class MIndocao : public Motor

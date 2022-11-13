@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include <Objetos.h>
+
+#include "Objetos.h"
 
 
 enum ESTADO_MOTOR {STOP = 0, START, RUN,AVARIADO};

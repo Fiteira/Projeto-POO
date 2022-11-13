@@ -1,7 +1,7 @@
 #ifndef MCOMBUSTAO_H
 #define MCOMBUSTAO_H
 
-#include <Motor.h>
+#include "Motor.h"
 
 
 class MCombustao : public Motor

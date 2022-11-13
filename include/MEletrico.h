@@ -1,7 +1,7 @@
 #ifndef MELETRICO_H
 #define MELETRICO_H
 
-#include <Motor.h>
+#include "Motor.h"
 
 
 class MEletrico : public Motor

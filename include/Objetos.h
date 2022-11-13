@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <string>
+
+
 using namespace std;
 
 class Fabrica;
@@ -16,6 +18,8 @@ class Objetos
     protected:
 
     private:
+
+
 };
 
 #endif // OBJETOS_H
