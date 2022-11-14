@@ -25,7 +25,7 @@ class Motor : public Objetos
     private:
         int CONSUMO_HORA;
         float TEMPERATURA;
-        vector<int> COR_TEMP;
+
 
 
 };

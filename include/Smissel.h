@@ -7,7 +7,7 @@
 class Smissel : public Sensor
 {
     public:
-        Smissel();
+        Smissel(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso);
         virtual ~Smissel();
 
     protected:

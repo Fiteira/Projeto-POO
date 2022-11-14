@@ -8,7 +8,7 @@ Fabrica::Fabrica(User *ut)
 
 Fabrica::~Fabrica()
 {
-    //dtor
+
 }
 bool Fabrica::Load(const string &ficheiro)
 {

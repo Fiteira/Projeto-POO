@@ -7,7 +7,7 @@
 class Sfogo : public Sensor
 {
     public:
-        Sfogo();
+        Sfogo(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso);
         virtual ~Sfogo();
 
     protected:
