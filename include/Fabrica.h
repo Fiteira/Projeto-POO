@@ -12,6 +12,7 @@ using namespace std;
 #include "Sensor.h"
 #include "Objetos.h"
 
+enum ESTADO_MOTOR {STOP = 0, START, RUN,AVARIADO};
 
 class Fabrica
 {
@@ -22,7 +23,11 @@ class Fabrica
         bool Load(const string &ficheiro);
         bool Add(User *ut);
         bool Add(Motor *m);
+        void Listar(ostream &f = std::cout);
+        void Desligar(int id_motor);
+
         bool Run();
+        ESTADO_MOTOR Get_ESTADO(int id_motor) { return ESTADO; }
     protected:
 
     private:
@@ -32,6 +37,7 @@ class Fabrica
     list<Objetos*> LObjetos;
 
     User *Ut_Atual;
+    ESTADO_MOTOR ESTADO;
 
     string NOME_EMPRESA;
     string HORA_INICIO;
@@ -39,6 +45,7 @@ class Fabrica
     string VIZINHANCA_AVISO;
     int DIMENSAO_FABRICA_X;
     int DIMENSAO_FABRICA_Y;
+
 
 };
 
