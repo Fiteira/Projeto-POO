@@ -7,7 +7,7 @@
 class Normal : public User
 {
     public:
-        Normal();
+        Normal(int _id,string _nome);
         virtual ~Normal();
         bool PossoLISTAR() {return true;}
         bool PossoMANUTENCAO() { return true; }

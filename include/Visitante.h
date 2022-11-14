@@ -7,7 +7,7 @@
 class Visitante : public User
 {
     public:
-        Visitante();
+        Visitante(int _id,string _nome);
         virtual ~Visitante();
         virtual bool PossoLISTAR() {return true;}
     protected:

@@ -9,7 +9,7 @@ class Fabrica;
 class User
 {
     public:
-        User();
+        User(int _id,string _nome);
         virtual ~User();
         virtual bool PossoLISTAR() {return false;}
         virtual bool PossoMANUTENCAO() { return false; }
@@ -21,7 +21,7 @@ class User
 
     private:
         int ID;
-        string nome;
+        string NOME;
 };
 
 #endif // USER_H

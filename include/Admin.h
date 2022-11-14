@@ -7,7 +7,7 @@
 class Admin : public User
 {
     public:
-        Admin();
+        Admin(int _id,string _nome);
         virtual ~Admin();
         bool PossoLISTAR() {return true;}
         bool PossoMANUTENCAO() { return true; }
