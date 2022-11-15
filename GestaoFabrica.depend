@@ -3,10 +3,10 @@
 	<iostream>
 	"Fabrica.h"
 
-1667918198 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\admin.cpp
+1668464804 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\admin.cpp
 	"Admin.h"
 
-1668366894 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\admin.h
+1668464843 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\admin.h
 	"User.h"
 
 1668464773 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\user.h
@@ -16,7 +16,7 @@
 1668463180 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
 
-1668417577 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
+1668523220 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
 	<iostream>
 	<string>
 	<list>
@@ -26,43 +26,43 @@
 	"Sensor.h"
 	"Objetos.h"
 
-1668423561 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mcombustao.cpp
+1668522214 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mcombustao.cpp
 	"MCombustao.h"
 
-1668423896 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\mcombustao.h
+1668522147 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\mcombustao.h
 	"Motor.h"
 
-1668463149 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\motor.h
+1668522156 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\motor.h
 	<iostream>
 	<string>
 	<vector>
 	"Objetos.h"
 
-1668423581 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\meletrico.cpp
+1668522220 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\meletrico.cpp
 	"MEletrico.h"
 
-1668423902 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\meletrico.h
+1668522347 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\meletrico.h
 	"Motor.h"
 
-1668423585 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mindocao.cpp
+1668522311 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mindocao.cpp
 	"MIndocao.h"
 
-1668423905 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\mindocao.h
+1668522252 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\mindocao.h
 	"Motor.h"
 
-1668423124 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\motor.cpp
+1668522334 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\motor.cpp
 	"Motor.h"
 
-1667918240 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\normal.cpp
+1668464827 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\normal.cpp
 	"Normal.h"
 
-1668366894 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\normal.h
+1668464848 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\normal.h
 	"User.h"
 
-1668423856 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sensor.cpp
+1668522284 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sensor.cpp
 	"Sensor.h"
 
-1668423875 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\sensor.h
+1668522187 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\sensor.h
 	"Objetos.h"
 
 1668457830 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sfogo.cpp
@@ -83,7 +83,7 @@
 1668457694 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\stemperatura.h
 	<Sensor.h>
 
-1667931412 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\user.cpp
+1668464767 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\user.cpp
 	"User.h"
 
 1667917403 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\uteis.cpp
@@ -97,10 +97,10 @@
 	<math.h>
 	<unistd.h>
 
-1667918171 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\visitante.cpp
+1668464822 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\visitante.cpp
 	"Visitante.h"
 
-1668366894 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
+1668464851 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
 	"User.h"
 
 1668352052 source:c:\users\leand\desktop\gestaofabrica\main.cpp
@@ -213,10 +213,15 @@
 	<math.h>
 	<unistd.h>
 
-1668422326 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\objetos.h
+1668522173 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\objetos.h
 	<iostream>
 	<string>
 
-1668422361 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\objetos.cpp
+1668522276 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\objetos.cpp
 	"Objetos.h"
+
+1668464158 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\xml.cpp
+	"XML.h"
+
+1668464158 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\xml.h
 

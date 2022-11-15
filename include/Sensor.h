@@ -13,6 +13,7 @@ class Sensor : public Objetos
 
     private:
         int VALOR_AVISO;
+        float _probAvaria;
 };
 
 #endif // SENSOR_H

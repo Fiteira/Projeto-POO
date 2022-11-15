@@ -12,6 +12,8 @@ using namespace std;
 #include "Sensor.h"
 #include "Objetos.h"
 
+#define NVALORES 7
+
 enum ESTADO_MOTOR {STOP = 0, START, RUN,AVARIADO};
 
 class Fabrica
@@ -25,9 +27,17 @@ class Fabrica
         bool Add(Motor *m);
         void Listar(ostream &f = std::cout);
         void Desligar(int id_motor);
-
-        bool Run();
         ESTADO_MOTOR Get_ESTADO(int id_motor) { return ESTADO; }
+        list<Motor *> *Listar_Tipo(string Tipo, ostream &f = std::cout);
+        bool Manutencao();
+        list<string> *Ranking_Dos_Fracos();
+        list<Motor *> *Ranking_Dos_Mais_Trabalhadores();
+        void Relatorio(string fich_xml);
+        int Aviso_Humidade(list<Motor *> &lm);
+        int Aviso_Fumo(list<Motor *> &lm, string fich_video);
+        int Aviso_Luz(string fich_video);
+        void Aviso_Missel(string fvideo, string festado = "Estado.txt");
+
     protected:
 
     private:
@@ -46,6 +56,9 @@ class Fabrica
     int DIMENSAO_FABRICA_X;
     int DIMENSAO_FABRICA_Y;
 
+    int DEFI_MELETRICO[NVALORES];
+    int DEFI_MCOMBUSTAO[NVALORES];
+    int DEFI_MINDUCAO[NVALORES];
 
 };
 

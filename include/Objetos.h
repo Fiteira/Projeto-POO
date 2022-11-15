@@ -12,7 +12,7 @@ class Fabrica;
 class Objetos
 {
     public:
-        Objetos(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria);
+        Objetos(int _id,string _marca,int _posicaoY,int _posicaoX);
         virtual ~Objetos();
 
     protected:

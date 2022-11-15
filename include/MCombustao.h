@@ -7,7 +7,7 @@
 class MCombustao : public Motor
 {
     public:
-        MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _consumoHora,float _temperatura);
+        MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
         virtual ~MCombustao();
         bool RUN() { cout << "RUN ??"; return false; }
         bool START() { cout << "RUN ??"; return false; }

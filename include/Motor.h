@@ -11,7 +11,7 @@ using namespace std;
 class Motor : public Objetos
 {
     public:
-        Motor(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _consumoHora,float _temperatura);
+        Motor(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
         virtual ~Motor();
         virtual bool RUN() { cout << "RUN ??"; return false; }
         virtual bool START(){ cout << "START ??"; return false; }
