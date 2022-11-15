@@ -18,9 +18,10 @@ enum ESTADO_MOTOR {STOP = 0, START, RUN,AVARIADO};
 
 class Fabrica
 {
-
+    //ola
     public:
         Fabrica(User *ut);
+        Fabrica(string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,int _dimensaoY,int ME_verde_min,int ME_verde_max,);
         virtual ~Fabrica();
         bool Load(const string &ficheiro);
         bool Add(User *ut);
@@ -50,9 +51,9 @@ class Fabrica
     ESTADO_MOTOR ESTADO;
 
     string NOME_EMPRESA;
-    string HORA_INICIO;
-    string HORA_FECHO;
-    string VIZINHANCA_AVISO;
+    int HORA_INICIO;
+    int HORA_FECHO;
+    int VIZINHANCA_AVISO;
     int DIMENSAO_FABRICA_X;
     int DIMENSAO_FABRICA_Y;
 

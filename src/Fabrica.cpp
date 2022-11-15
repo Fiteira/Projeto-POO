@@ -5,6 +5,11 @@ Fabrica::Fabrica(User *ut)
     Ut_Atual = ut;
     LUsers.push_back(ut);
 }
+Fabrica::Fabrica()
+{
+
+
+}
 
 Fabrica::~Fabrica()
 {
@@ -34,6 +39,7 @@ bool Fabrica::Add(Motor *M)
         cout << "Nao existe User!" << endl;
 }
 
+/*
 bool Fabrica::Run()
 {
     while(true)
@@ -42,5 +48,5 @@ bool Fabrica::Run()
             (*it)->RUN();
     }
 }
-
+*/
 
