@@ -13,10 +13,10 @@
 	<iostream>
 	<string>
 
-1668463180 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
+1668526206 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
 
-1668523437 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
+1668527163 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
 	<iostream>
 	<string>
 	<list>
@@ -25,6 +25,7 @@
 	"Motor.h"
 	"Sensor.h"
 	"Objetos.h"
+	"XML.h"
 
 1668522214 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mcombustao.cpp
 	"MCombustao.h"

@@ -11,17 +11,23 @@ using namespace std;
 #include "Motor.h"
 #include "Sensor.h"
 #include "Objetos.h"
+#include "XML.h"
 
-#define NVALORES 7
+#define NVALORES 6
 
 enum ESTADO_MOTOR {STOP = 0, START, RUN,AVARIADO};
 
 class Fabrica
 {
-    //ola
+
     public:
         Fabrica(User *ut);
-        Fabrica(string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,int _dimensaoY,int ME_verde_min,int ME_verde_max,);
+        Fabrica(string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,
+                int _dimensaoY,int ME_verde_min,int ME_verde_max,int ME_amarelo_min,int ME_amarelo_max,
+                int ME_vermelho_min,int ME_vermelho_max,int ME_probAvaria,int MC_verde_min,int MC_verde_max,
+                int MC_amarelo_min,int MC_amarelo_max,int MC_vermelho_min,int MC_vermelho_max,int MC_probAvaria,
+                int MI_verde_min,int MI_verde_max,int MI_amarelo_min,int MI_amarelo_max,int MI_vermelho_min,
+                int MI_vermelho_max,int MI_probAvaria);
         virtual ~Fabrica();
         bool Load(const string &ficheiro);
         bool Add(User *ut);
