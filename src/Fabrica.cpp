@@ -1,17 +1,21 @@
 #include "Fabrica.h"
+#include "Uteis.h"
 
 Fabrica::Fabrica(User *ut)
 {
     Ut_Atual = ut;
     LUsers.push_back(ut);
 }
-Fabrica::Fabrica(string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,
+Fabrica::Fabrica(User *ut,string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,
 int _dimensaoY,int ME_verde_min,int ME_verde_max,int ME_amarelo_min,int ME_amarelo_max,
 int ME_vermelho_min,int ME_vermelho_max,int ME_probAvaria,int MC_verde_min,int MC_verde_max,
 int MC_amarelo_min,int MC_amarelo_max,int MC_vermelho_min,int MC_vermelho_max,int MC_probAvaria,
 int MI_verde_min,int MI_verde_max,int MI_amarelo_min,int MI_amarelo_max,int MI_vermelho_min,
 int MI_vermelho_max,int MI_probAvaria)
 {
+    Ut_Atual = ut;
+    LUsers.push_back(ut);
+
     NOME_EMPRESA=_nomeEmpresa;
     HORA_INICIO=_horaInicio;
     HORA_FECHO=_horaFecho;
@@ -51,16 +55,39 @@ int MI_vermelho_max,int MI_probAvaria)
 
 Fabrica::~Fabrica()
 {
-
+  cout << "Fabrica destruida" << endl;
 }
+
 bool Fabrica::Load(const string &ficheiro)
 {
     cout << "Passei em <" << __FUNCTION__ << ">" << endl;
     return true;
 }
+
 bool Fabrica::Add(User *ut)
 {
-    cout << "Passei em <" << __FUNCTION__ << ">" << endl;
+    if(!ut->PossoADD())
+    {
+        cout << "Nao tem permisao " + ut->getNome() << endl;
+        return false;
+    }
+
+    int tipo;
+   // cout << "Passei em <" << __FUNCTION__ << ">" << endl;
+    while(tipo<1 || tipo>2)
+    {
+        cout << "Adicionar User" << endl;
+        cout << "NORMAL - 1" << endl;
+        cout << "VISITANTE - 2" << endl;
+        cout << "NUMERO 1 a 2: ";
+        cin >> tipo;
+        system("cls");
+    }
+    if(tipo == 1)
+        Normal::ADD();
+    else
+        Visitante::ADD();
+
     return true;
 }
 

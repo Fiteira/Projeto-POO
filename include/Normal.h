@@ -1,7 +1,11 @@
 #ifndef NORMAL_H
 #define NORMAL_H
 
-#include "User.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include <User.h>
 
 
 class Normal : public User
@@ -14,6 +18,7 @@ class Normal : public User
         bool PossoRUN() { return true; }
         bool PossoADD() { return true; }
 
+        static void ADD();
     protected:
 
     private:

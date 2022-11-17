@@ -1,7 +1,7 @@
 #ifndef VISITANTE_H
 #define VISITANTE_H
 
-#include "User.h"
+#include <User.h>
 
 
 class Visitante : public User
@@ -10,6 +10,8 @@ class Visitante : public User
         Visitante(int _id,string _nome);
         virtual ~Visitante();
         virtual bool PossoLISTAR() {return true;}
+
+        static void ADD();
     protected:
 
     private:

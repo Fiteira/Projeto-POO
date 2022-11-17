@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-class Fabrica;
+//class Fabrica;
 class User
 {
     public:
@@ -16,6 +16,12 @@ class User
         virtual bool PossoRUN() { return false; }
         virtual bool PossoREMOVER() { return false; }
         virtual bool PossoADD() { return false; }
+
+        //static bool ADDuser(int tipo){ return false; }
+
+
+        int getId(){return ID;}
+        string getNome(){return NOME;}
 
     protected:
 

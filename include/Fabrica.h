@@ -4,11 +4,18 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <algorithm>
 using namespace std;
 
 #include "User.h"
+#include "Admin.h"
+#include "Normal.h"
+#include "Visitante.h"
+
 #include "Motor.h"
+#include "MCombustao.h"
+#include "MEletrico.h"
+#include "MIndocao.h"
+
 #include "Sensor.h"
 #include "Objetos.h"
 #include "XML.h"
@@ -22,7 +29,7 @@ class Fabrica
 
     public:
         Fabrica(User *ut);
-        Fabrica(string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,
+        Fabrica(User *ut,string _nomeEmpresa,int _horaInicio,int _horaFecho,int _vizinhancaAviso,int _dimensaoX,
                 int _dimensaoY,int ME_verde_min,int ME_verde_max,int ME_amarelo_min,int ME_amarelo_max,
                 int ME_vermelho_min,int ME_vermelho_max,int ME_probAvaria,int MC_verde_min,int MC_verde_max,
                 int MC_amarelo_min,int MC_amarelo_max,int MC_vermelho_min,int MC_vermelho_max,int MC_probAvaria,
