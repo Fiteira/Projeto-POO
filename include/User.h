@@ -17,8 +17,6 @@ class User
         virtual bool PossoREMOVER() { return false; }
         virtual bool PossoADD() { return false; }
 
-        //static bool ADDuser(int tipo){ return false; }
-
 
         int getId(){return ID;}
         string getNome(){return NOME;}

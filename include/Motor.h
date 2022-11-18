@@ -20,12 +20,18 @@ class Motor : public Objetos
         virtual bool ESTOU_QUENTE(){ cout << "ESTOU_QUENTE ??"; return false; }
 
 
-    protected:
+        //gets
+        string getTipo(){return TIPO;}
+        int getID(){return Objetos::getID();}
 
+        //sets
+        void setTipo(string tipo){TIPO=tipo;}
+
+    protected:
+        float TEMPERATURA;
     private:
         int CONSUMO_HORA;
-        float TEMPERATURA;
-
+        string TIPO;
 
 
 };

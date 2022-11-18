@@ -19,6 +19,7 @@ class MEletrico : public Motor
     protected:
 
     private:
+
 };
 
 #endif // MELETRICO_H

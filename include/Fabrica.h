@@ -39,10 +39,10 @@ class Fabrica
         bool Load(const string &ficheiro);
         bool Add(User *ut);
         bool Add(Motor *m);
-        void Listar(ostream &f = std::cout);
+        void Listar(ostream &f);
         void Desligar(int id_motor);
         ESTADO_MOTOR Get_ESTADO(int id_motor) { return ESTADO; }
-        list<Motor *> *Listar_Tipo(string Tipo, ostream &f = std::cout);
+        list<Motor *> *Listar_Tipo(string Tipo, ostream &f);
         bool Manutencao();
         list<string> *Ranking_Dos_Fracos();
         list<Motor *> *Ranking_Dos_Mais_Trabalhadores();

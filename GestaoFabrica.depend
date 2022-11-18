@@ -115,106 +115,117 @@
 1668626558 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
 	<User.h>
 
-1668352052 source:c:\users\leand\desktop\gestaofabrica\main.cpp
+1668731897 source:c:\users\leand\desktop\gestaofabrica\main.cpp
 	<iostream>
+	<sstream>
 	"Fabrica.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\admin.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\admin.cpp
 	"Admin.h"
 
-1668354385 c:\users\leand\desktop\gestaofabrica\include\admin.h
-	"User.h"
+1668718976 c:\users\leand\desktop\gestaofabrica\include\admin.h
+	<User.h>
 
-1668354474 c:\users\leand\desktop\gestaofabrica\include\user.h
+1668726016 c:\users\leand\desktop\gestaofabrica\include\user.h
 	<iostream>
 	<string>
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
+1668731680 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
+	"Uteis.h"
 
-1668354621 c:\users\leand\desktop\gestaofabrica\include\fabrica.h
+1668729002 c:\users\leand\desktop\gestaofabrica\include\fabrica.h
 	<iostream>
 	<string>
 	<list>
-	<algorithm>
 	"User.h"
+	"Admin.h"
+	"Normal.h"
+	"Visitante.h"
 	"Motor.h"
+	"MCombustao.h"
+	"MEletrico.h"
+	"MIndocao.h"
 	"Sensor.h"
 	"Objetos.h"
+	"XML.h"
 
-1668351122 c:\users\leand\desktop\gestaofabrica\include\motor.h
+1668732260 c:\users\leand\desktop\gestaofabrica\include\motor.h
 	<iostream>
 	<string>
+	<vector>
 	"Objetos.h"
 
-1668351768 c:\users\leand\desktop\gestaofabrica\include\objetos.h
+1668732176 c:\users\leand\desktop\gestaofabrica\include\objetos.h
 	<iostream>
 	<string>
 
-1668351403 c:\users\leand\desktop\gestaofabrica\include\sensor.h
+1668718976 c:\users\leand\desktop\gestaofabrica\include\sensor.h
 	"Objetos.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
+1668726819 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
 	"MCombustao.h"
 
-1668351253 c:\users\leand\desktop\gestaofabrica\include\mcombustao.h
+1668718976 c:\users\leand\desktop\gestaofabrica\include\mcombustao.h
 	"Motor.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
+1668726797 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
 	"MEletrico.h"
 
-1668351288 c:\users\leand\desktop\gestaofabrica\include\meletrico.h
+1668726437 c:\users\leand\desktop\gestaofabrica\include\meletrico.h
 	"Motor.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\mindocao.cpp
+1668726806 source:c:\users\leand\desktop\gestaofabrica\src\mindocao.cpp
 	"MIndocao.h"
 
-1668351287 c:\users\leand\desktop\gestaofabrica\include\mindocao.h
+1668718976 c:\users\leand\desktop\gestaofabrica\include\mindocao.h
 	"Motor.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
 	"Motor.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\normal.cpp
+1668725800 source:c:\users\leand\desktop\gestaofabrica\src\normal.cpp
 	"Normal.h"
 
-1668354581 c:\users\leand\desktop\gestaofabrica\include\normal.h
-	"User.h"
+1668726068 c:\users\leand\desktop\gestaofabrica\include\normal.h
+	<iostream>
+	<string>
+	<User.h>
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\sensor.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\sensor.cpp
 	"Sensor.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\sfogo.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\sfogo.cpp
 	"Sfogo.h"
 
-1668163169 c:\users\leand\desktop\gestaofabrica\include\sfogo.h
+1668718976 c:\users\leand\desktop\gestaofabrica\include\sfogo.h
 	<Sensor.h>
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
 	"Smissel.h"
 
-1668163169 c:\users\leand\desktop\gestaofabrica\include\smissel.h
+1668718976 c:\users\leand\desktop\gestaofabrica\include\smissel.h
 	<Sensor.h>
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
 	"Stemperatura.h"
 
-1668163169 c:\users\leand\desktop\gestaofabrica\include\stemperatura.h
+1668718976 c:\users\leand\desktop\gestaofabrica\include\stemperatura.h
 	<Sensor.h>
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\user.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\user.cpp
 	"User.h"
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\visitante.cpp
+1668725804 source:c:\users\leand\desktop\gestaofabrica\src\visitante.cpp
 	"Visitante.h"
 
-1668354505 c:\users\leand\desktop\gestaofabrica\include\visitante.h
-	"User.h"
+1668726086 c:\users\leand\desktop\gestaofabrica\include\visitante.h
+	<User.h>
 
-1668163169 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
 	"Objetos.h"
 
-1668289248 c:\users\leand\desktop\gestaofabrica\include\uteis.h
+1668289296 c:\users\leand\desktop\gestaofabrica\include\uteis.h
 	<iostream>
 	<string>
 	<sstream>
@@ -236,4 +247,9 @@
 	"XML.h"
 
 1668464158 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\xml.h
+
+1668718976 c:\users\leand\desktop\gestaofabrica\include\xml.h
+
+1668718976 source:c:\users\leand\desktop\gestaofabrica\src\xml.cpp
+	"XML.h"
 

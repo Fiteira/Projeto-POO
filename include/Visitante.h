@@ -11,7 +11,6 @@ class Visitante : public User
         virtual ~Visitante();
         virtual bool PossoLISTAR() {return true;}
 
-        static void ADD();
     protected:
 
     private:

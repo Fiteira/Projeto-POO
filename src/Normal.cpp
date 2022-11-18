@@ -10,17 +10,3 @@ Normal::~Normal()
 {
     //dtor
 }
-
-void Normal::ADD()
-{
-    int id;
-    string nome;
-
-    cout << "-User Normal-"<< endl;
-    cout << "ID: ";
-    cin >> id;
-    cout << "Nome: ";
-    cin >> nome;
-
-    Normal(id,nome);
-}

@@ -15,6 +15,13 @@ class Objetos
         Objetos(int _id,string _marca,int _posicaoY,int _posicaoX);
         virtual ~Objetos();
 
+        //gets
+        int getID(){return ID;}
+        string getMARCA(){return MARCA;}
+        int getPOSICAO_Y(){return POSICAO_Y;}
+        int getPOSICAO_X(){return POSICAO_X;}
+        float getPROB_AVARIA(){return PROB_AVARIA;}
+
     protected:
 
     private:

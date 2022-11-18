@@ -16,9 +16,9 @@ class Normal : public User
         bool PossoLISTAR() {return true;}
         bool PossoMANUTENCAO() { return true; }
         bool PossoRUN() { return true; }
+        bool PossoREMOVER() { return false; }
         bool PossoADD() { return true; }
 
-        static void ADD();
     protected:
 
     private:
