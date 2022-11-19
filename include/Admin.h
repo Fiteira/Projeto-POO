@@ -6,6 +6,10 @@
 
 class Admin : public User
 {
+    private:
+
+    protected:
+
     public:
         Admin(int _id,string _nome);
         virtual ~Admin();
@@ -15,9 +19,7 @@ class Admin : public User
         bool PossoREMOVER() { return true; }
         bool PossoADD() { return true; }
 
-    protected:
 
-    private:
 };
 
 #endif // ADMIN_H

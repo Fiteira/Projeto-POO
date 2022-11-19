@@ -5,15 +5,16 @@
 
 class Sensor : public Objetos
 {
+    private:
+        int VALOR_AVISO;
+        float _probAvaria;
+
+    protected:
+
     public:
         Sensor(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso);
         virtual ~Sensor();
 
-    protected:
-
-    private:
-        int VALOR_AVISO;
-        float _probAvaria;
 };
 
 #endif // SENSOR_H

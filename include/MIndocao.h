@@ -6,6 +6,10 @@
 
 class MIndocao : public Motor
 {
+    private:
+
+    protected:
+
     public:
         MIndocao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
         virtual ~MIndocao();
@@ -16,9 +20,6 @@ class MIndocao : public Motor
         bool ESTOU_QUENTE() { cout << "RUN ??"; return false; }
 
 
-    protected:
-
-    private:
 };
 
 #endif // MINDOCAO_H

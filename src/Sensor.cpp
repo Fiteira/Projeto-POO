@@ -8,5 +8,5 @@ Sensor::Sensor(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvar
 
 Sensor::~Sensor()
 {
-    //dtor
+
 }

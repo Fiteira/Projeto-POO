@@ -97,6 +97,20 @@ class Uteis
                 return false;
         }
 
+
+        template <class T>
+        static void Liberar_Memoria(list<T*>* Lista)
+        {
+
+            auto it = Lista->begin();
+            while (it != Lista->end())
+            {
+                delete(*it);
+                ++it;
+            }
+            Lista->clear();
+        }
+
 };
 
 #endif // UTEIS_H

@@ -77,9 +77,15 @@ int MI_vermelho_max,int MI_probAvaria)
 
 Fabrica::~Fabrica()
 {
-    cout << "Passei em <" << __FUNCTION__ << ">" << endl;
-}
 
+    cout << "Passei em <" << __FUNCTION__ << ">" << endl;
+
+    Uteis::Liberar_Memoria(&LUsers);
+    Uteis::Liberar_Memoria(&LMotores);
+    Uteis::Liberar_Memoria(&LSensores);
+    Uteis::Liberar_Memoria(&LObjetos);
+
+}
 
 /** \brief As configurações da Fábrica são dadas em ficheiro XML, com todas as informações
  *
@@ -105,7 +111,7 @@ bool Fabrica::Add(User *ut)
 {
     if (!Ut_Atual)
     {
-        cout << "Nao existe User!" << endl;
+        cout << "Nao existe User Atual!" << endl;
         return false;
     }
     else{
@@ -113,19 +119,19 @@ bool Fabrica::Add(User *ut)
         {
             cout << "Nao tens autorizacao!!!" << endl;
             return false;
+        }else
+        {
+            if(ut)
+            {
+                LUsers.push_back(ut);
+                return true;
+            }else
+            {
+                cout << "Nao existe User!" << endl;
+                return false;
+            }
         }
     }
-
-    if(ut)
-    {
-        LUsers.push_back(ut);
-        return true;
-    }else
-    {
-        cout << "Nao existe User!" << endl;
-        return false;
-    }
-
 }
 
 /** \brief Adicionar Motores (Ver quem pode!)
@@ -139,7 +145,7 @@ bool Fabrica::Add(Motor *M)
 {
     if (!Ut_Atual)
     {
-        cout << "Nao existe User!" << endl;
+        cout << "Nao existe User Atual!" << endl;
         return false;
     }
     else{
@@ -147,26 +153,26 @@ bool Fabrica::Add(Motor *M)
         {
             cout << "Nao tens autorizacao!!!" << endl;
             return false;
+        }else
+        {
+            if(M)
+            {
+                LObjetos.push_back(M);
+                LMotores.push_back(M);
+                return true;
+            }else
+            {
+                cout << "Nao existe Motor!" << endl;
+                return false;
+            }
         }
     }
-
-    if(M)
-    {
-        LObjetos.push_back(M);
-        LMotores.push_back(M);
-        return true;
-    }else
-    {
-        cout << "Nao existe Motor!" << endl;
-        return false;
-    }
-
 }
 
 
 /** \brief Listar o estado atual da fábrica;
  *
- * \param Motor adicionado
+ * \param output no &f
  * \author LD & GA
  * \return void
  *
@@ -174,6 +180,50 @@ bool Fabrica::Add(Motor *M)
 void Fabrica::Listar(ostream &f)
 {
     cout << "Passei em <" << __FUNCTION__ << ">" << endl;
+}
+
+
+
+
+/** \brief Desligar um motor especifico, dado o seu ID;
+ *
+ * \param ID Motor
+ * \author LD & GA
+ * \return void
+ *
+ */
+void Fabrica::Desligar(int id_motor)
+{
+
+}
+
+
+/** \brief Saber o estado de um dado Motor, dado o seu ID;
+ *
+ * \param ID Motor
+ * \author LD & GA
+ * \return ESTADO_MOTOR
+ *
+ */
+/*
+ESTADO_MOTOR Fabrica::Get_Estado(int id_motor)
+{
+
+    return Motor::Get_ESTADO();
+}
+*/
+
+
+/** \brief Listar e devolver todos os Motores de um dado Tipo;
+ *
+ * \param string Tipo e output no &f
+ * \author LD & GA
+ * \return lista Motores
+ *
+ */
+list<Motor *> *Fabrica::Listar_Tipo(string Tipo, ostream &f)
+{
+    return NULL;
 }
 
 

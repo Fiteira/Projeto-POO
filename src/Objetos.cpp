@@ -10,5 +10,5 @@ Objetos::Objetos(int _id,string _marca,int _posicaoY,int _posicaoX)
 
 Objetos::~Objetos()
 {
-    //dtor
+
 }

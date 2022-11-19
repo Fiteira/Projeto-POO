@@ -5,9 +5,15 @@
 #include <string>
 using namespace std;
 
-//class Fabrica;
+class Fabrica;
 class User
 {
+     private:
+        int ID;
+        string NOME;
+
+    protected:
+
     public:
         User(int _id,string _nome);
         virtual ~User();
@@ -21,11 +27,6 @@ class User
         int getId(){return ID;}
         string getNome(){return NOME;}
 
-    protected:
-
-    private:
-        int ID;
-        string NOME;
 };
 
 #endif // USER_H

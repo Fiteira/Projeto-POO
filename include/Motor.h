@@ -8,8 +8,20 @@ using namespace std;
 
 #include "Objetos.h"
 
+enum ESTADO_MOTOR {ESTADO_PARADO = 0, ESTADO_RUN, ESTADO_AVARIADO};
+enum TEMPERATURA_COR {VERDE, AMARELO, VERMELHO};
+
 class Motor : public Objetos
 {
+    private:
+        int CONSUMO_HORA;
+        string TIPO;
+        ESTADO_MOTOR ESTADO;
+        TEMPERATURA_COR COR_MOTOR;
+
+    protected:
+        float TEMPERATURA;
+
     public:
         Motor(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
         virtual ~Motor();
@@ -21,17 +33,19 @@ class Motor : public Objetos
 
 
         //gets
+        int getCONSUMO(){return CONSUMO_HORA;}
         string getTipo(){return TIPO;}
-        int getID(){return Objetos::getID();}
+        ESTADO_MOTOR Get_ESTADO() { return ESTADO; }
+        TEMPERATURA_COR Get_COR_MOTOR() { return COR_MOTOR; }
 
         //sets
-        void setTipo(string tipo){TIPO=tipo;}
+        void setCONSUMO(int CONSUMO){CONSUMO_HORA = CONSUMO;}
+        void setTipo(string tipo){TIPO = tipo;}
+        void Set_ESTADO(ESTADO_MOTOR EST) { ESTADO = EST; }
+        void Set_COR_MOTOR(TEMPERATURA_COR COR) { COR_MOTOR = COR; }
 
-    protected:
-        float TEMPERATURA;
-    private:
-        int CONSUMO_HORA;
-        string TIPO;
+
+
 
 
 };

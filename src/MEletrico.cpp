@@ -8,5 +8,5 @@ MEletrico::MEletrico(int _id,string _marca,int _posicaoY,int _posicaoX,int _cons
 
 MEletrico::~MEletrico()
 {
-    //dtor
+
 }

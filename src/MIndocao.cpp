@@ -8,5 +8,5 @@ MIndocao::MIndocao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consum
 
 MIndocao::~MIndocao()
 {
-    //dtor
+
 }

@@ -8,5 +8,5 @@ User::User(int _id,string _nome)
 
 User::~User()
 {
-    //dtor
+
 }
