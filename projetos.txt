@@ -1,0 +1,5 @@
+1- https://github.com/eduardaaragao/ProjetoPOO.git
+2- https://github.com/fsantos98/ProjetoFinalPOO.git
+3- https://github.com/YuriFss/Sistema-de-gerenciamento-de-insumos.git
+
+4- https://github.com/edurbrito/low-cost-oconnor
