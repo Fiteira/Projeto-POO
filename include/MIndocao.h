@@ -11,7 +11,7 @@ class MIndocao : public Motor
     protected:
 
     public:
-        MIndocao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
+        MIndocao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt);
         virtual ~MIndocao();
         bool RUN() { cout << "RUN ??"; return false; }
         bool START() { cout << "RUN ??"; return false; }
@@ -19,6 +19,13 @@ class MIndocao : public Motor
         bool STOP() { cout << "RUN ??"; return false; }
         bool ESTOU_QUENTE() { cout << "RUN ??"; return false; }
 
+       void show(ostream &f = std::cout)
+        {
+            f << "-----------------" << endl;
+            f << Motor::getTIPO() << endl;
+            f << "-----------------" << endl;
+            Motor::show(f);
+        }
 
 };
 

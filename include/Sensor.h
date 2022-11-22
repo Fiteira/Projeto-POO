@@ -12,7 +12,7 @@ class Sensor : public Objetos
     protected:
 
     public:
-        Sensor(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso);
+        Sensor(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso,Fabrica *Pt);
         virtual ~Sensor();
 
 };

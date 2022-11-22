@@ -11,13 +11,22 @@ class MCombustao : public Motor
     protected:
 
     public:
-        MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
+        MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt);
         virtual ~MCombustao();
         bool RUN();
         bool START();
         bool RESTART();
         bool STOP();
         bool ESTOU_QUENTE();
+
+        void show(ostream &f = std::cout)
+        {
+            f << "-----------------" << endl;
+            f << Motor::getTIPO() << endl;
+            f << "-----------------" << endl;
+            Motor::show(f);
+
+        }
 
 };
 

@@ -83,7 +83,7 @@ Fabrica::~Fabrica()
     Uteis::Liberar_Memoria(&LUsers);
     Uteis::Liberar_Memoria(&LMotores);
     Uteis::Liberar_Memoria(&LSensores);
-    Uteis::Liberar_Memoria(&LObjetos);
+    LObjetos.clear();
 
 }
 
@@ -157,6 +157,8 @@ bool Fabrica::Add(Motor *M)
         {
             if(M)
             {
+
+                //ATENCAO AS POSICAO DA FABIRCA E SE TEM MOTORES NA MESMA POSICAO
                 LObjetos.push_back(M);
                 LMotores.push_back(M);
                 return true;
@@ -180,9 +182,22 @@ bool Fabrica::Add(Motor *M)
 void Fabrica::Listar(ostream &f)
 {
     cout << "Passei em <" << __FUNCTION__ << ">" << endl;
+
+    list<Objetos *>::iterator it;
+    for (it = LObjetos.begin(); it != LObjetos.end(); ++it)
+            (*it)->show();
+
+    /*
+    list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+            (*it)->show();
+
+    list<Sensor *>::iterator it1;
+    for (it1 = LSensores.begin(); it1 != LSensores.end(); ++it1)
+            (*it1)->show();
+
+    */
 }
-
-
 
 
 /** \brief Desligar um motor especifico, dado o seu ID;
@@ -209,7 +224,6 @@ void Fabrica::Desligar(int id_motor)
 ESTADO_MOTOR Fabrica::Get_Estado(int id_motor)
 {
 
-    return Motor::Get_ESTADO();
 }
 */
 
@@ -226,31 +240,123 @@ list<Motor *> *Fabrica::Listar_Tipo(string Tipo, ostream &f)
     return NULL;
 }
 
+/** \brief Manutenção de todos os dispositivos (Motores e Sensores!), A manutenção de um motor poderá ser
+ *         por exemplo alterar a temperatura para um valor (aleatório) dentro da temperatura VERDE do motor;
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
+bool Fabrica::Manutencao()
+{
+    return true;
+}
+
+
+
+/** \brief Quais as Marcas de motores/sensores que mais avariam, deve devolver uma lista (ordenada) do que
+ *          mais avaria para o mais fiável
+ * \param
+ * \author LD & GA
+ * \return lista das Marcas de motores/sensores
+ *
+ */
+list<string> *Fabrica::Ranking_Dos_Fracos()
+{
+    return NULL;
+}
+
+/** \brief Quais motores que mais trabalharam, deve devolver uma lista (ordenada);
+ *
+ * \param
+ * \author LD & GA
+ * \return lista dos Motores
+ *
+ */
+list<Motor *> *Fabrica::Ranking_Dos_Mais_Trabalhadores()
+{
+    return NULL;
+}
+
+
+/** \brief Enviar um relatório em XML, do estado da fábrica;
+ *          O relatório deverá ter a informação do total de consumo (do motor) nesse dia;
+ * \param
+ * \author LD & GA
+ * \return
+ *
+ */
+ void Fabrica::Relatorio(string fich_xml)
+ {
+
+ }
+
+
+ /** \brief Quando um sensor de Humidade envia um aviso, todos os motores que estão numa dada vizinhança
+ *           (X) dele devem ser desligados!, o método deve devolver (por parametro) a lista dos Motores que
+ *            foram desligados, também deve devolver o número de motores que foram desligados;
+ * \param   devolver a lista dos Motores
+ * \author LD & GA
+ * \return int
+ *
+ */
+int Fabrica::Aviso_Humidade(list<Motor *> &lm)
+{
+    return 0;
+}
+
+/** \brief Quando um sensor de FUMO envia um aviso, todos os motores devem ser desligados e deve ser
+ *           invocado um video mostrando as zonas de saída da fábrica;
+ * \param   devolver a lista dos Motores e video
+ * \author LD & GA
+ * \return int
+ *
+ */
+int Fabrica::Aviso_Fumo(list<Motor *> &lm, string fich_video)
+{
+    return 0;
+}
+
+/** \brief No caso de o sensor de LUZ enviar um aviso (por exemplo quando a luz é inferior a um dado valor!)
+ *           deve passar um video desejando um bom regresso a casa!, pois o tempo está a escurecer e aproximase a
+ *           hora de dormir.
+ * \param   video
+ * \author LD & GA
+ * \return int
+ *
+ */
+int Fabrica::Aviso_Luz(string fich_video)
+{
+    return 0;
+}
+
+/** \brief No caso de o sensor de MÍSSEL enviar um aviso (por exemplo quando o valor for 1) deve passar um
+ *   video mostrando os abrigos e a fábrica deve desligar-se completamente, guardando o estado atual!.
+ *
+ * \param   video, ficheiro de testo
+ * \author LD & GA
+ * \return
+ *
+ */
+ void Fabrica::Aviso_Missel(string fvideo, string festado)
+{
+
+}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 bool Fabrica::Run()
 {
     while(true)
     {
         for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
+        {
+            Uteis::Delay(1000);
             (*it)->RUN();
+        }
     }
 }
-*/
+
 

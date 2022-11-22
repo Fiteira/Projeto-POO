@@ -23,7 +23,7 @@ class Motor : public Objetos
         float TEMPERATURA;
 
     public:
-        Motor(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,float _temperatura);
+        Motor(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt);
         virtual ~Motor();
         virtual bool RUN() { cout << "RUN ??"; return false; }
         virtual bool START(){ cout << "START ??"; return false; }
@@ -31,18 +31,25 @@ class Motor : public Objetos
         virtual bool STOP() { cout << "STOP ??"; return false; }
         virtual bool ESTOU_QUENTE(){ cout << "ESTOU_QUENTE ??"; return false; }
 
+        virtual void show(ostream &f = std::cout)
+        {
+            Objetos::show(f);
+            f << "CONSUMO_HORA: " << CONSUMO_HORA << endl;
+        }
+
 
         //gets
         int getCONSUMO(){return CONSUMO_HORA;}
-        string getTipo(){return TIPO;}
-        ESTADO_MOTOR Get_ESTADO() { return ESTADO; }
-        TEMPERATURA_COR Get_COR_MOTOR() { return COR_MOTOR; }
+        string getTIPO(){return TIPO;}
+        ESTADO_MOTOR getESTADO() { return ESTADO; }
+        TEMPERATURA_COR getCOR_MOTOR() { return COR_MOTOR; }
+        float getTEMPERATURA(){return TEMPERATURA;}
 
         //sets
         void setCONSUMO(int CONSUMO){CONSUMO_HORA = CONSUMO;}
-        void setTipo(string tipo){TIPO = tipo;}
-        void Set_ESTADO(ESTADO_MOTOR EST) { ESTADO = EST; }
-        void Set_COR_MOTOR(TEMPERATURA_COR COR) { COR_MOTOR = COR; }
+        void setTIPO(string tipo){TIPO = tipo;}
+        void setESTADO(ESTADO_MOTOR EST) { ESTADO = EST; }
+        void setCOR_MOTOR(TEMPERATURA_COR COR) { COR_MOTOR = COR; }
 
 
 

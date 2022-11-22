@@ -17,12 +17,14 @@ class Objetos
         int POSICAO_Y;
         int POSICAO_X;
         float PROB_AVARIA;
+        Fabrica *Pt_Fabrica;
 
     protected:
 
     public:
-        Objetos(int _id,string _marca,int _posicaoY,int _posicaoX);
+        Objetos(int _id,string _marca,int _posicaoY,int _posicaoX,Fabrica *Pt);
         virtual ~Objetos();
+        virtual void show(ostream &f = std::cout);
 
         //gets
         int getID(){return ID;}
@@ -30,6 +32,7 @@ class Objetos
         int getPOSICAO_Y(){return POSICAO_Y;}
         int getPOSICAO_X(){return POSICAO_X;}
         float getPROB_AVARIA(){return PROB_AVARIA;}
+
 
 
 

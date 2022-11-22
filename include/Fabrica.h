@@ -61,7 +61,7 @@ class Fabrica
         bool Load(const string &ficheiro);
         bool Add(User *ut);
         bool Add(Motor *m);
-        void Listar(ostream &f);
+        void Listar(ostream &f = std::cout);
         void Desligar(int id_motor);
         ESTADO_MOTOR Get_ESTADO(int id_motor);
         list<Motor *> *Listar_Tipo(string Tipo, ostream &f);
@@ -75,7 +75,7 @@ class Fabrica
         void Aviso_Missel(string fvideo, string festado = "Estado.txt");
 
 
-
+        bool Run();
 
 
 

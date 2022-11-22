@@ -11,7 +11,7 @@ class Smissel : public Sensor
     protected:
 
     public:
-        Smissel(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso);
+        Smissel(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso,Fabrica *Pt);
         virtual ~Smissel();
 
 };

@@ -11,7 +11,7 @@ class Sfogo : public Sensor
     protected:
 
     public:
-        Sfogo(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso);
+        Sfogo(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso,Fabrica *Pt);
         virtual ~Sfogo();
 
 };
