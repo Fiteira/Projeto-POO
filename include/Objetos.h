@@ -32,6 +32,7 @@ class Objetos
         int getPOSICAO_Y(){return POSICAO_Y;}
         int getPOSICAO_X(){return POSICAO_X;}
         float getPROB_AVARIA(){return PROB_AVARIA;}
+        Fabrica *getPt_Fabrica() { return Pt_Fabrica; }
 
 
 

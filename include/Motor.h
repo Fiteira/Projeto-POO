@@ -8,7 +8,7 @@ using namespace std;
 
 #include "Objetos.h"
 
-enum ESTADO_MOTOR {ESTADO_PARADO = 0, ESTADO_RUN, ESTADO_AVARIADO};
+enum ESTADO_MOTOR {ESTADO_PARADO = 0, ESTADO_RUN, ESTADO_AVARIADO ,SEM_ESTADO=-1};
 enum TEMPERATURA_COR {VERDE, AMARELO, VERMELHO};
 
 class Motor : public Objetos
@@ -29,7 +29,8 @@ class Motor : public Objetos
         virtual bool START(){ cout << "START ??"; return false; }
         virtual bool RESTART(){ cout << "RESTART ??"; return false; }
         virtual bool STOP() { cout << "STOP ??"; return false; }
-        virtual bool ESTOU_QUENTE(){ cout << "ESTOU_QUENTE ??"; return false; }
+        bool ESTOU_QUENTE();
+        bool ESTOU_AVARIADO();
 
         virtual void show(ostream &f = std::cout)
         {

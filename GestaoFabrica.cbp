@@ -39,6 +39,7 @@
 		<Unit filename="include/MCombustao.h" />
 		<Unit filename="include/MEletrico.h" />
 		<Unit filename="include/MIndocao.h" />
+		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Motor.h" />
 		<Unit filename="include/Normal.h" />
 		<Unit filename="include/Objetos.h" />
@@ -65,7 +66,6 @@
 		<Unit filename="src/Stemperatura.cpp" />
 		<Unit filename="src/User.cpp" />
 		<Unit filename="src/Visitante.cpp" />
-		<Unit filename="src/XML.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

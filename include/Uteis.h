@@ -11,7 +11,9 @@ using namespace std;
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include<unistd.h>
+#include <unistd.h>
+#include <conio.h>
+
 
 
 class Uteis
@@ -25,6 +27,12 @@ class Uteis
         {
             int microsecond = 1000;
             usleep(ms * microsecond);
+        }
+        static void HoraAtual(int &hora)
+        {
+            time_t t=time(0);
+            tm* now = localtime(&t);
+            hora=now->tm_hour;
         }
 
         static int Aleatorio(int _min,int _max)
@@ -87,6 +95,9 @@ class Uteis
             }
         }
 
+
+
+
         static bool ProbabilidadeAcerto(int n)
         {
             srand(time(NULL));
@@ -96,7 +107,6 @@ class Uteis
             else
                 return false;
         }
-
 
         template <class T>
         static void Liberar_Memoria(list<T*>* Lista)

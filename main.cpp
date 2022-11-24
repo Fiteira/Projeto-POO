@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 using namespace std;
+#include <ctime>
 
 #include "Fabrica.h"
 /*
@@ -13,17 +14,9 @@ void print(ostream &o) {
 }
 */
 
-int main()
+void teste()
 {
-    /*
-    stringstream ss;
-    print(ss);
-    string outputString = ss.str();
-    cout << outputString << endl;
-    */
-
-
-    User *U;
+     User *U;
 
     U=new Admin(0,"Admin");
 
@@ -40,12 +33,29 @@ int main()
     F->Add(M);
 
     F->Listar(cout);
+    F->Run();
 
-
-
-    //F->Run();
+    //F->Stop();
 
     F->~Fabrica();
+}
+
+int main()
+{
+    /*
+    stringstream ss;
+    print(ss);
+    string outputString = ss.str();
+    cout << outputString << endl;
+    */
+    /*
+    int hora;
+
+    Uteis::HoraAtual(hora);
+
+    cout << hora;
+    */
+    teste();
 
     return 0;
 }

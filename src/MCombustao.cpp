@@ -16,15 +16,18 @@ MCombustao::~MCombustao()
 
 bool MCombustao::RUN()
 {
-    if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
+    if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << "MCombustao... RUN : ID= " << Objetos::getID() << endl;
-        cout << "ESTADO: " << getESTADO() << endl;
-        cout << "TEMPERATURA= " << getTEMPERATURA() << endl;
-        TEMPERATURA += 0.1f;
-        Uteis::Delay(500);
-    }else
-        setESTADO(ESTADO_RUN);
+        cout << "MCombustao ID=[" << getID() << "] Motor desligado" << endl;
+        return false;
+    }
+
+    cout << "MCombustao ID=[" << getID() << "] RUN" << endl;
+    cout << "ESTADO: " << getESTADO() << endl;
+    cout << "TEMPERATURA= " << getTEMPERATURA() << endl;
+    TEMPERATURA += 0.1f;
+    Uteis::Delay(500);
+
     return true;
 }
 
@@ -32,11 +35,11 @@ bool MCombustao::START()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << "MCombustao.... START" << endl;
+        cout << "MCombustao ID=[" << getID() << "] START" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         return true;
     }else
-        cout << "MCombustao....Ja esta RUN" << endl;
+        cout << "MCombustao ID=[" << getID() << "] Ja esta RUN" << endl;
     return false;
 }
 
@@ -44,15 +47,15 @@ bool MCombustao::RESTART()
 {
     if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << "MCombustao.... RUN" << endl;
-        cout << "MCombustao.... INICIAR RESTART" << endl;
+        cout << "MCombustao ID=[" << getID() << "] RUN" << endl;
+        cout << "MCombustao ID=[" << getID() << "] INICIAR RESTART" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
-        cout << "MCombustao.... PARADO" << endl;
+        cout << "MCombustao ID=[" << getID() << "] PARADO" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_RUN);
-        cout << "MCombustao.... RUN NOVAMENTE" << endl;
+        cout << "MCombustao ID=[" << getID() << "] RUN NOVAMENTE" << endl;
         return true;
     }else
-        cout << "MCombustao....Ja esta PARADO" << endl;
+        cout << "MCombustao ID=[" << getID() << "] Ja esta PARADO" << endl;
     return false;
 }
 
@@ -60,17 +63,13 @@ bool MCombustao::STOP()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_PARADO)
     {
-        cout << "MCombustao.... STOP" << endl;
+        cout << "MCombustao ID=[" << getID() << "] STOP" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
         return true;
     }else
     {
-        cout << "MCombustao....Ja esta parado" << endl;
+        cout << "MCombustao ID=[" << getID() << "] Ja esta parado" << endl;
         return false;
     }
 }
 
-bool MCombustao::ESTOU_QUENTE()
-{
-    return true;
-}

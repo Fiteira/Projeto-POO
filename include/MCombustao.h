@@ -17,7 +17,6 @@ class MCombustao : public Motor
         bool START();
         bool RESTART();
         bool STOP();
-        bool ESTOU_QUENTE();
 
         void show(ostream &f = std::cout)
         {

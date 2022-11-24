@@ -1,5 +1,6 @@
 #include "Fabrica.h"
 #include "Uteis.h"
+#include <conio.h>
 
 /** \brief Construtor da Fabrica, sendo dado o USER actual
  *
@@ -83,6 +84,9 @@ Fabrica::~Fabrica()
     Uteis::Liberar_Memoria(&LUsers);
     Uteis::Liberar_Memoria(&LMotores);
     Uteis::Liberar_Memoria(&LSensores);
+    Uteis::Liberar_Memoria(&LMotoresAvariados);
+    Uteis::Liberar_Memoria(&LMotoresQuentes);
+    Uteis::Liberar_Memoria(&LSensoresAvariados);
     LObjetos.clear();
 
 }
@@ -109,29 +113,29 @@ bool Fabrica::Load(const string &ficheiro)
  */
 bool Fabrica::Add(User *ut)
 {
-    if (!Ut_Atual)
+
+    if(!Ut_Atual)
     {
         cout << "Nao existe User Atual!" << endl;
         return false;
     }
-    else{
-        if (!Ut_Atual->PossoADD())
-        {
-            cout << "Nao tens autorizacao!!!" << endl;
-            return false;
-        }else
-        {
-            if(ut)
-            {
-                LUsers.push_back(ut);
-                return true;
-            }else
-            {
-                cout << "Nao existe User!" << endl;
-                return false;
-            }
-        }
+
+    if(!Ut_Atual->PossoADD())
+    {
+        cout << "Nao tens autorizacao!!!" << endl;
+        return false;
     }
+
+    if(!ut)
+    {
+        cout << "Nao existe User!" << endl;
+        return false;
+    }
+
+    LUsers.push_back(ut);
+    return true;
+
+
 }
 
 /** \brief Adicionar Motores (Ver quem pode!)
@@ -143,32 +147,32 @@ bool Fabrica::Add(User *ut)
  */
 bool Fabrica::Add(Motor *M)
 {
-    if (!Ut_Atual)
+
+    if(!Ut_Atual)
     {
         cout << "Nao existe User Atual!" << endl;
         return false;
     }
-    else{
-        if (!Ut_Atual->PossoADD())
-        {
-            cout << "Nao tens autorizacao!!!" << endl;
-            return false;
-        }else
-        {
-            if(M)
-            {
-
-                //ATENCAO AS POSICAO DA FABIRCA E SE TEM MOTORES NA MESMA POSICAO
-                LObjetos.push_back(M);
-                LMotores.push_back(M);
-                return true;
-            }else
-            {
-                cout << "Nao existe Motor!" << endl;
-                return false;
-            }
-        }
+    if(!Ut_Atual->PossoADD())
+    {
+        cout << "Nao tens autorizacao!!!" << endl;
+        return false;
     }
+    if(!M)
+    {
+        cout << "Nao existe Motor!" << endl;
+        return false;
+    }
+    if(M->getPOSICAO_X()>getDIMENSAO_FABRICA_X() || M->getPOSICAO_X()>getDIMENSAO_FABRICA_X())
+    {
+        cout << "O motor nao pode ficar fora da fabrica" << endl;
+        return false;
+    }
+    //ATENCAO AS POSICAO DA FABIRCA E SE TEM MOTORES NA MESMA POSICAO
+    LObjetos.push_back(M);
+    LMotores.push_back(M);
+    return true;
+
 }
 
 
@@ -186,18 +190,8 @@ void Fabrica::Listar(ostream &f)
     list<Objetos *>::iterator it;
     for (it = LObjetos.begin(); it != LObjetos.end(); ++it)
             (*it)->show();
-
-    /*
-    list<Motor *>::iterator it;
-    for (it = LMotores.begin(); it != LMotores.end(); ++it)
-            (*it)->show();
-
-    list<Sensor *>::iterator it1;
-    for (it1 = LSensores.begin(); it1 != LSensores.end(); ++it1)
-            (*it1)->show();
-
-    */
 }
+
 
 
 /** \brief Desligar um motor especifico, dado o seu ID;
@@ -209,6 +203,15 @@ void Fabrica::Listar(ostream &f)
  */
 void Fabrica::Desligar(int id_motor)
 {
+    list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+    {
+
+        if((*it)->getID() == id_motor)
+            (*it)->setESTADO(ESTADO_PARADO);
+        else
+            cout << "Nao tem nenhum motor com esse ID:[" << id_motor <<"]" << endl;
+    }
 
 }
 
@@ -220,12 +223,19 @@ void Fabrica::Desligar(int id_motor)
  * \return ESTADO_MOTOR
  *
  */
-/*
-ESTADO_MOTOR Fabrica::Get_Estado(int id_motor)
+ESTADO_MOTOR Fabrica::Get_ESTADO(int id_motor)
 {
+     list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+    {
 
+        if((*it)->getID() == id_motor)
+            return (*it)->getESTADO();
+        else
+            cout << "Nao tem nenhum motor com esse ID:[" << id_motor <<"]" << endl;
+    }
+    return ESTADO_MOTOR::SEM_ESTADO;
 }
-*/
 
 
 /** \brief Listar e devolver todos os Motores de um dado Tipo;
@@ -345,18 +355,63 @@ int Fabrica::Aviso_Luz(string fich_video)
 
 
 
+//-----------------------Funcoes Extras------------------------//
 
-
-bool Fabrica::Run()
+/** \brief Desligar motores
+ *
+ * \param
+ * \author LD & GA
+ * \return void
+ *
+ */
+bool Fabrica::Stop()
 {
-    while(true)
-    {
-        for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
-        {
-            Uteis::Delay(1000);
-            (*it)->RUN();
-        }
-    }
+    cout << "Fabrica a desligar Motores" << endl;
+    list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+            (*it)->STOP();
+    return true;
 }
 
 
+/** \brief Run motores
+ *
+ * \param
+ * \author LD & GA
+ * \return void
+ *
+ */
+bool Fabrica::Run()
+{
+    do{
+        for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
+        {
+
+            //horas de trabalho
+            Uteis::Delay(1000);
+            (*it)->RUN();
+        }
+    }while(!kbhit());
+    //ir para o menu
+    printf( "\ntecla clicada '%c' \n", _getch());
+    return true;
+}
+
+
+bool Fabrica::ESTOU_QUENTE(Motor *M)
+{
+    LMotoresQuentes.push_back(M);
+    return true;
+}
+
+bool Fabrica::ESTOU_AVARIADO_MOTOR(Motor *M)
+{
+    LMotoresAvariados.push_back(M);
+    return true;
+}
+
+bool Fabrica::ESTOU_AVARIADO_SENSOR(Sensor *S)
+{
+    LSensoresAvariados.push_back(S);
+    return true;
+}

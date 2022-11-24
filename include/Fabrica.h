@@ -32,6 +32,9 @@ class Fabrica
     list<Motor*> LMotores;
     list<Sensor*> LSensores;
     list<Objetos*> LObjetos;
+    list<Motor *> LMotoresQuentes;
+    list<Motor *> LMotoresAvariados;
+    list<Sensor*> LSensoresAvariados;
 
     User *Ut_Atual;
     ESTADO_MOTOR ESTADO;
@@ -75,10 +78,19 @@ class Fabrica
         void Aviso_Missel(string fvideo, string festado = "Estado.txt");
 
 
+        //gets
+        int getDIMENSAO_FABRICA_X(){return DIMENSAO_FABRICA_X;}
+        int getDIMENSAO_FABRICA_Y(){return DIMENSAO_FABRICA_Y;}
+
+
+
+
+        //-----------------------Funcoes Extras------------------------//
         bool Run();
-
-
-
+        bool Stop();
+        bool ESTOU_QUENTE(Motor *m);
+        bool ESTOU_AVARIADO_MOTOR(Motor *m);
+        bool ESTOU_AVARIADO_SENSOR(Sensor *s);
 };
 
 #endif // FABRICA_H
