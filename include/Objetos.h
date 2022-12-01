@@ -18,6 +18,7 @@ class Objetos
         int POSICAO_X;
         float PROB_AVARIA;
         Fabrica *Pt_Fabrica;
+        int numeroDeAvarias;
 
     protected:
 

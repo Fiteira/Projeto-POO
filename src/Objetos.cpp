@@ -7,6 +7,7 @@ Objetos::Objetos(int _id,string _marca,int _posicaoY,int _posicaoX,Fabrica *F)
     POSICAO_Y=_posicaoY;
     POSICAO_X=_posicaoX;
     Pt_Fabrica=F;
+    numeroDeAvarias=0;
 }
 
 Objetos::~Objetos()

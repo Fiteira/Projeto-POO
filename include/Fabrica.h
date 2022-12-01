@@ -67,10 +67,10 @@ class Fabrica
         void Listar(ostream &f = std::cout);
         void Desligar(int id_motor);
         ESTADO_MOTOR Get_ESTADO(int id_motor);
-        list<Motor *> *Listar_Tipo(string Tipo, ostream &f);
+        list<Motor *> Listar_Tipo(string Tipo, ostream &f);
         bool Manutencao();
-        list<string> *Ranking_Dos_Fracos();
-        list<Motor *> *Ranking_Dos_Mais_Trabalhadores();
+        list<string> Ranking_Dos_Fracos();
+        list<Motor *> Ranking_Dos_Mais_Trabalhadores();
         void Relatorio(string fich_xml);
         int Aviso_Humidade(list<Motor *> &lm);
         int Aviso_Fumo(list<Motor *> &lm, string fich_video);
@@ -81,6 +81,8 @@ class Fabrica
         //gets
         int getDIMENSAO_FABRICA_X(){return DIMENSAO_FABRICA_X;}
         int getDIMENSAO_FABRICA_Y(){return DIMENSAO_FABRICA_Y;}
+        int getHoraInicio(){return HORA_INICIO;}
+        int getHoraFecho(){return HORA_FECHO;}
 
 
 
@@ -88,9 +90,11 @@ class Fabrica
         //-----------------------Funcoes Extras------------------------//
         bool Run();
         bool Stop();
+        void Ligar(int id_motor);
         bool ESTOU_QUENTE(Motor *m);
         bool ESTOU_AVARIADO_MOTOR(Motor *m);
         bool ESTOU_AVARIADO_SENSOR(Sensor *s);
+        bool TempoFabrica();
 };
 
 #endif // FABRICA_H
