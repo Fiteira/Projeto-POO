@@ -437,13 +437,14 @@ bool Fabrica::Run()
         return false;
     do
     {
-        system("cls");
+       cout << "TIPO\t       ID\tESTADO\t ESTADO_COR\tTEMPERATURA" << endl;
         for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
         {
             if(TempoFabrica() == false)
                 return false;
             (*it)->RUN();
         }
+        system("cls");
     }
     while(!kbhit());
     //ir para o menu

@@ -8,6 +8,7 @@ class Sensor : public Objetos
     private:
         int VALOR_AVISO;
         float _probAvaria;
+        string TIPO;
 
     protected:
 

@@ -21,7 +21,7 @@ class MCombustao : public Motor
         void show(ostream &f = std::cout)
         {
             f << "-----------------" << endl;
-            f << Motor::getTIPO() << endl;
+            f << Objetos::getTIPO() << endl;
             f << "-----------------" << endl;
             Motor::show(f);
 

@@ -18,7 +18,9 @@ class Objetos
         int POSICAO_X;
         float PROB_AVARIA;
         Fabrica *Pt_Fabrica;
+        string TIPO;
         int numeroDeAvarias;
+
 
     protected:
 
@@ -34,6 +36,11 @@ class Objetos
         int getPOSICAO_X(){return POSICAO_X;}
         float getPROB_AVARIA(){return PROB_AVARIA;}
         Fabrica *getPt_Fabrica() { return Pt_Fabrica; }
+        string getTIPO(){return TIPO;}
+
+        //sets
+
+         void setTIPO(string tipo){TIPO = tipo;}
 
 
 

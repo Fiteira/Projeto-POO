@@ -4,7 +4,7 @@
 MCombustao::MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
 :Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
 {
-    Motor::setTIPO("MCombustao");
+    Objetos::setTIPO("MCombustao");
     setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
 }
 
@@ -18,14 +18,27 @@ bool MCombustao::RUN()
 {
     if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << "MCombustao ID=[" << getID() << "] Motor desligado" << endl;
+        cout << getTIPO()<< "\t" << getID() << "\t" << getESTADO() << "\t" << getCOR_MOTOR() << endl;
+        Uteis::Delay(500);
         return false;
     }
 
-    cout << "MCombustao ID=[" << getID() << "] RUN" << endl;
-    cout << "ESTADO: " << getESTADO() << endl;
-    cout << "TEMPERATURA= " << getTEMPERATURA() << endl;
-    TEMPERATURA += 0.1f;
+
+    //restricoes aqui sobre a temp
+    if(TEMPERATURA>=)
+    {
+
+    }
+
+
+    cout << getTIPO();
+    cout << "\t" << getID();
+    cout << "\t" << getESTADO();
+    cout << "\t" << getCOR_MOTOR();
+    cout << fixed;
+    cout.precision(2);
+    cout << "\t\t" << TEMPERATURA<<endl;
+    TEMPERATURA += Uteis::AleatorioFloat(0.1,2);
     Uteis::Delay(500);
 
     return true;

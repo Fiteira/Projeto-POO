@@ -32,10 +32,13 @@ void teste()
     F->Add(M);
     M=new MCombustao(1,"XPTO1",2,3,5,F);
     F->Add(M);
+    M=new MCombustao(2,"XPTO2",2,5,5,F);
+    F->Add(M);
 
     //F->Listar_Tipo("MCombustaoa",cout);
     F->Ligar(0);
     F->Ligar(1);
+    //F->Ligar(2);
     //F->Listar(cout);
     F->Run();
     //F->Manutencao();

@@ -15,7 +15,6 @@ using namespace std;
 #include <conio.h>
 
 
-
 class Uteis
 {
 
@@ -37,10 +36,17 @@ public:
 
     static int Aleatorio(int _min,int _max)
     {
-        srand(time(NULL));
+        srand(time(NULL)*getpid());
         return _min + rand()%(_max - _min + 1);
     }
 
+    static double AleatorioFloat(double _min,double _max)
+    {
+        srand(time(NULL)*getpid());
+        double numero;
+        numero=_min + (rand() / (RAND_MAX / (_max - _min)));
+        return  numero;
+    }
     static void Msg(string txt)
     {
         cout << txt << endl;
