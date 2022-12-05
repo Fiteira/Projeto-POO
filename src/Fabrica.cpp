@@ -85,9 +85,10 @@ Fabrica::~Fabrica()
     Uteis::Liberar_Memoria(&LUsers);
     Uteis::Liberar_Memoria(&LMotores);
     Uteis::Liberar_Memoria(&LSensores);
-    Uteis::Liberar_Memoria(&LMotoresAvariados);
-    Uteis::Liberar_Memoria(&LMotoresQuentes);
-    Uteis::Liberar_Memoria(&LSensoresAvariados);
+
+    LMotoresAvariados.clear();
+    LMotoresQuentes.clear();
+    LSensoresAvariados.clear();
     LObjetos.clear();
 
 }
@@ -248,6 +249,7 @@ ESTADO_MOTOR Fabrica::Get_ESTADO(int id_motor)
         cout << "Nao tem nenhum motor com esse ID:[" << id_motor <<"]" << endl;
         return ESTADO_MOTOR::SEM_ESTADO;
     }
+    return ESTADO_MOTOR::SEM_ESTADO;
 }
 
 
@@ -295,6 +297,15 @@ bool Fabrica::Manutencao()
     if (LSensoresAvariados.empty())
         cout << "Nao tem nenhum Sensores Avariados" << endl;
 
+
+    list<Motor *>::iterator it;
+    for (it = LMotoresQuentes.begin(); it != LMotoresQuentes.end(); ++it)
+    {
+        (*it)->setCOR_MOTOR(VERDE);
+        //MAIS COISAS NAO ACABOU
+    }
+    //...
+
     return true;
 }
 
@@ -329,6 +340,8 @@ list<Motor *> Fabrica::Ranking_Dos_Mais_Trabalhadores()
      list<Motor *> listaMotores;
      if(!Ut_Atual->PossoLISTAR())
         return listaMotores;
+
+    return listaMotores;
 }
 
 
@@ -423,6 +436,23 @@ bool Fabrica::Stop()
     return true;
 }
 
+/** \brief Ligar motores
+ *
+ * \param
+ * \author LD & GA
+ * \return void
+ *
+ */
+bool Fabrica::LigarMotores()
+{
+    if(!Ut_Atual->PossoRUN())
+        return false;
+    cout << "Fabrica a Ligar todos os Motores" << endl;
+    list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+        (*it)->START();
+    return true;
+}
 
 /** \brief Run motores
  *
@@ -435,12 +465,14 @@ bool Fabrica::Run()
 {
     if(!Ut_Atual->PossoRUN())
         return false;
+    if(!TempoFabrica())
+        return false;
     do
     {
        cout << "TIPO\t       ID\tESTADO\t ESTADO_COR\tTEMPERATURA" << endl;
         for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
         {
-            if(TempoFabrica() == false)
+            if(!TempoFabrica())
                 return false;
             (*it)->RUN();
         }

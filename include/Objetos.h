@@ -37,11 +37,12 @@ class Objetos
         float getPROB_AVARIA(){return PROB_AVARIA;}
         Fabrica *getPt_Fabrica() { return Pt_Fabrica; }
         string getTIPO(){return TIPO;}
+        int getNumeroDeAvarias(){return numeroDeAvarias;}
 
         //sets
 
-         void setTIPO(string tipo){TIPO = tipo;}
-
+        void setTIPO(string tipo){TIPO = tipo;}
+        void setNumeroDeAvarias(int numero){numeroDeAvarias = numero;}
 
 
 

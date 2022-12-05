@@ -40,13 +40,14 @@ public:
         return _min + rand()%(_max - _min + 1);
     }
 
-    static double AleatorioFloat(double _min,double _max)
+    static double AleatorioDouble(double _min,double _max)
     {
         srand(time(NULL)*getpid());
         double numero;
         numero=_min + (rand() / (RAND_MAX / (_max - _min)));
         return  numero;
     }
+
     static void Msg(string txt)
     {
         cout << txt << endl;
@@ -99,7 +100,7 @@ public:
 
     static bool ProbabilidadeAcerto(int n)
     {
-        srand(time(NULL));
+        srand(time(NULL)*getpid());
         int numero=rand()%100;
         if(numero <= (n-1))
             return true;

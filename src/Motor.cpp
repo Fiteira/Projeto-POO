@@ -5,6 +5,7 @@ Motor::Motor(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,
 :Objetos(_id,_marca,_posicaoY,_posicaoX,Pt)
 {
     CONSUMO_HORA=_consumoHora;
+    HORAS_TRABALHO=0;
 }
 
 Motor::~Motor()

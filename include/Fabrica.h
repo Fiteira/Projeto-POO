@@ -20,7 +20,7 @@ using namespace std;
 #include "Objetos.h"
 #include "XML.h"
 
-#define NVALORES 6
+#define NVALORES 7
 
 
 
@@ -84,12 +84,16 @@ class Fabrica
         int getHoraInicio(){return HORA_INICIO;}
         int getHoraFecho(){return HORA_FECHO;}
 
+        int getDefinicaoMEletrico(int n){return DEFI_MELETRICO[n];}
+        int getDefinicaoMCombustao(int n){return DEFI_MCOMBUSTAO[n];}
+        int getDefinicaoMInducao(int n){return DEFI_MINDUCAO[n];}
 
 
 
         //-----------------------Funcoes Extras------------------------//
         bool Run();
         bool Stop();
+        bool LigarMotores();
         void Ligar(int id_motor);
         bool ESTOU_QUENTE(Motor *m);
         bool ESTOU_AVARIADO_MOTOR(Motor *m);
