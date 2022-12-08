@@ -21,7 +21,30 @@ bool MCombustao::RUN()
 {
     if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << getTIPO()<< "\t" << getID() << "\t" << getESTADO() << "\t" << getCOR_MOTOR() << endl;
+        cout << getTIPO()<< "\t" << getID();
+
+        if(getESTADO() == 0)
+            cout << "\t" << "PARADO";
+        else if (getESTADO() == 1)
+            cout << "\t" << "RUN";
+        else if (getESTADO() == 2)
+            cout << "\t" << "AVARIADO";
+        else
+            cout << "\t" << "SEM_ESTADO";
+
+
+        if(getCOR_MOTOR() == 0)
+            cout << "\t" << "VERDE";
+        else if (getCOR_MOTOR() == 1)
+            cout << "\t" << "AMARELO";
+        else
+            cout << "\t" << "VERMELHO";
+
+        cout << endl;
+
+        if(getPt_Fabrica()->UmaHora())
+            getPt_Fabrica()->Manutencao();
+
         Uteis::Delay(500);
         return false;
     }
@@ -30,12 +53,17 @@ bool MCombustao::RUN()
     int minVermelho=getPt_Fabrica()->getDefinicaoMCombustao(4);
     int proAvaria=getPt_Fabrica()->getDefinicaoMCombustao(6);
 
-    //passar uma hora fazer o que esta em baixo
-//    int consumoHora=getCONSUMO();
-//    consumoHora+=consumoHora;
-//    setCONSUMO(consumoHora);
-//    HORAS_TRABALHO++;
 
+    if(getPt_Fabrica()->UmaHora())
+    {
+        int consumoHora=getCONSUMO_HORA();
+        int consumo=getCONSUMO();
+
+        consumo=consumo+consumoHora;
+        setCONSUMO(consumo);
+
+        HORAS_TRABALHO++;
+    }
 
     if(Uteis::ProbabilidadeAcerto(proAvaria))
     {
@@ -60,8 +88,25 @@ bool MCombustao::RUN()
 
     cout << getTIPO();
     cout << "\t" << getID();
-    cout << "\t" << getESTADO();
-    cout << "\t" << getCOR_MOTOR();
+
+    if(getESTADO() == 0)
+        cout << "\t" << "PARADO";
+    else if (getESTADO() == 1)
+        cout << "\t" << "RUN";
+    else if (getESTADO() == 2)
+        cout << "\t" << "AVARIADO";
+    else
+        cout << "\t" << "SEM_ESTADO";
+
+
+    if(getCOR_MOTOR() == 0)
+        cout << "\t" << "VERDE";
+    else if (getCOR_MOTOR() == 1)
+        cout << "\t" << "AMARELO";
+    else
+        cout << "\t" << "VERMELHO";
+
+
     cout << fixed;
     cout.precision(2);
     cout << "\t\t" << TEMPERATURA<<endl;
@@ -75,11 +120,11 @@ bool MCombustao::START()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << "MCombustao ID=[" << getID() << "] START" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] START" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         return true;
     }else
-        cout << "MCombustao ID=[" << getID() << "] Ja esta RUN" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] Ja esta RUN" << endl;
     return false;
 }
 
@@ -87,15 +132,15 @@ bool MCombustao::RESTART()
 {
     if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
     {
-        cout << "MCombustao ID=[" << getID() << "] RUN" << endl;
-        cout << "MCombustao ID=[" << getID() << "] INICIAR RESTART" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] RUN" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] INICIAR RESTART" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
-        cout << "MCombustao ID=[" << getID() << "] PARADO" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] PARADO" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_RUN);
-        cout << "MCombustao ID=[" << getID() << "] RUN NOVAMENTE" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] RUN NOVAMENTE" << endl;
         return true;
     }else
-        cout << "MCombustao ID=[" << getID() << "] Ja esta PARADO" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] Ja esta PARADO" << endl;
     return false;
 }
 
@@ -103,12 +148,12 @@ bool MCombustao::STOP()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_PARADO)
     {
-        cout << "MCombustao ID=[" << getID() << "] STOP" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] STOP" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
         return true;
     }else
     {
-        cout << "MCombustao ID=[" << getID() << "] Ja esta parado" << endl;
+        cout << getTIPO() <<" ID=[" << getID() << "] Ja esta parado" << endl;
         return false;
     }
 }

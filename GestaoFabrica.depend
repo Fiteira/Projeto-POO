@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1670282706 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\main.cpp
+1670367547 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\main.cpp
 	<iostream>
 	<sstream>
 	<ctime>
@@ -15,13 +15,13 @@
 	<iostream>
 	<string>
 
-1670284027 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
+1670371832 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
 	"Uteis.h"
 	<conio.h>
 	<string.h>
 
-1670282884 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
+1670368023 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
 	<iostream>
 	<string>
 	<list>
@@ -36,15 +36,16 @@
 	"Sensor.h"
 	"Objetos.h"
 	"XML.h"
+	"RelogioFabrica.h"
 
-1670283170 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mcombustao.cpp
+1670371410 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\mcombustao.cpp
 	"MCombustao.h"
 	"Fabrica.h"
 
 1670193440 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\mcombustao.h
 	"Motor.h"
 
-1670280917 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\motor.h
+1670370905 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\motor.h
 	<iostream>
 	<string>
 	<vector>
@@ -62,7 +63,7 @@
 1670193440 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\mindocao.h
 	"Motor.h"
 
-1670281445 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\motor.cpp
+1670368240 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\motor.cpp
 	"Motor.h"
 	"Fabrica.h"
 
@@ -104,7 +105,7 @@
 1667917403 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\uteis.cpp
 	"Uteis.h"
 
-1670283531 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\uteis.h
+1670367393 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\uteis.h
 	<iostream>
 	<string>
 	<sstream>
@@ -278,4 +279,8 @@
 
 1668718976 source:c:\users\leand\desktop\gestaofabrica\src\xml.cpp
 	"XML.h"
+
+1670337735 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\relogiofabrica.h
+	<iostream>
+	<time.h>
 

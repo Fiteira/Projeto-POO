@@ -20,7 +20,7 @@ void teste()
 
     U=new Admin(0,"Admin");
 
-    Fabrica *F=new Fabrica(U,"Empresa-da-Minha-Terra",8,24,10,50,80,0,80,81,100,101,500,1,0,80,81,100,101,250,10,0,50,51,70,71,100,1);
+    Fabrica *F=new Fabrica(U,"Empresa-da-Minha-Terra",8,16,10,50,80,0,80,81,100,101,500,1,0,80,81,100,101,250,10,0,50,51,70,71,100,1);
     U=new Normal(1,"Normal");
     F->Add(U);
 

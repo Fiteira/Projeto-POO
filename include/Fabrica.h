@@ -18,8 +18,9 @@ using namespace std;
 
 #include "Sensor.h"
 #include "Objetos.h"
-#include "XML.h"
 
+#include "XML.h"
+#include "RelogioFabrica.h"
 #define NVALORES 7
 
 
@@ -38,6 +39,8 @@ class Fabrica
 
     User *Ut_Atual;
     ESTADO_MOTOR ESTADO;
+
+    RelogioFabrica *Rolex;
 
     string NOME_EMPRESA;
     int HORA_INICIO;
@@ -98,7 +101,9 @@ class Fabrica
         bool ESTOU_QUENTE(Motor *m);
         bool ESTOU_AVARIADO_MOTOR(Motor *m);
         bool ESTOU_AVARIADO_SENSOR(Sensor *s);
+        void MostrarHoraAtual();
         bool TempoFabrica();
+        bool UmaHora();
 };
 
 #endif // FABRICA_H

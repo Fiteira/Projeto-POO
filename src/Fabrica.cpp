@@ -14,6 +14,8 @@ Fabrica::Fabrica(User *ut)
 {
     Ut_Atual = ut;
     LUsers.push_back(ut);
+
+    Rolex = new RelogioFabrica(100);
 }
 
 /** \brief Construtor da Fabrica, sendo dado o USER actual
@@ -35,6 +37,8 @@ Fabrica::Fabrica(User *ut,string _nomeEmpresa,int _horaInicio,int _horaFecho,int
 
     Ut_Atual = ut;
     LUsers.push_back(ut);
+
+    Rolex = new RelogioFabrica(100);
 
     NOME_EMPRESA=_nomeEmpresa;
     HORA_INICIO=_horaInicio;
@@ -90,7 +94,7 @@ Fabrica::~Fabrica()
     LMotoresQuentes.clear();
     LSensoresAvariados.clear();
     LObjetos.clear();
-
+    delete(Rolex);
 }
 
 /** \brief As configurações da Fábrica são dadas em ficheiro XML, com todas as informações
@@ -290,6 +294,7 @@ list<Motor *> Fabrica::Listar_Tipo(string Tipo, ostream &f)
  */
 bool Fabrica::Manutencao()
 {
+    system("cls");
     if (LMotoresQuentes.empty())
         cout << "Nao tem nenhum Motor Quente" << endl;
     if (LMotoresAvariados.empty())
@@ -301,11 +306,26 @@ bool Fabrica::Manutencao()
     list<Motor *>::iterator it;
     for (it = LMotoresQuentes.begin(); it != LMotoresQuentes.end(); ++it)
     {
+         cout << "Arrefecer Motor ID: "<< (*it)->getID() << endl;
         (*it)->setCOR_MOTOR(VERDE);
-        //MAIS COISAS NAO ACABOU
+        double temperatura=Uteis::AleatorioDouble((double)getDefinicaoMCombustao(0),(double)getDefinicaoMCombustao(1));
+        (*it)->setTEMPERATURA(temperatura);
+        (*it)->setESTADO(ESTADO_MOTOR::ESTADO_RUN);
+        Uteis::Wait(2);
     }
-    //...
+    list<Motor *>::iterator it1;
+    for (it1 = LMotoresAvariados.begin(); it1 != LMotoresAvariados.end(); ++it1)
+    {
+        cout << "Arranjar Motor ID: "<< (*it1)->getID() << endl;
+        (*it1)->setCOR_MOTOR(VERDE);
+        double temperatura=Uteis::AleatorioDouble((double)getDefinicaoMCombustao(0),(double)getDefinicaoMCombustao(1));
+        (*it1)->setTEMPERATURA(temperatura);
+        (*it1)->setESTADO(ESTADO_MOTOR::ESTADO_RUN);
+        Uteis::Wait(2);
+    }
 
+    //falta os sensores
+    system("cls");
     return true;
 }
 
@@ -465,15 +485,24 @@ bool Fabrica::Run()
 {
     if(!Ut_Atual->PossoRUN())
         return false;
-    if(!TempoFabrica())
-        return false;
+//    if(!TempoFabrica())
+//    {
+//        //ir para o menu
+//        return false;
+//    }
+
+
     do
     {
+        MostrarHoraAtual();
        cout << "TIPO\t       ID\tESTADO\t ESTADO_COR\tTEMPERATURA" << endl;
         for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
         {
-            if(!TempoFabrica())
-                return false;
+//            if(!TempoFabrica())
+//            {
+//                //ir para o menu
+//                return false;
+//            }
             (*it)->RUN();
         }
         system("cls");
@@ -522,16 +551,45 @@ bool Fabrica::ESTOU_AVARIADO_SENSOR(Sensor *S)
     return true;
 }
 
+
+void Fabrica::MostrarHoraAtual()
+{
+    time_t hora_atual = Rolex->GetTime();
+    tm* now = localtime(&hora_atual);
+    int hora=now->tm_hour;
+    int minutos=now->tm_min;
+    int segundos=now->tm_sec;
+     cout << "Hora atual = " << hora << ":" << minutos << ":" << segundos << endl;
+}
+
 bool Fabrica::TempoFabrica()
 {
-    int hora;
-    Uteis::HoraAtual(hora);
+    time_t hora_atual = Rolex->GetTime();
+    tm* now = localtime(&hora_atual);
+    int hora=now->tm_hour;
+//    int hora;
+//    Uteis::HoraAtual(hora);
 
-    if(hora<getHoraInicio() || hora>getHoraFecho())
+    if(hora<=getHoraInicio() || hora>=getHoraFecho())
     {
+        system("cls");
+        cout << "FABRICA A FECHAR BOA VIAGEM A CASA" << endl;
         Stop();
         return false;
     }
     else
         return true;
+}
+
+
+bool Fabrica::UmaHora()
+{
+    time_t hora_atual = Rolex->GetTime();
+    tm* now = localtime(&hora_atual);
+    int minutos=now->tm_min;
+
+    if(minutos >= 0 && minutos <=2)
+        return true;
+    else
+        return false;
 }

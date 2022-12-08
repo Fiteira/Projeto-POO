@@ -6,6 +6,7 @@ Motor::Motor(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,
 {
     CONSUMO_HORA=_consumoHora;
     HORAS_TRABALHO=0;
+    CONSUMO=0;
 }
 
 Motor::~Motor()

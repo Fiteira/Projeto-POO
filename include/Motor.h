@@ -15,6 +15,7 @@ class Motor : public Objetos
 {
     private:
         int CONSUMO_HORA;
+        int CONSUMO;
         ESTADO_MOTOR ESTADO;
         TEMPERATURA_COR COR_MOTOR;
 
@@ -40,15 +41,18 @@ class Motor : public Objetos
 
 
         //gets
-        int getCONSUMO(){return CONSUMO_HORA;}
+        int getCONSUMO_HORA(){return CONSUMO_HORA;}
+        int getCONSUMO(){return CONSUMO;}
         ESTADO_MOTOR getESTADO() { return ESTADO; }
         TEMPERATURA_COR getCOR_MOTOR() { return COR_MOTOR; }
         double getTEMPERATURA(){return TEMPERATURA; }
 
         //sets
-        void setCONSUMO(int CONSUMO){CONSUMO_HORA = CONSUMO; }
+        void setCONSUMO_HORA(int consumoHora){CONSUMO_HORA = consumoHora; }
+        void setCONSUMO(int CONSUMO){CONSUMO = CONSUMO; }
         void setESTADO(ESTADO_MOTOR EST) { ESTADO = EST; }
         void setCOR_MOTOR(TEMPERATURA_COR COR) { COR_MOTOR = COR; }
+        void setTEMPERATURA(double temperatura){TEMPERATURA = temperatura; }
 
 
 };

@@ -27,6 +27,14 @@ public:
         int microsecond = 1000;
         usleep(ms * microsecond);
     }
+
+    static void Wait(int s)
+    {
+    clock_t T0 = clock();
+    clock_t T1 = T0 + s * CLOCKS_PER_SEC;
+    while (clock() < T1);
+    }
+
     static void HoraAtual(int &hora)
     {
         time_t t=time(0);
