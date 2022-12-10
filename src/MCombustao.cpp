@@ -2,7 +2,7 @@
 #include "Fabrica.h"
 
 MCombustao::MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
-:Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
+    :Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
 {
     Objetos::setTIPO("MCombustao");
     setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
@@ -63,15 +63,15 @@ bool MCombustao::RUN()
         setCONSUMO(consumo);
 
         HORAS_TRABALHO++;
-    }
 
-    if(Uteis::ProbabilidadeAcerto(proAvaria))
-    {
-        setESTADO(ESTADO_AVARIADO);
-        ESTOU_AVARIADO();
-        int nAvarias=getNumeroDeAvarias();
-        nAvarias++;
-        setNumeroDeAvarias(nAvarias);
+        if(Uteis::ProbabilidadeAcerto(proAvaria))
+        {
+            setESTADO(ESTADO_AVARIADO);
+            ESTOU_AVARIADO();
+            int nAvarias=getNumeroDeAvarias();
+            nAvarias++;
+            setNumeroDeAvarias(nAvarias);
+        }
     }
 
     if(TEMPERATURA >= minAmarelo)
@@ -123,7 +123,8 @@ bool MCombustao::START()
         cout << getTIPO() <<" ID=[" << getID() << "] START" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         return true;
-    }else
+    }
+    else
         cout << getTIPO() <<" ID=[" << getID() << "] Ja esta RUN" << endl;
     return false;
 }
@@ -139,7 +140,8 @@ bool MCombustao::RESTART()
         setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         cout << getTIPO() <<" ID=[" << getID() << "] RUN NOVAMENTE" << endl;
         return true;
-    }else
+    }
+    else
         cout << getTIPO() <<" ID=[" << getID() << "] Ja esta PARADO" << endl;
     return false;
 }
@@ -151,7 +153,8 @@ bool MCombustao::STOP()
         cout << getTIPO() <<" ID=[" << getID() << "] STOP" << endl;
         setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
         return true;
-    }else
+    }
+    else
     {
         cout << getTIPO() <<" ID=[" << getID() << "] Ja esta parado" << endl;
         return false;

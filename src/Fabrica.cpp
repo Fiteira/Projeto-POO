@@ -302,7 +302,6 @@ bool Fabrica::Manutencao()
     if (LSensoresAvariados.empty())
         cout << "Nao tem nenhum Sensores Avariados" << endl;
 
-
     list<Motor *>::iterator it;
     for (it = LMotoresQuentes.begin(); it != LMotoresQuentes.end(); ++it)
     {
@@ -313,6 +312,8 @@ bool Fabrica::Manutencao()
         (*it)->setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         Uteis::Wait(2);
     }
+    LMotoresQuentes.clear();
+
     list<Motor *>::iterator it1;
     for (it1 = LMotoresAvariados.begin(); it1 != LMotoresAvariados.end(); ++it1)
     {
@@ -323,8 +324,11 @@ bool Fabrica::Manutencao()
         (*it1)->setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         Uteis::Wait(2);
     }
+    LMotoresAvariados.clear();
 
     //falta os sensores
+
+
     system("cls");
     return true;
 }
@@ -386,9 +390,18 @@ void Fabrica::Relatorio(string fich_xml)
 * \return int
 *
 */
-int Fabrica::Aviso_Humidade(list<Motor *> &lm)
+int Fabrica::Aviso_Humidade(list<Motor *> &lm,int x)
 {
-    return 0;
+    int numMotores=0;
+    list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+     {
+        (*it)->STOP();
+        numMotores++;
+        lm.push_back(*it);
+     }
+
+    return numMotores;
 }
 
 /** \brief Quando um sensor de FUMO envia um aviso, todos os motores devem ser desligados e deve ser
@@ -400,7 +413,16 @@ int Fabrica::Aviso_Humidade(list<Motor *> &lm)
  */
 int Fabrica::Aviso_Fumo(list<Motor *> &lm, string fich_video)
 {
-    return 0;
+    int numMotores=0;
+    list<Motor *>::iterator it;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+     {
+        (*it)->STOP();
+        numMotores++;
+        lm.push_back(*it);
+     }
+
+    return numMotores;
 }
 
 /** \brief No caso de o sensor de LUZ enviar um aviso (por exemplo quando a luz é inferior a um dado valor!)
@@ -413,6 +435,10 @@ int Fabrica::Aviso_Fumo(list<Motor *> &lm, string fich_video)
  */
 int Fabrica::Aviso_Luz(string fich_video)
 {
+
+    system("cls");
+    cout << "BOM REGRESSO A CASA" << endl;
+    Stop();
     return 0;
 }
 
@@ -473,6 +499,25 @@ bool Fabrica::LigarMotores()
         (*it)->START();
     return true;
 }
+
+/** \brief Ligar sensor
+ *
+ * \param
+ * \author LD & GA
+ * \return void
+ *
+ */
+bool Fabrica::LigarSensores()
+{
+    if(!Ut_Atual->PossoRUN())
+        return false;
+    cout << "Fabrica a Ligar todos os Sensores" << endl;
+    list<Sensor *>::iterator it;
+    for (it = LSensores.begin(); it != LSensores.end(); ++it)
+       (*it)->Run();
+    return true;
+}
+
 
 /** \brief Run motores
  *
@@ -535,19 +580,44 @@ void Fabrica::Ligar(int id_motor)
 
 bool Fabrica::ESTOU_QUENTE(Motor *M)
 {
+
+    list<Motor *>::iterator it;
+    for (it = LMotoresQuentes.begin(); it != LMotoresQuentes.end(); ++it)
+    {
+        if((*it)->getID() == M->getID())
+            return false;
+    }
     LMotoresQuentes.push_back(M);
     return true;
 }
 
 bool Fabrica::ESTOU_AVARIADO_MOTOR(Motor *M)
 {
+
+
+    list<Motor *>::iterator it;
+    for (it = LMotoresAvariados.begin(); it != LMotoresAvariados.end(); ++it)
+    {
+        if((*it)->getID() == M->getID())
+            return false;
+    }
     LMotoresAvariados.push_back(M);
+
     return true;
 }
 
 bool Fabrica::ESTOU_AVARIADO_SENSOR(Sensor *S)
 {
+
+
+    list<Sensor *>::iterator it;
+    for (it = LSensoresAvariados.begin(); it != LSensoresAvariados.end(); ++it)
+    {
+        if((*it)->getID() == S->getID())
+            return false;
+    }
     LSensoresAvariados.push_back(S);
+
     return true;
 }
 
@@ -573,7 +643,7 @@ bool Fabrica::TempoFabrica()
     if(hora<=getHoraInicio() || hora>=getHoraFecho())
     {
         system("cls");
-        cout << "FABRICA A FECHAR BOA VIAGEM A CASA" << endl;
+        cout << "FABRICA A FECHAR" << endl;
         Stop();
         return false;
     }
@@ -587,6 +657,9 @@ bool Fabrica::UmaHora()
     time_t hora_atual = Rolex->GetTime();
     tm* now = localtime(&hora_atual);
     int minutos=now->tm_min;
+
+    //int segundos=now->tm_sec;
+    // devia de ser 0 min e 0 seg mas como estamos numa simulacao pode nao chegar a esses valores
 
     if(minutos >= 0 && minutos <=2)
         return true;

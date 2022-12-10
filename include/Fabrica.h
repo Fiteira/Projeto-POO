@@ -75,7 +75,7 @@ class Fabrica
         list<string> Ranking_Dos_Fracos();
         list<Motor *> Ranking_Dos_Mais_Trabalhadores();
         void Relatorio(string fich_xml);
-        int Aviso_Humidade(list<Motor *> &lm);
+        int Aviso_Humidade(list<Motor *> &lm,int x);
         int Aviso_Fumo(list<Motor *> &lm, string fich_video);
         int Aviso_Luz(string fich_video);
         void Aviso_Missel(string fvideo, string festado = "Estado.txt");
@@ -97,6 +97,7 @@ class Fabrica
         bool Run();
         bool Stop();
         bool LigarMotores();
+        bool LigarSensores();
         void Ligar(int id_motor);
         bool ESTOU_QUENTE(Motor *m);
         bool ESTOU_AVARIADO_MOTOR(Motor *m);

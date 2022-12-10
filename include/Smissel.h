@@ -13,7 +13,7 @@ class Smissel : public Sensor
     public:
         Smissel(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso,Fabrica *Pt);
         virtual ~Smissel();
-
+    bool Run();
 };
 
 #endif // SMISSEL_H

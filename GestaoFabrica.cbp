@@ -45,6 +45,7 @@
 		<Unit filename="include/Objetos.h" />
 		<Unit filename="include/Sensor.h" />
 		<Unit filename="include/Sfogo.h" />
+		<Unit filename="include/Sluz.h" />
 		<Unit filename="include/Smissel.h" />
 		<Unit filename="include/Stemperatura.h" />
 		<Unit filename="include/User.h" />
@@ -62,6 +63,7 @@
 		<Unit filename="src/Objetos.cpp" />
 		<Unit filename="src/Sensor.cpp" />
 		<Unit filename="src/Sfogo.cpp" />
+		<Unit filename="src/Sluz.cpp" />
 		<Unit filename="src/Smissel.cpp" />
 		<Unit filename="src/Stemperatura.cpp" />
 		<Unit filename="src/User.cpp" />
