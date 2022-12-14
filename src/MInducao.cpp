@@ -1,23 +1,22 @@
-#include "MCombustao.h"
+#include "MInducao.h"
 #include "Fabrica.h"
 
-MCombustao::MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
-    :Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
+MInducao::MInducao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
+:Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
 {
-    Objetos::setTIPO("MCombustao");
+    Motor::setTIPO("MInducao");
     setESTADO(ESTADO_MOTOR::ESTADO_PARADO);
-    int minVerde=getPt_Fabrica()->getDefinicaoMCombustao(0);
-    int maxVerde=getPt_Fabrica()->getDefinicaoMCombustao(1);
+    int minVerde=getPt_Fabrica()->getDefinicaoMInducao(0);
+    int maxVerde=getPt_Fabrica()->getDefinicaoMInducao(1);
     TEMPERATURA=Uteis::AleatorioDouble((double)minVerde,(double)maxVerde);
 }
 
-MCombustao::~MCombustao()
+MInducao::~MInducao()
 {
 
 }
 
-
-bool MCombustao::RUN()
+bool MInducao::RUN()
 {
     if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
@@ -49,9 +48,9 @@ bool MCombustao::RUN()
         return false;
     }
 
-    int minAmarelo=getPt_Fabrica()->getDefinicaoMCombustao(2);
-    int minVermelho=getPt_Fabrica()->getDefinicaoMCombustao(4);
-    int proAvaria=getPt_Fabrica()->getDefinicaoMCombustao(6);
+    int minAmarelo=getPt_Fabrica()->getDefinicaoMInducao(2);
+    int minVermelho=getPt_Fabrica()->getDefinicaoMInducao(4);
+    int proAvaria=getPt_Fabrica()->getDefinicaoMInducao(6);
 
 
     if(getPt_Fabrica()->UmaHora())
@@ -116,7 +115,7 @@ bool MCombustao::RUN()
     return true;
 }
 
-bool MCombustao::START()
+bool MInducao::START()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
     {
@@ -129,7 +128,7 @@ bool MCombustao::START()
     return false;
 }
 
-bool MCombustao::RESTART()
+bool MInducao::RESTART()
 {
     if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
     {
@@ -146,7 +145,7 @@ bool MCombustao::RESTART()
     return false;
 }
 
-bool MCombustao::STOP()
+bool MInducao::STOP()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_PARADO)
     {
@@ -160,4 +159,3 @@ bool MCombustao::STOP()
         return false;
     }
 }
-

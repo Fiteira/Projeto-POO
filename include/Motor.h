@@ -46,6 +46,7 @@ class Motor : public Objetos
         ESTADO_MOTOR getESTADO() { return ESTADO; }
         TEMPERATURA_COR getCOR_MOTOR() { return COR_MOTOR; }
         double getTEMPERATURA(){return TEMPERATURA; }
+        int getHorasTrabalho(){return HORAS_TRABALHO;}
 
         //sets
         void setCONSUMO_HORA(int consumoHora){CONSUMO_HORA = consumoHora; }

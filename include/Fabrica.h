@@ -14,13 +14,19 @@ using namespace std;
 #include "Motor.h"
 #include "MCombustao.h"
 #include "MEletrico.h"
-#include "MIndocao.h"
+#include "MInducao.h"
 
 #include "Sensor.h"
+#include "Sfogo.h"
+#include "Sluz.h"
+#include "Smissel.h"
+#include "Stemperatura.h"
+
 #include "Objetos.h"
 
 #include "XML.h"
 #include "RelogioFabrica.h"
+
 #define NVALORES 7
 
 
@@ -41,6 +47,7 @@ class Fabrica
     ESTADO_MOTOR ESTADO;
 
     RelogioFabrica *Rolex;
+
 
     string NOME_EMPRESA;
     int HORA_INICIO;
@@ -67,6 +74,7 @@ class Fabrica
         bool Load(const string &ficheiro);
         bool Add(User *ut);
         bool Add(Motor *m);
+        bool Add(Sensor *s);
         void Listar(ostream &f = std::cout);
         void Desligar(int id_motor);
         ESTADO_MOTOR Get_ESTADO(int id_motor);
@@ -75,7 +83,7 @@ class Fabrica
         list<string> Ranking_Dos_Fracos();
         list<Motor *> Ranking_Dos_Mais_Trabalhadores();
         void Relatorio(string fich_xml);
-        int Aviso_Humidade(list<Motor *> &lm,int x);
+        int Aviso_Humidade(list<Motor *> &lm,int x,int y,int nVizinhanca);
         int Aviso_Fumo(list<Motor *> &lm, string fich_video);
         int Aviso_Luz(string fich_video);
         void Aviso_Missel(string fvideo, string festado = "Estado.txt");
@@ -105,6 +113,16 @@ class Fabrica
         void MostrarHoraAtual();
         bool TempoFabrica();
         bool UmaHora();
+        void DesligarMotor(int id_motor);
+
+        //---------------------------Menu----------------------------//
+        bool Menu();
+        bool MenuAddUser();
+        bool MenuAddMotor();
+        bool MenuAddSensor();
+        bool MenuListarMotorTipo();
+        bool MenuLigarMotorID();
+        bool MenuDesligarMotorID();
 };
 
 #endif // FABRICA_H

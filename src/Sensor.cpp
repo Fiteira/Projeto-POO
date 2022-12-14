@@ -1,9 +1,10 @@
 #include "Sensor.h"
 #include "Fabrica.h"
 
-Sensor::Sensor(int _id,string _marca,int _posicaoY,int _posicaoX,float _probAvaria,int _valorAviso,Fabrica *Pt)
+Sensor::Sensor(int _id,string _marca,int _posicaoY,int _posicaoX,int _probAvaria,int _valorAviso,Fabrica *Pt)
 :Objetos(_id,_marca,_posicaoY,_posicaoX,Pt)
 {
+    PROB_AVARIA=_probAvaria;
     VALOR_AVISO=_valorAviso;
     VALOR_ATUAL=0;
 }

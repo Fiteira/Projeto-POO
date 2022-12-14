@@ -1,6 +1,7 @@
 #include "Fabrica.h"
 #include "Uteis.h"
 #include <conio.h>
+#include <algorithm>
 #include <string.h>
 
 /** \brief Construtor da Fabrica, sendo dado o USER actual
@@ -16,6 +17,7 @@ Fabrica::Fabrica(User *ut)
     LUsers.push_back(ut);
 
     Rolex = new RelogioFabrica(100);
+
 }
 
 /** \brief Construtor da Fabrica, sendo dado o USER actual
@@ -185,6 +187,47 @@ bool Fabrica::Add(Motor *M)
 }
 
 
+/** \brief Adicionar Sensores (Ver quem pode!)
+ *
+ * \param Sensor adicionado
+ * \author LD & GA
+ * \return true / false
+ *
+ */
+bool Fabrica::Add(Sensor *S)
+{
+
+    if(!Ut_Atual->PossoADD())
+    {
+        cout << "Nao tens autorizacao!!!" << endl;
+        return false;
+    }
+    if(!S)
+    {
+        cout << "Nao existe Sensor!" << endl;
+        return false;
+    }
+    if(S->getPOSICAO_X()>getDIMENSAO_FABRICA_X() || S->getPOSICAO_X()>getDIMENSAO_FABRICA_X())
+    {
+        cout << "O sensor nao pode ficar fora da fabrica" << endl;
+        return false;
+    }
+
+    list<Objetos *>::iterator it;
+    for (it = LObjetos.begin(); it != LObjetos.end(); ++it)
+    {
+        if((*it)->getPOSICAO_Y() == S->getPOSICAO_Y() && (*it)->getPOSICAO_X() == S->getPOSICAO_X())
+        {
+            cout << "Tem um objeto nessa posicao" << endl;
+            return false;
+        }
+    }
+    LObjetos.push_back(S);
+    LSensores.push_back(S);
+    return true;
+
+}
+
 /** \brief Listar o estado atual da fábrica;
  *
  * \param output no &f
@@ -200,6 +243,9 @@ void Fabrica::Listar(ostream &f)
     list<Objetos *>::iterator it;
     for (it = LObjetos.begin(); it != LObjetos.end(); ++it)
         (*it)->show(f);
+
+    while(!kbhit());
+    Menu();
 }
 
 
@@ -305,7 +351,7 @@ bool Fabrica::Manutencao()
     list<Motor *>::iterator it;
     for (it = LMotoresQuentes.begin(); it != LMotoresQuentes.end(); ++it)
     {
-         cout << "Arrefecer Motor ID: "<< (*it)->getID() << endl;
+        cout << "Arrefecer Motor ID: "<< (*it)->getID() << endl;
         (*it)->setCOR_MOTOR(VERDE);
         double temperatura=Uteis::AleatorioDouble((double)getDefinicaoMCombustao(0),(double)getDefinicaoMCombustao(1));
         (*it)->setTEMPERATURA(temperatura);
@@ -314,24 +360,43 @@ bool Fabrica::Manutencao()
     }
     LMotoresQuentes.clear();
 
+
     list<Motor *>::iterator it1;
     for (it1 = LMotoresAvariados.begin(); it1 != LMotoresAvariados.end(); ++it1)
     {
         cout << "Arranjar Motor ID: "<< (*it1)->getID() << endl;
         (*it1)->setCOR_MOTOR(VERDE);
-        double temperatura=Uteis::AleatorioDouble((double)getDefinicaoMCombustao(0),(double)getDefinicaoMCombustao(1));
+        double temperatura;
+
+        if((*it1)->getTIPO()=="MCombustao")
+            temperatura=Uteis::AleatorioDouble((double)getDefinicaoMCombustao(0),(double)getDefinicaoMCombustao(1));
+        else if((*it1)->getTIPO()=="MEletrico")
+            temperatura=Uteis::AleatorioDouble((double)getDefinicaoMEletrico(0),(double)getDefinicaoMEletrico(1));
+        else if((*it1)->getTIPO()=="MInducao")
+            temperatura=Uteis::AleatorioDouble((double)getDefinicaoMInducao(0),(double)getDefinicaoMInducao(1));
+
         (*it1)->setTEMPERATURA(temperatura);
         (*it1)->setESTADO(ESTADO_MOTOR::ESTADO_RUN);
         Uteis::Wait(2);
     }
     LMotoresAvariados.clear();
 
-    //falta os sensores
 
+    list<Sensor *>::iterator it2;
+    for (it2 = LSensoresAvariados.begin(); it2 != LSensoresAvariados.end(); ++it2)
+    {
+        cout << "Arranjar Sensor ID: "<< (*it2)->getID() << endl;
 
+        (*it2)->setESTADO(ESTADO_SENSOR::RUN);
+        Uteis::Wait(2);
+    }
+    LSensoresAvariados.clear();
+
+    Uteis::Wait(1);
     system("cls");
     return true;
 }
+
 
 
 
@@ -345,11 +410,41 @@ bool Fabrica::Manutencao()
 list<string> Fabrica::Ranking_Dos_Fracos()
 {
 
-    list<string> Marcas;
-    if(!Ut_Atual->PossoLISTAR())
-        return Marcas;
+    list<Objetos *> listaObjetos;
 
-    return Marcas;
+    list<string> listMarcas;
+
+    if(!Ut_Atual->PossoLISTAR())
+
+        for (list<Objetos *>::iterator it = LObjetos.begin(); it != LObjetos.end(); ++it)
+        {
+
+            listaObjetos.push_back(*it);
+
+        }
+
+    listaObjetos.assign(LObjetos.begin(),LObjetos.end());
+
+    listaObjetos.sort([](Objetos *o1, Objetos *o2)
+    {
+        return o1->getNumeroDeAvarias() > o2->getNumeroDeAvarias();
+    });
+
+
+    for (list<Objetos *>::iterator it = listaObjetos.begin(); it != listaObjetos.end(); ++it)
+    {
+
+        cout << "TIPO: " << (*it)->getTIPO();
+        cout << "| ID: " << (*it)->getID();
+        cout << "| MARCA: " << (*it)->getMARCA();
+        cout << "| NUMERO DE AVARIAS: " << (*it)->getNumeroDeAvarias() << endl;
+
+        listMarcas.push_back((*it)->getMARCA());
+    }
+
+    while(!kbhit());
+    system("cls");
+    return listMarcas;
 }
 
 /** \brief Quais motores que mais trabalharam, deve devolver uma lista (ordenada);
@@ -361,9 +456,38 @@ list<string> Fabrica::Ranking_Dos_Fracos()
  */
 list<Motor *> Fabrica::Ranking_Dos_Mais_Trabalhadores()
 {
-     list<Motor *> listaMotores;
-     if(!Ut_Atual->PossoLISTAR())
-        return listaMotores;
+
+    list<Motor *> listaMotores;
+
+
+    if(!Ut_Atual->PossoLISTAR())
+
+        for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
+        {
+
+            listaMotores.push_back(*it);
+
+        }
+
+    listaMotores.assign(LMotores.begin(),LMotores.end());
+
+    listaMotores.sort([](Motor *m1, Motor *m2)
+    {
+        return m1->getHorasTrabalho() > m2->getHorasTrabalho();
+    });
+
+    for (list<Motor *>::iterator it = listaMotores.begin(); it != listaMotores.end(); ++it)
+    {
+
+        cout << "TIPO: " << (*it)->getTIPO();
+        cout << "| ID: " << (*it)->getID();
+        cout << "| MARCA: " << (*it)->getMARCA();
+        cout << "| HORAS TRABALHADAS: " << (*it)->getHorasTrabalho() << endl;
+
+    }
+
+    while(!kbhit());
+    system("cls");
 
     return listaMotores;
 }
@@ -385,21 +509,40 @@ void Fabrica::Relatorio(string fich_xml)
 /** \brief Quando um sensor de Humidade envia um aviso, todos os motores que estão numa dada vizinhança
 *           (X) dele devem ser desligados!, o método deve devolver (por parametro) a lista dos Motores que
 *            foram desligados, também deve devolver o número de motores que foram desligados;
-* \param   devolver a lista dos Motores
+* \param   devolver a lista dos Motores e dada um X,Y do sensor
 * \author LD & GA
 * \return int
 *
 */
-int Fabrica::Aviso_Humidade(list<Motor *> &lm,int x)
+int Fabrica::Aviso_Humidade(list<Motor *> &lm,int x,int y,int nVizinhanca)
 {
     int numMotores=0;
+
+    int x1,x2,y1,y2;
+
+    x1=x+nVizinhanca;
+    x2=x-nVizinhanca;
+
+    y1=y+nVizinhanca;
+    y2=y-nVizinhanca;
+
+    if(x2 < 0)
+        x2=0;
+
+    if(y2 < 0)
+        y2=0;
+
+//    cout << "x1:" << x1 << " x2:" << x2 << " --- y1:" << y1 << " y2:" << y2 << endl;
     list<Motor *>::iterator it;
     for (it = LMotores.begin(); it != LMotores.end(); ++it)
-     {
-        (*it)->STOP();
-        numMotores++;
-        lm.push_back(*it);
-     }
+    {
+        if( ( (*it)->getPOSICAO_X() <= x2 || (*it)->getPOSICAO_X() <= x1) && ( (*it)->getPOSICAO_Y() <= y2 || (*it)->getPOSICAO_Y() <= y1) )
+        {
+            (*it)->STOP();
+            numMotores++;
+            lm.push_back(*it);
+        }
+    }
 
     return numMotores;
 }
@@ -416,11 +559,11 @@ int Fabrica::Aviso_Fumo(list<Motor *> &lm, string fich_video)
     int numMotores=0;
     list<Motor *>::iterator it;
     for (it = LMotores.begin(); it != LMotores.end(); ++it)
-     {
+    {
         (*it)->STOP();
         numMotores++;
         lm.push_back(*it);
-     }
+    }
 
     return numMotores;
 }
@@ -438,6 +581,7 @@ int Fabrica::Aviso_Luz(string fich_video)
 
     system("cls");
     cout << "BOM REGRESSO A CASA" << endl;
+    Uteis::Wait(2);
     Stop();
     return 0;
 }
@@ -479,6 +623,9 @@ bool Fabrica::Stop()
     list<Motor *>::iterator it;
     for (it = LMotores.begin(); it != LMotores.end(); ++it)
         (*it)->STOP();
+
+    while(!kbhit());
+    system("cls");
     return true;
 }
 
@@ -497,6 +644,9 @@ bool Fabrica::LigarMotores()
     list<Motor *>::iterator it;
     for (it = LMotores.begin(); it != LMotores.end(); ++it)
         (*it)->START();
+
+    Uteis::Wait(1);
+    system("cls");
     return true;
 }
 
@@ -514,10 +664,18 @@ bool Fabrica::LigarSensores()
     cout << "Fabrica a Ligar todos os Sensores" << endl;
     list<Sensor *>::iterator it;
     for (it = LSensores.begin(); it != LSensores.end(); ++it)
-       (*it)->Run();
+    {
+        (*it)->setESTADO(RUN);
+        cout << "Motor ID: [" << (*it)->getID() << "] esta a ligar"<< endl;
+    }
+
+    while(!kbhit());
+    system("cls");
+
     return true;
 }
 
+//-----------------------Funcoes Extras------------------------//
 
 /** \brief Run motores
  *
@@ -530,37 +688,40 @@ bool Fabrica::Run()
 {
     if(!Ut_Atual->PossoRUN())
         return false;
+
 //    if(!TempoFabrica())
 //    {
 //        //ir para o menu
 //        return false;
 //    }
 
-
     do
     {
         MostrarHoraAtual();
-       cout << "TIPO\t       ID\tESTADO\t ESTADO_COR\tTEMPERATURA" << endl;
+        cout << "---------------------------MOTORES--------------------------" << endl;
+        cout << "TIPO\t       ID\tESTADO\t ESTADO_COR\tTEMPERATURA" << endl;
         for (list<Motor *>::iterator it = LMotores.begin(); it != LMotores.end(); ++it)
         {
-//            if(!TempoFabrica())
-//            {
-//                //ir para o menu
-//                return false;
-//            }
             (*it)->RUN();
         }
+        cout << "--------------------------SENSORES-------------------------" << endl;
+        cout << "TIPO\t       ID\tESTADO\t VALOR AVISO\t VALOR ATUAL" << endl;
+        for (list<Sensor *>::iterator it = LSensores.begin(); it != LSensores.end(); ++it)
+        {
+            (*it)->Run();
+        }
+        Uteis::Delay(200);
         system("cls");
     }
     while(!kbhit());
-    //ir para o menu
-    printf( "\ntecla clicada '%c' \n", _getch());
+    Menu();
+//    printf( "\ntecla clicada '%c' \n", _getch());
     return true;
 }
 
 void Fabrica::Ligar(int id_motor)
 {
-     if(!Ut_Atual->PossoRUN())
+    if(!Ut_Atual->PossoRUN())
         return;
     list<Motor *>::iterator it;
     int n=0;
@@ -569,6 +730,7 @@ void Fabrica::Ligar(int id_motor)
         if((*it)->getID() == id_motor)
         {
             (*it)->setESTADO(ESTADO_RUN);
+            cout << "Motor ID: [" << id_motor << "] esta a ligar"<< endl;
             n=1;
         }
     }
@@ -609,7 +771,6 @@ bool Fabrica::ESTOU_AVARIADO_MOTOR(Motor *M)
 bool Fabrica::ESTOU_AVARIADO_SENSOR(Sensor *S)
 {
 
-
     list<Sensor *>::iterator it;
     for (it = LSensoresAvariados.begin(); it != LSensoresAvariados.end(); ++it)
     {
@@ -629,7 +790,7 @@ void Fabrica::MostrarHoraAtual()
     int hora=now->tm_hour;
     int minutos=now->tm_min;
     int segundos=now->tm_sec;
-     cout << "Hora atual = " << hora << ":" << minutos << ":" << segundos << endl;
+    cout << "Hora atual = " << hora << ":" << minutos << ":" << segundos << endl;
 }
 
 bool Fabrica::TempoFabrica()
@@ -661,8 +822,562 @@ bool Fabrica::UmaHora()
     //int segundos=now->tm_sec;
     // devia de ser 0 min e 0 seg mas como estamos numa simulacao pode nao chegar a esses valores
 
-    if(minutos >= 0 && minutos <=2)
+    if(minutos == 0 || minutos <=1)
+    {
+//        system("cls");
+//        cout << "1 HORA" << endl;
+//        Uteis::Wait(1);
         return true;
+    }
+
     else
         return false;
 }
+
+
+void Fabrica::DesligarMotor(int id_motor)
+{
+    if(!Ut_Atual->PossoRUN())
+        return;
+    list<Motor *>::iterator it;
+    int n=0;
+    for (it = LMotores.begin(); it != LMotores.end(); ++it)
+    {
+        if((*it)->getID() == id_motor)
+        {
+            (*it)->setESTADO(ESTADO_PARADO);
+            cout << "Motor ID: [" << id_motor << "] esta a desligar"<< endl;
+            n=1;
+        }
+    }
+    if(n==0)
+    {
+        cout << "Nao tem nenhum motor com esse ID:[" << id_motor <<"]" << endl;
+    }
+}
+
+
+
+
+//---------------------------Menu----------------------------//
+
+bool Fabrica::Menu()
+{
+    system("cls");
+    do
+    {
+        int opcao;
+        cout << "********************************************************************" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*                         Menu Fabrica                             *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "********************************************************************" << endl;
+        cout << endl;
+        cout << endl;
+        cout << " 1 - RUN Fabrica" << endl;
+        cout << " 2 - Add User" << endl;
+        cout << " 3 - Add Motor" << endl;
+        cout << " 4 - Add Sensor" << endl;
+        cout << " 5 - Listar" << endl;
+        cout << " 6 - Listar Tipo Motor" << endl;
+        cout << " 7 - Ligar Motores" << endl;
+        cout << " 8 - Ligar Motor por ID" << endl;
+        cout << " 9 - Ligar Sensores" << endl;
+        cout << " 10 - Desligar motores" << endl;
+        cout << " 11 - Desligar Motor por ID" << endl;
+        cout << " 12 - Manutencao" << endl;
+        cout << " 13 - Ranking Dos Fracos" << endl;
+        cout << " 14 - Ranking Dos Mais Trabalhadores" << endl;
+        cout << " 15 - Relatorio" << endl;
+
+        cout << " 0 - Sair" << endl;
+
+        cout << "Selecione uma opcao: ";
+        cin >> opcao;
+        switch(opcao)
+        {
+        case 1:
+            system("cls");
+            Run();
+            break;
+        case 2:
+            system("cls");
+            MenuAddUser();
+            break;
+        case 3:
+            system("cls");
+            MenuAddMotor();
+            break;
+        case 4:
+            system("cls");
+            MenuAddSensor();
+            break;
+        case 5:
+            system("cls");
+            Listar();
+            break;
+        case 6:
+            system("cls");
+            MenuListarMotorTipo();
+            break;
+        case 7:
+            system("cls");
+            LigarMotores();
+            break;
+        case 8:
+            system("cls");
+            MenuLigarMotorID();
+            break;
+        case 9:
+            system("cls");
+            LigarSensores();
+            break;
+        case 10:
+            system("cls");
+            Stop();
+            break;
+        case 11:
+            system("cls");
+            MenuDesligarMotorID();
+            break;
+        case 12:
+            system("cls");
+            Manutencao();
+            break;
+        case 13:
+            system("cls");
+            Ranking_Dos_Fracos();
+            break;
+        case 14:
+            system("cls");
+            Ranking_Dos_Mais_Trabalhadores();
+            break;
+        case 15:
+            system("cls");
+            Relatorio("XML.xml");
+            break;
+        case 0:
+            return true;
+            break;
+        default:
+            system("cls");
+            Menu();
+            break;
+        }
+    }
+    while(1);
+    return true;
+}
+
+bool Fabrica::MenuAddUser()
+{
+    system("cls");
+    if(!Ut_Atual->PossoADD())
+    {
+        cout << "Não tem permissao!" << endl;
+        Menu();
+        return false;
+    }
+    int opcao;
+    cout << "********************************************************************" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "*                         Menu Add User                            *" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << " 1 - ADD Admin" << endl;
+    cout << " 2 - ADD Normal" << endl;
+    cout << " 3 - ADD Visitante" << endl;
+
+    cout << "Selecione uma opcao: ";
+    cin >> opcao;
+
+    if(opcao < 1 || opcao > 3)
+    {
+        MenuAddUser();
+    }
+
+    int id=LUsers.back()->getId();
+    id++;
+
+    User *U;
+    string nome;
+    if(opcao == 1)
+    {
+        cout << "Nome do Admin: ";
+        cin >> nome;
+
+        U=new Admin(id,nome);
+        Add(U);
+        system("cls");
+    }
+    else if(opcao == 2)
+    {
+        cout << "Nome do Normal: ";
+        cin >> nome;
+
+        U=new Normal(id,nome);
+        Add(U);
+        system("cls");
+    }
+    else if(opcao == 3)
+    {
+        cout << "Nome do Visitante: ";
+        cin >> nome;
+
+        U=new Visitante(id,nome);
+        Add(U);
+        system("cls");
+    }
+    cout << "Guardado Com Sucesso!!" << endl;
+    Uteis::Wait(2);
+    system("cls");
+    return true;
+}
+
+
+bool Fabrica::MenuAddMotor()
+{
+    system("cls");
+    if(!Ut_Atual->PossoADD())
+    {
+        cout << "Não tem permissao!" << endl;
+        Menu();
+        return false;
+    }
+    int opcao;
+    cout << "********************************************************************" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "*                         Menu Add Motor                           *" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << " 1 - ADD MCombustao" << endl;
+    cout << " 2 - ADD MEletrico" << endl;
+    cout << " 3 - ADD MInducao" << endl;
+
+    cout << "Selecione uma opcao: ";
+    cin >> opcao;
+
+    if(opcao < 1 || opcao > 3)
+    {
+        MenuAddMotor();
+    }
+
+    int id=LObjetos.back()->getID();
+    id++;
+
+    Motor *M;
+
+    string marca;
+    int posicaoX;
+    int posicaoY;
+    int consumo;
+
+    if(opcao == 1)
+    {
+        cout << "---MCombustao---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nConsumo por hora: ";
+        cin >> consumo;
+
+        M=new MCombustao(id,marca,posicaoY,posicaoX,consumo,this);
+        Add(M);
+
+        system("cls");
+    }
+    else if(opcao == 2)
+    {
+        cout << "---MEletrico---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nConsumo por hora: ";
+        cin >> consumo;
+
+        M=new MEletrico(id,marca,posicaoY,posicaoX,consumo,this);
+        Add(M);
+
+        system("cls");
+    }
+    else if(opcao == 3)
+    {
+        cout << "---MInducao---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nConsumo por hora: ";
+        cin >> consumo;
+
+        M=new MInducao(id,marca,posicaoY,posicaoX,consumo,this);
+        Add(M);
+
+        system("cls");
+    }
+    cout << "Guardado Com Sucesso!!" << endl;
+    Uteis::Wait(2);
+    system("cls");
+    return true;
+}
+
+
+bool Fabrica::MenuAddSensor()
+{
+    system("cls");
+    if(!Ut_Atual->PossoADD())
+    {
+        cout << "Não tem permissao!" << endl;
+        Menu();
+        return false;
+    }
+    int opcao;
+    cout << "********************************************************************" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "*                         Menu Add Sensor                          *" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << " 1 - ADD Sfogo" << endl;
+    cout << " 2 - ADD Sluz" << endl;
+    cout << " 3 - ADD Smissel" << endl;
+    cout << " 4 - ADD Stemperatura" << endl;
+
+    cout << "Selecione uma opcao: ";
+    cin >> opcao;
+
+    if(opcao < 1 || opcao > 4)
+    {
+        MenuAddSensor();
+    }
+
+    int id=LObjetos.back()->getID();
+    id++;
+
+    Sensor *S;
+    string marca;
+    int posicaoX;
+    int posicaoY;
+    int probAvaria;
+    int valorAviso;
+
+    if(opcao == 1)
+    {
+        cout << "---Sfogo---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nProbabilidade de avaria: ";
+        cin >> probAvaria;
+        cout << "\nValor Aviso: ";
+        cin >> valorAviso;
+
+        S=new Sfogo(id,marca,posicaoY,posicaoX,probAvaria,valorAviso,this);
+        Add(S);
+
+        system("cls");
+    }
+    else if(opcao == 2)
+    {
+        cout << "---Sluz---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nProbabilidade de avaria: ";
+        cin >> probAvaria;
+        cout << "\nValor Aviso: ";
+        cin >> valorAviso;
+
+        S=new Sfogo(id,marca,posicaoY,posicaoX,probAvaria,valorAviso,this);
+        Add(S);
+
+        system("cls");
+        system("cls");
+    }
+    else if(opcao == 3)
+    {
+        cout << "---Smissel---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nProbabilidade de avaria: ";
+        cin >> probAvaria;
+        cout << "\nValor Aviso: ";
+        cin >> valorAviso;
+
+        S=new Sfogo(id,marca,posicaoY,posicaoX,probAvaria,valorAviso,this);
+        Add(S);
+
+        system("cls");
+    }
+    else if(opcao == 4)
+    {
+        cout << "---Stemperatura---" << endl;
+        cout << "Posicao Fabrica X:" << getDIMENSAO_FABRICA_X() << " Y:" << getDIMENSAO_FABRICA_Y() << endl;
+        cout << endl;
+
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "\nPosicao Y: ";
+        cin >> posicaoY;
+        cout << "\nPosicao X: ";
+        cin >> posicaoX;
+        cout << "\nProbabilidade de avaria: ";
+        cin >> probAvaria;
+        cout << "\nValor Aviso: ";
+        cin >> valorAviso;
+
+        S=new Sfogo(id,marca,posicaoY,posicaoX,probAvaria,valorAviso,this);
+        Add(S);
+
+        system("cls");
+    }
+
+
+    cout << "Guardado Com Sucesso!!" << endl;
+    Uteis::Wait(2);
+    system("cls");
+    return true;
+}
+
+
+bool Fabrica::MenuListarMotorTipo()
+{
+    system("cls");
+    if(!Ut_Atual->PossoLISTAR())
+    {
+        cout << "Não tem permissao!" << endl;
+        Menu();
+        return false;
+    }
+    int opcao;
+    cout << "********************************************************************" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "*                   Menu Listar Motor Por Tipo                     *" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << " 1 - Litar Tipo MCombustao" << endl;
+    cout << " 2 - Litar Tipo MEletrico" << endl;
+    cout << " 3 - Litar Tipo MInducao" << endl;
+
+    cout << "Selecione uma opcao: ";
+    cin >> opcao;
+
+    if(opcao < 1 || opcao > 3)
+    {
+        MenuListarMotorTipo();
+    }
+
+    if(opcao == 1)
+    {
+        system("cls");
+        Listar_Tipo("MCombustao",cout);
+
+    }
+    else if(opcao == 2)
+    {
+        system("cls");
+        Listar_Tipo("MEletrico",cout);
+    }
+    else if(opcao == 3)
+    {
+        system("cls");
+        Listar_Tipo("MInducao",cout);
+    }
+
+    while(!kbhit());
+    system("cls");
+
+    Menu();
+    return true;
+}
+
+
+bool Fabrica::MenuLigarMotorID()
+{
+
+    int ID;
+    cout << "********************************************************************" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "*                   Menu Ligar Motor Pelo ID                       *" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "ID do Motor: ";
+    cin >> ID;
+
+    Ligar(ID);
+
+    while(!kbhit());
+    system("cls");
+
+    return true;
+}
+
+
+
+bool Fabrica::MenuDesligarMotorID()
+{
+
+    int ID;
+    cout << "********************************************************************" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "*                   Menu Desligar Motor Pelo ID                    *" << endl;
+    cout << "*                                                                  *" << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "ID do Motor: ";
+    cin >> ID;
+
+    DesligarMotor(ID);
+
+    while(!kbhit());
+    system("cls");
+
+    return true;
+}
+

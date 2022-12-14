@@ -28,21 +28,35 @@ void teste()
     F->Add(U);
 
 
-    Motor *M=new MCombustao(0,"XPTO",5,3,5,F);
+    Motor *M=new MCombustao(100,"Roy",20,10,5,F);
     F->Add(M);
-    M=new MCombustao(1,"XPTO1",2,3,5,F);
+    M=new MCombustao(101,"HIRTH-SOLO",10,0,3,F);
     F->Add(M);
-    M=new MCombustao(2,"XPTO2",2,5,5,F);
+    M=new MCombustao(102,"F200",22,15,4,F);
     F->Add(M);
+    M=new MEletrico(103,"EFACEC",18,10,1250,F);
+    F->Add(M);
+//    M=new MInducao(4,"XPTO4",7,8,5,F);
+//    F->Add(M);
 
-    //F->Listar_Tipo("MCombustaoa",cout);
-    F->Ligar(0);
-    F->Ligar(1);
-    //F->Ligar(2);
-    //F->Listar(cout);
+
+    Sensor *S=new Stemperatura(200,"M1",40,12,1,50,F);
+    F->Add(S);
+    S=new Stemperatura(201,"M1",10,12,5,50,F);
+    F->Add(S);
+    S=new Sfogo(202,"M1",4,2,15,1,F);
+    F->Add(S);
+    S=new Smissel(300,"Molotof-Expresso",79,49,3,1,F);
+    F->Add(S);
+
+//    S=new Sluz(8,"XPTO8",1,8,4,1,F);
+//    F->Add(S);
+
+
+
+    F->LigarMotores();
+
     F->Run();
-    //F->Manutencao();
-    //F->Stop();
 
     F->~Fabrica();
 }

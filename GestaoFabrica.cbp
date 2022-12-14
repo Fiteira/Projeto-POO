@@ -38,8 +38,7 @@
 		<Unit filename="include/Fabrica.h" />
 		<Unit filename="include/MCombustao.h" />
 		<Unit filename="include/MEletrico.h" />
-		<Unit filename="include/MIndocao.h" />
-		<Unit filename="include/Menu.h" />
+		<Unit filename="include/MInducao.h" />
 		<Unit filename="include/Motor.h" />
 		<Unit filename="include/Normal.h" />
 		<Unit filename="include/Objetos.h" />
@@ -57,7 +56,7 @@
 		<Unit filename="src/Fabrica.cpp" />
 		<Unit filename="src/MCombustao.cpp" />
 		<Unit filename="src/MEletrico.cpp" />
-		<Unit filename="src/MIndocao.cpp" />
+		<Unit filename="src/MInducao.cpp" />
 		<Unit filename="src/Motor.cpp" />
 		<Unit filename="src/Normal.cpp" />
 		<Unit filename="src/Objetos.cpp" />

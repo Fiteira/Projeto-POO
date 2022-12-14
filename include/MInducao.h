@@ -1,18 +1,18 @@
-#ifndef MELETRICO_H
-#define MELETRICO_H
+#ifndef MINDUCAO_H
+#define MINDUCAO_H
 
 #include "Motor.h"
 
 
-class MEletrico : public Motor
+class MInducao : public Motor
 {
     private:
 
     protected:
 
     public:
-        MEletrico(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt);
-        virtual ~MEletrico();
+        MInducao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt);
+        virtual ~MInducao();
         bool RUN();
         bool START();
         bool RESTART();
@@ -24,8 +24,9 @@ class MEletrico : public Motor
             f << Objetos::getTIPO() << endl;
             f << "-----------------" << endl;
             Motor::show(f);
+
         }
 
 };
 
-#endif // MELETRICO_H
+#endif // MINDUCAO_H
