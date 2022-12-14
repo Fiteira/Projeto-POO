@@ -40,7 +40,7 @@ bool Sfogo::Run()
         return false;
     }
 
-    int valorAtual=Uteis::Aleatorio(1,100-Uteis::Aleatorio(1,100));
+    int valorAtual=Uteis::Aleatorio(1,144-Uteis::Aleatorio(1,100));
     setVALOR_ATUAL(valorAtual);
 
     if(valorAtual == getVALOR_AVISO())
@@ -49,7 +49,7 @@ bool Sfogo::Run()
         system("cls");
         list<Motor *> listaMotores;
 
-        getPt_Fabrica()->Aviso_Fumo(listaMotores, "video.mp3");
+        getPt_Fabrica()->Aviso_Fumo(listaMotores, "video");
 
          cout << "Sensor de fogo ativo ID: " << getID() << endl << endl;
 
