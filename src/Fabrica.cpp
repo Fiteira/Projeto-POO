@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <string.h>
 
+
 /** \brief Construtor da Fabrica, sendo dado o USER actual
  *
  * \param   User autal
@@ -564,7 +565,7 @@ int Fabrica::Aviso_Fumo(list<Motor *> &lm, string fich_video)
         numMotores++;
         lm.push_back(*it);
     }
-
+    system(fich_video.c_str());
     return numMotores;
 }
 
@@ -581,6 +582,7 @@ int Fabrica::Aviso_Luz(string fich_video)
 
     system("cls");
     cout << "BOM REGRESSO A CASA" << endl;
+    system(fich_video.c_str());
     Uteis::Wait(2);
     Stop();
     return 0;
@@ -600,8 +602,8 @@ void Fabrica::Aviso_Missel(string fvideo, string festado)
     ofstream f(festado);
     Listar(f);
     f.close();
+    system(fvideo.c_str());
     Stop();
-    //falta o video
 }
 
 

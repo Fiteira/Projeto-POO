@@ -12,7 +12,7 @@ Objetos::Objetos(int _id,string _marca,int _posicaoY,int _posicaoX,Fabrica *F)
 
 Objetos::~Objetos()
 {
-
+//      cout << "Passei em <" << __FUNCTION__ << ">" << endl;
 }
 
 void Objetos::show(ostream &f)

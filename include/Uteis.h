@@ -119,7 +119,6 @@ public:
     template <class T>
     static void Liberar_Memoria(list<T*>* Lista)
     {
-
         auto it = Lista->begin();
         while (it != Lista->end())
         {

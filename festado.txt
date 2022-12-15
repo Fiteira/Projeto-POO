@@ -1,0 +1,60 @@
+-----------------
+MCombustao
+-----------------
+ID: 100
+MARCA: Roy
+POSICAO_Y: 20
+POSICAO_X: 10
+CONSUMO_HORA: 5
+-----------------
+MCombustao
+-----------------
+ID: 101
+MARCA: HIRTH-SOLO
+POSICAO_Y: 10
+POSICAO_X: 0
+CONSUMO_HORA: 3
+-----------------
+MCombustao
+-----------------
+ID: 102
+MARCA: F200
+POSICAO_Y: 22
+POSICAO_X: 15
+CONSUMO_HORA: 4
+-----------------
+MEletrico
+-----------------
+ID: 103
+MARCA: EFACEC
+POSICAO_Y: 18
+POSICAO_X: 10
+CONSUMO_HORA: 1250
+-----------------
+Stemperatura
+-----------------
+ID: 200
+MARCA: M1
+POSICAO_Y: 40
+POSICAO_X: 12
+-----------------
+Stemperatura
+-----------------
+ID: 201
+MARCA: M1
+POSICAO_Y: 10
+POSICAO_X: 12
+-----------------
+Sfogo
+-----------------
+ID: 202
+MARCA: M1
+POSICAO_Y: 4
+POSICAO_X: 2
+-----------------
+Smissel
+-----------------
+ID: 300
+MARCA: Molotof-Expresso
+POSICAO_Y: 79
+POSICAO_X: 49

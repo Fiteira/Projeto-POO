@@ -58,7 +58,7 @@ void teste()
 
     F->Run();
 
-    F->~Fabrica();
+    delete(F);
 }
 
 int main()

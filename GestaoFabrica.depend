@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1671058905 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\main.cpp
+1671128731 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\main.cpp
 	<iostream>
 	<sstream>
 	<ctime>
@@ -15,14 +15,14 @@
 	<iostream>
 	<string>
 
-1671055847 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
+1671103725 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
 	"Uteis.h"
 	<conio.h>
 	<algorithm>
 	<string.h>
 
-1671052181 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
+1671060074 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\fabrica.h
 	<iostream>
 	<string>
 	<list>
@@ -86,37 +86,37 @@
 	"Sensor.h"
 	"Fabrica.h"
 
-1671039290 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\sensor.h
+1671060285 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\sensor.h
 	"Objetos.h"
 
-1671059492 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sfogo.cpp
+1671059896 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sfogo.cpp
 	"Sfogo.h"
 	"Fabrica.h"
 
 1670942637 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\sfogo.h
 	<Sensor.h>
 
-1671056099 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\smissel.cpp
+1671129497 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\smissel.cpp
 	"Smissel.h"
 	"Fabrica.h"
 
 1670942629 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\smissel.h
 	<Sensor.h>
 
-1671059290 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\stemperatura.cpp
+1671129314 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\stemperatura.cpp
 	"Stemperatura.h"
 	"Fabrica.h"
 
 1670942633 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\stemperatura.h
 	<Sensor.h>
 
-1670794401 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\user.cpp
+1671128848 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\user.cpp
 	"User.h"
 
 1667917403 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\uteis.cpp
 	"Uteis.h"
 
-1671040910 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\uteis.h
+1671128969 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\uteis.h
 	<iostream>
 	<string>
 	<sstream>
@@ -131,7 +131,7 @@
 1670794401 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\visitante.cpp
 	"Visitante.h"
 
-1670794401 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
+1671108002 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
 	<User.h>
 
 1670590134 source:c:\users\leand\desktop\gestaofabrica\main.cpp
@@ -269,7 +269,7 @@
 	<string>
 	"Uteis.h"
 
-1670794401 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\objetos.cpp
+1671128856 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\objetos.cpp
 	"Objetos.h"
 
 1668464158 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\xml.cpp
@@ -308,7 +308,7 @@
 1670616207 c:\users\leand\desktop\gestaofabrica\include\sluz.h
 	<Sensor.h>
 
-1671059001 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sluz.cpp
+1671107757 source:c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\src\sluz.cpp
 	"Sluz.h"
 	"Fabrica.h"
 

@@ -52,8 +52,8 @@ bool Stemperatura::Run()
         }
     }
 
-    int valorAtual=Uteis::Aleatorio(1,120-Uteis::Aleatorio(1,100));
-//    int valorAtual=Uteis::Aleatorio(1,20);
+//    int valorAtual=Uteis::Aleatorio(1,99);
+    int valorAtual=Uteis::Aleatorio(40,50);
     setVALOR_ATUAL(valorAtual);
 
     if(valorAtual == getVALOR_AVISO())
@@ -63,7 +63,7 @@ bool Stemperatura::Run()
         int nMotores;
         nMotores=getPt_Fabrica()->Aviso_Humidade(listaMotores,getPOSICAO_X(),getPOSICAO_Y(),2);
 
-        cout << "Foram " << nMotores << " desligados por causa do sensor de Temperatura ID: " << getID() << endl << endl;
+        cout << "Foram " << nMotores << " desligados por causa do sensor de Temperatura ID: " << getID() << "  Posicao X:"<<getPOSICAO_X()<<" Y:"<<getPOSICAO_Y()<< endl << endl;
 
 
         for (list<Motor *>::iterator it = listaMotores.begin(); it != listaMotores.end(); ++it)
@@ -76,7 +76,9 @@ bool Stemperatura::Run()
             cout << "| Y: " << (*it)->getPOSICAO_Y() << endl;
 
         }
-        listaMotores.clear();
+
+        Uteis::Liberar_Memoria(&listaMotores);
+
         while(!kbhit());
         getPt_Fabrica()->Menu();
         return false;
