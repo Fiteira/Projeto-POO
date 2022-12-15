@@ -36,13 +36,15 @@ void teste()
     F->Add(M);
     M=new MEletrico(103,"EFACEC",18,10,1250,F);
     F->Add(M);
-//    M=new MInducao(4,"XPTO4",7,8,5,F);
-//    F->Add(M);
+    M=new MEletrico(104,"EFACEC1",19,11,1250,F);
+    F->Add(M);
+    M=new MInducao(105,"XPTO4",11,13,50,F);
+    F->Add(M);
 
 
-    Sensor *S=new Stemperatura(200,"M1",40,12,1,50,F);
+    Sensor *S=new Stemperatura(200,"M1",20,12,1,50,F);
     F->Add(S);
-    S=new Stemperatura(201,"M1",10,12,5,50,F);
+    S=new Stemperatura(201,"M1",10,12,5,51,F);
     F->Add(S);
     S=new Sfogo(202,"M1",4,2,15,1,F);
     F->Add(S);

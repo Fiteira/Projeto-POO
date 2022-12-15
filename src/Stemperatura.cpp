@@ -52,8 +52,8 @@ bool Stemperatura::Run()
         }
     }
 
-//    int valorAtual=Uteis::Aleatorio(1,99);
-    int valorAtual=Uteis::Aleatorio(40,50);
+    int valorAtual=Uteis::Aleatorio(1,99);
+//    int valorAtual=Uteis::Aleatorio(50,54);
     setVALOR_ATUAL(valorAtual);
 
     if(valorAtual == getVALOR_AVISO())
@@ -61,9 +61,10 @@ bool Stemperatura::Run()
         system("cls");
         list<Motor *> listaMotores;
         int nMotores;
-        nMotores=getPt_Fabrica()->Aviso_Humidade(listaMotores,getPOSICAO_X(),getPOSICAO_Y(),2);
+        int nVizinhanca=2;
+        nMotores=getPt_Fabrica()->Aviso_Humidade(listaMotores,getPOSICAO_X(),getPOSICAO_Y(),nVizinhanca);
 
-        cout << "Foram " << nMotores << " desligados por causa do sensor de Temperatura ID: " << getID() << "  Posicao X:"<<getPOSICAO_X()<<" Y:"<<getPOSICAO_Y()<< endl << endl;
+        cout << "Foram " << nMotores << " desligados por causa do sensor de Temperatura ID: " << getID() << "  Posicao X:"<<getPOSICAO_X()<<" Y:"<<getPOSICAO_Y()<< " Com uma vizinhanca:"<< nVizinhanca << endl << endl;
 
 
         for (list<Motor *>::iterator it = listaMotores.begin(); it != listaMotores.end(); ++it)

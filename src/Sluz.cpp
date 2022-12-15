@@ -53,7 +53,8 @@ bool Sluz::Run()
         }
     }
 
-    int valorAtual=Uteis::Aleatorio(1,114-Uteis::Aleatorio(1,100));
+    int valorAtual=Uteis::Aleatorio(1,112);
+    //    int valorAtual=Uteis::Aleatorio(1,10);
     setVALOR_ATUAL(valorAtual);
 
     if(valorAtual == getVALOR_AVISO())
@@ -61,7 +62,7 @@ bool Sluz::Run()
 
         system("cls");
 
-        getPt_Fabrica()->Aviso_Luz("video");
+        getPt_Fabrica()->Aviso_Luz("avisoLuz.mp4");
 
          cout << "Sensor de fogo ativo ID: " << getID() << endl << endl;
 

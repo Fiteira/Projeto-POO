@@ -53,7 +53,8 @@ bool Smissel::Run()
         }
     }
 
-    int valorAtual=Uteis::Aleatorio(1,103-Uteis::Aleatorio(1,100));
+    int valorAtual=Uteis::Aleatorio(1,111);
+//    int valorAtual=Uteis::Aleatorio(1,10);
     setVALOR_ATUAL(valorAtual);
 
 
@@ -65,7 +66,7 @@ bool Smissel::Run()
 
         cout << "Sensor de Missel ativo ID: " << getID() << endl << endl;
 
-        getPt_Fabrica()->Aviso_Missel("videoSmissel","festado.txt");
+        getPt_Fabrica()->Aviso_Missel("videoSmissel.mp4","festado.txt");
 
         while(!kbhit());
         getPt_Fabrica()->Menu();

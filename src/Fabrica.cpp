@@ -21,7 +21,7 @@ Fabrica::Fabrica(User *ut)
 
 }
 
-/** \brief Construtor da Fabrica, sendo dado o USER actual
+/** \brief Construtor da Fabrica, sendo dado o USER actual e todos os atributos da fabrica
  *
  * \param _nomeEmpresa _horaInicio, _horaFecho, _vizinhancaAviso, _dimensaoX, _dimensaoY, ME_verde_min, ME_verde_max, ME_amarelo_min, ME_amarelo_max, ME_vermelho_min,
  * \param ME_vermelho_max, ME_probAvaria, MC_verde_min, MC_verde_max, MC_amarelo_min, MC_amarelo_max, MC_vermelho_min, MC_vermelho_max, MC_probAvaria, MI_verde_min, MI_verde_max, MI_amarelo_min
@@ -533,11 +533,13 @@ int Fabrica::Aviso_Humidade(list<Motor *> &lm,int x,int y,int nVizinhanca)
     if(y2 < 0)
         y2=0;
 
-//    cout << "x1:" << x1 << " x2:" << x2 << " --- y1:" << y1 << " y2:" << y2 << endl;
+    cout << "x1:" << x1 << " x2:" << x2 << " --- y1:" << y1 << " y2:" << y2 << endl;
     list<Motor *>::iterator it;
     for (it = LMotores.begin(); it != LMotores.end(); ++it)
     {
-        if( ( (*it)->getPOSICAO_X() <= x2 || (*it)->getPOSICAO_X() <= x1) && ( (*it)->getPOSICAO_Y() <= y2 || (*it)->getPOSICAO_Y() <= y1) )
+
+
+        if( ( (*it)->getPOSICAO_X()>=x2 && (*it)->getPOSICAO_X()<=x1 ) && ( (*it)->getPOSICAO_Y()>=y2 && (*it)->getPOSICAO_Y()<=y1 ))
         {
             (*it)->STOP();
             numMotores++;
@@ -593,17 +595,18 @@ int Fabrica::Aviso_Luz(string fich_video)
  *
  * \param   video, ficheiro de testo
  * \author LD & GA
- * \return
+ * \return void
  *
  */
 void Fabrica::Aviso_Missel(string fvideo, string festado)
 {
-
-    ofstream f(festado);
-    Listar(f);
-    f.close();
     system(fvideo.c_str());
     Stop();
+
+    ofstream f;
+    f.open(festado);
+    Listar(f);
+    f.close();
 }
 
 
@@ -614,7 +617,7 @@ void Fabrica::Aviso_Missel(string fvideo, string festado)
  *
  * \param
  * \author LD & GA
- * \return void
+ * \return true / false
  *
  */
 bool Fabrica::Stop()
@@ -635,7 +638,7 @@ bool Fabrica::Stop()
  *
  * \param
  * \author LD & GA
- * \return void
+ * \return true / false
  *
  */
 bool Fabrica::LigarMotores()
@@ -656,7 +659,7 @@ bool Fabrica::LigarMotores()
  *
  * \param
  * \author LD & GA
- * \return void
+ * \return true / false
  *
  */
 bool Fabrica::LigarSensores()
@@ -683,7 +686,7 @@ bool Fabrica::LigarSensores()
  *
  * \param
  * \author LD & GA
- * \return void
+ * \return true / false
  *
  */
 bool Fabrica::Run()
@@ -721,6 +724,14 @@ bool Fabrica::Run()
     return true;
 }
 
+
+/** \brief Ligar motor
+ *
+ * \param id motor
+ * \author LD & GA
+ * \return void
+ *
+ */
 void Fabrica::Ligar(int id_motor)
 {
     if(!Ut_Atual->PossoRUN())
@@ -742,6 +753,13 @@ void Fabrica::Ligar(int id_motor)
     }
 }
 
+/** \brief Motor ESTOU_QUENTE meter o motor na lista de motores quentes
+ *
+ * \param objeto motor
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::ESTOU_QUENTE(Motor *M)
 {
 
@@ -755,6 +773,14 @@ bool Fabrica::ESTOU_QUENTE(Motor *M)
     return true;
 }
 
+
+/** \brief Motor ESTOU_AVARUADO meter o motor na lista de motores avariados
+ *
+ * \param objeto motor
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::ESTOU_AVARIADO_MOTOR(Motor *M)
 {
 
@@ -770,6 +796,13 @@ bool Fabrica::ESTOU_AVARIADO_MOTOR(Motor *M)
     return true;
 }
 
+/** \brief Motor ESTOU_AVARUADO meter o sensor na lista de motores avariados
+ *
+ * \param objeto sensor
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::ESTOU_AVARIADO_SENSOR(Sensor *S)
 {
 
@@ -785,6 +818,13 @@ bool Fabrica::ESTOU_AVARIADO_SENSOR(Sensor *S)
 }
 
 
+/** \brief MostarHoraAtual
+ *
+ * \param
+ * \author LD & GA
+ * \return void
+ *
+ */
 void Fabrica::MostrarHoraAtual()
 {
     time_t hora_atual = Rolex->GetTime();
@@ -795,6 +835,14 @@ void Fabrica::MostrarHoraAtual()
     cout << "Hora atual = " << hora << ":" << minutos << ":" << segundos << endl;
 }
 
+
+/** \brief Tempo atual
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::TempoFabrica()
 {
     time_t hora_atual = Rolex->GetTime();
@@ -814,7 +862,13 @@ bool Fabrica::TempoFabrica()
         return true;
 }
 
-
+/** \brief Se passar uma hora retorna true se nao false
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::UmaHora()
 {
     time_t hora_atual = Rolex->GetTime();
@@ -837,6 +891,14 @@ bool Fabrica::UmaHora()
 }
 
 
+
+/** \brief Desligar Motor dado um Id
+ *
+ * \param   id motor
+ * \author LD & GA
+ * \return void
+ *
+ */
 void Fabrica::DesligarMotor(int id_motor)
 {
     if(!Ut_Atual->PossoRUN())
@@ -863,6 +925,13 @@ void Fabrica::DesligarMotor(int id_motor)
 
 //---------------------------Menu----------------------------//
 
+/** \brief Menu principal
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::Menu()
 {
     system("cls");
@@ -971,6 +1040,14 @@ bool Fabrica::Menu()
     return true;
 }
 
+
+/** \brief Menu Add User
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::MenuAddUser()
 {
     system("cls");
@@ -1038,7 +1115,13 @@ bool Fabrica::MenuAddUser()
     return true;
 }
 
-
+/** \brief Menu Add Motor
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::MenuAddMotor()
 {
     system("cls");
@@ -1144,7 +1227,13 @@ bool Fabrica::MenuAddMotor()
     return true;
 }
 
-
+/** \brief Menu Add Sensor
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::MenuAddSensor()
 {
     system("cls");
@@ -1336,7 +1425,13 @@ bool Fabrica::MenuListarMotorTipo()
     return true;
 }
 
-
+/** \brief Menu Ligar Motor ID
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::MenuLigarMotorID()
 {
 
@@ -1360,7 +1455,13 @@ bool Fabrica::MenuLigarMotorID()
 }
 
 
-
+/** \brief Menu Desligar Motor ID
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::MenuDesligarMotorID()
 {
 
