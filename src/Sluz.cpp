@@ -1,17 +1,36 @@
 #include "Sluz.h"
 #include "Fabrica.h"
 
+/** \brief Construtor do Sluz
+ *
+ * \param  int ID, string marca , int posicao Y, int posicao X ,int probabilidade de avaria , int valor aviso e ponteiro para Fabrica
+ * \author LD & GA
+ * \return Sluz
+ *
+ */
 Sluz::Sluz(int _id,string _marca,int _posicaoY,int _posicaoX,int _probAvaria,int _valorAviso,Fabrica *Pt)
     :Sensor(_id,_marca,_posicaoY,_posicaoX,_probAvaria,_valorAviso,Pt)
 {
     Objetos::setTIPO("Sluz");
 }
 
+/** \brief Destrutor da Sluz
+ *
+ * \author LD & GA
+ *
+ */
 Sluz::~Sluz()
 {
 
 }
 
+/** \brief Run
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Sluz::Run()
 {
  int proAvaria=getProbAvaria();

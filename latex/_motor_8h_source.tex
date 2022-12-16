@@ -1,0 +1,67 @@
+\hypertarget{_motor_8h_source}{}\doxysection{Motor.\+h}
+\label{_motor_8h_source}\index{Motor.h@{Motor.h}}
+\mbox{\hyperlink{_motor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MOTOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MOTOR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_objetos_8h}{Objetos.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{enum} \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\_MOTOR}} \{\mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ad085165c80754a828e055f4155fb604e}{ESTADO\_PARADO}} = 0, \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9a77ea527caf886a0fe22b3243d4b9fc68}{ESTADO\_RUN}}, \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9add0fc2551359a92cd862ee8723760a9a}{ESTADO\_AVARIADO}} ,\mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ab26c25e5f95199c28f19d0704956e682}{SEM\_ESTADO}}=-\/1\};}
+\DoxyCodeLine{12 \textcolor{keyword}{enum} \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}{TEMPERATURA\_COR}} \{\mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6af9efd9e6bd17c0580d8a0432ba1b04a2}{VERDE}}, \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a968fd04270855d4f614b4650f33e5f9f}{AMARELO}}, \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a2f985094c4ea0066b0e04d47f38d2153}{VERMELHO}}\};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_motor}{Motor}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_objetos}{Objetos}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{private}:}
+\DoxyCodeLine{17         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_abc7f43482d06407f10716f156e821263}{CONSUMO\_HORA}};}
+\DoxyCodeLine{18         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_a162fb23e1c922a03d9d403ea33dc3169}{CONSUMO}};}
+\DoxyCodeLine{19         \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\_MOTOR}} \mbox{\hyperlink{class_motor_a1e6094b5a964df05c55e3471fd28688b}{ESTADO}};}
+\DoxyCodeLine{20         \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}{TEMPERATURA\_COR}} \mbox{\hyperlink{class_motor_aedee80af3eb3838107248923917ec6e4}{COR\_MOTOR}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_motor_abaeae913e5c7d55694ed00bdd2ebabe5}{TEMPERATURA}};}
+\DoxyCodeLine{24         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_a536ce8b128011f666baf7eeebd462be9}{HORAS\_TRABALHO}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{public}:}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_motor}{Motor}}(\textcolor{keywordtype}{int} \_id,\textcolor{keywordtype}{string} \_marca,\textcolor{keywordtype}{int} \_posicaoY,\textcolor{keywordtype}{int} \_posicaoX,\textcolor{keywordtype}{int} \_consumoHora,\mbox{\hyperlink{class_fabrica}{Fabrica}} *Pt);}
+\DoxyCodeLine{28         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_motor_a2e57c7b2681efea1d3b7f253ee88ecd4}{\string~Motor}}();}
+\DoxyCodeLine{29         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_motor_a66b3545c43fac25bba312d3121d2fc83}{RUN}}() \{ cout << \textcolor{stringliteral}{"{}RUN ??"{}}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{30         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_motor_ae8a0f9bf47b64a21f49a5730872883e9}{START}}()\{ cout << \textcolor{stringliteral}{"{}START ??"{}}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{31         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_motor_a6d022ec2d4d4987073a1a100b758d612}{RESTART}}()\{ cout << \textcolor{stringliteral}{"{}RESTART ??"{}}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{32         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_motor_adddf5c9c09855f254aefb52e6d4a6265}{STOP}}() \{ cout << \textcolor{stringliteral}{"{}STOP ??"{}}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_motor_a9b8706ad9fc2149e08d20d5ee61e7ac5}{ESTOU\_QUENTE}}();}
+\DoxyCodeLine{34         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_motor_a6b18257292f4365d4a3beac15f0663a1}{ESTOU\_AVARIADO}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_motor_a00e9d4be1090dc594c55ab74c3558f55}{show}}(ostream \&f = std::cout)}
+\DoxyCodeLine{37         \{}
+\DoxyCodeLine{38             \mbox{\hyperlink{class_objetos_a7a3f7c33aaea5be6ef8c9962e9ffe391}{Objetos::show}}(f);}
+\DoxyCodeLine{39             f << \textcolor{stringliteral}{"{}CONSUMO\_HORA: "{}} << \mbox{\hyperlink{class_motor_abc7f43482d06407f10716f156e821263}{CONSUMO\_HORA}} << endl;}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{comment}{//gets}}
+\DoxyCodeLine{44         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_a19f704458878e6e67f9a7123e3e8abd5}{getCONSUMO\_HORA}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_motor_abc7f43482d06407f10716f156e821263}{CONSUMO\_HORA}};\}}
+\DoxyCodeLine{45         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_ac2c7778dfdfdb561e8ea64d84af2538b}{getCONSUMO}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_motor_a162fb23e1c922a03d9d403ea33dc3169}{CONSUMO}};\}}
+\DoxyCodeLine{46         \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\_MOTOR}} \mbox{\hyperlink{class_motor_a2c982c7094dd58b823d02cb4b38c736d}{getESTADO}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_motor_a1e6094b5a964df05c55e3471fd28688b}{ESTADO}}; \}}
+\DoxyCodeLine{47         \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}{TEMPERATURA\_COR}} \mbox{\hyperlink{class_motor_a41146dd42aceb4bda5a01e169987b5e7}{getCOR\_MOTOR}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_motor_aedee80af3eb3838107248923917ec6e4}{COR\_MOTOR}}; \}}
+\DoxyCodeLine{48         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_motor_aa493307043300d2cee809e7a1c175f09}{getTEMPERATURA}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_motor_abaeae913e5c7d55694ed00bdd2ebabe5}{TEMPERATURA}}; \}}
+\DoxyCodeLine{49         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_a78c6e3d0b87a56fd811b60c11da8fbc1}{getHorasTrabalho}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_motor_a536ce8b128011f666baf7eeebd462be9}{HORAS\_TRABALHO}};\}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{comment}{//sets}}
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_motor_ac1ca93c4d552ed55005d9dc74ae5f73c}{setCONSUMO\_HORA}}(\textcolor{keywordtype}{int} consumoHora)\{\mbox{\hyperlink{class_motor_abc7f43482d06407f10716f156e821263}{CONSUMO\_HORA}} = consumoHora; \}}
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_motor_a244913b0dda11023433124ce4fb9e106}{setCONSUMO}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_motor_a162fb23e1c922a03d9d403ea33dc3169}{CONSUMO}})\{\mbox{\hyperlink{class_motor_a162fb23e1c922a03d9d403ea33dc3169}{CONSUMO}} = \mbox{\hyperlink{class_motor_a162fb23e1c922a03d9d403ea33dc3169}{CONSUMO}}; \}}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_motor_a8e81572c339525de55c4aeb5c8852568}{setESTADO}}(\mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\_MOTOR}} EST) \{ \mbox{\hyperlink{class_motor_a1e6094b5a964df05c55e3471fd28688b}{ESTADO}} = EST; \}}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_motor_ad0daf3e7284fd3c5ba295a8e9e871720}{setCOR\_MOTOR}}(\mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}{TEMPERATURA\_COR}} COR) \{ \mbox{\hyperlink{class_motor_aedee80af3eb3838107248923917ec6e4}{COR\_MOTOR}} = COR; \}}
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_motor_a3b5913c76d8419bc516d079b7c8d0976}{setTEMPERATURA}}(\textcolor{keywordtype}{double} temperatura)\{\mbox{\hyperlink{class_motor_abaeae913e5c7d55694ed00bdd2ebabe5}{TEMPERATURA}} = temperatura; \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MOTOR\_H}}
+
+\end{DoxyCode}

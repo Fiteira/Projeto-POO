@@ -1,0 +1,134 @@
+\hypertarget{_fabrica_8h_source}{}\doxysection{Fabrica.\+h}
+\label{_fabrica_8h_source}\index{Fabrica.h@{Fabrica.h}}
+\mbox{\hyperlink{_fabrica_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef FABRICA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define FABRICA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_user_8h}{User.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_admin_8h}{Admin.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_normal_8h}{Normal.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_visitante_8h}{Visitante.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_motor_8h}{Motor.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_m_combustao_8h}{MCombustao.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_m_eletrico_8h}{MEletrico.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_m_inducao_8h}{MInducao.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sensor_8h}{Sensor.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sfogo_8h}{Sfogo.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sluz_8h}{Sluz.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_smissel_8h}{Smissel.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_stemperatura_8h}{Stemperatura.h}}"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_objetos_8h}{Objetos.h}}"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_x_m_l_8h}{XML.h}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_relogio_fabrica_8h}{RelogioFabrica.h}}"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define NVALORES 7}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{class_fabrica}{Fabrica}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{private}:}
+\DoxyCodeLine{38     list<User *> \mbox{\hyperlink{class_fabrica_adf38b219d3e2068a71b45a93dc0569f7}{LUsers}};}
+\DoxyCodeLine{39     list<Motor*> \mbox{\hyperlink{class_fabrica_aa71e7efd068551fccacd37859d8b74ae}{LMotores}};}
+\DoxyCodeLine{40     list<Sensor*> \mbox{\hyperlink{class_fabrica_a435b17ab891ab3ee6e521cafd175fbf4}{LSensores}};}
+\DoxyCodeLine{41     list<Objetos*> \mbox{\hyperlink{class_fabrica_a25f02f95d6893175fa967ba7428aed50}{LObjetos}};}
+\DoxyCodeLine{42     list<Motor *> \mbox{\hyperlink{class_fabrica_a60aac4c8aa19c0a2c2e280348acfb64f}{LMotoresQuentes}};}
+\DoxyCodeLine{43     list<Motor *> \mbox{\hyperlink{class_fabrica_ac9c5479c63b02938eea25ed6b6d12d27}{LMotoresAvariados}};}
+\DoxyCodeLine{44     list<Sensor*> \mbox{\hyperlink{class_fabrica_a789e87c3186e99cfd27d335e14e4b6da}{LSensoresAvariados}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \mbox{\hyperlink{class_user}{User}} *\mbox{\hyperlink{class_fabrica_a93779fca4f9546fdcea32799d4d2a406}{Ut\_Atual}};}
+\DoxyCodeLine{47     \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\_MOTOR}} \mbox{\hyperlink{class_fabrica_af01bae3c947c3db99e1c5e247b8c33a1}{ESTADO}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \mbox{\hyperlink{class_relogio_fabrica}{RelogioFabrica}} *\mbox{\hyperlink{class_fabrica_a68accab2ee402646d07e1aca15515094}{Rolex}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_fabrica_a1cf17952a0f8f5557506a1932800707d}{NOME\_EMPRESA}};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a4ddcddfd54b5f37225d28cf812392663}{HORA\_INICIO}};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_ab4eee5a0344325c307afe86e280d0227}{HORA\_FECHO}};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_ac2a17ba1fa71a5df8cb2fdee49cfe067}{VIZINHANCA\_AVISO}};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a645244873251fdb0f802ec2b1fafb7f0}{DIMENSAO\_FABRICA\_X}};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a98dd993652aa22b7fbaafd31670f8cc3}{DIMENSAO\_FABRICA\_Y}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a6eb8ae965df33d929434f9ee08289a3e}{DEFI\_MELETRICO}}[\mbox{\hyperlink{_fabrica_8h_abc3057fc13678195a54bf0d528c6c449}{NVALORES}}];}
+\DoxyCodeLine{60     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a2d5bceaadafa41e4abdc5331f8f73b10}{DEFI\_MCOMBUSTAO}}[\mbox{\hyperlink{_fabrica_8h_abc3057fc13678195a54bf0d528c6c449}{NVALORES}}];}
+\DoxyCodeLine{61     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_abd544ced30f78583fae5b62c595acaf3}{DEFI\_MINDUCAO}}[\mbox{\hyperlink{_fabrica_8h_abc3057fc13678195a54bf0d528c6c449}{NVALORES}}];}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{public}:}
+\DoxyCodeLine{66         \mbox{\hyperlink{class_fabrica}{Fabrica}}(\mbox{\hyperlink{class_user}{User}} *ut);}
+\DoxyCodeLine{67         \mbox{\hyperlink{class_fabrica}{Fabrica}}(\mbox{\hyperlink{class_user}{User}} *ut,\textcolor{keywordtype}{string} \_nomeEmpresa,\textcolor{keywordtype}{int} \_horaInicio,\textcolor{keywordtype}{int} \_horaFecho,\textcolor{keywordtype}{int} \_vizinhancaAviso,\textcolor{keywordtype}{int} \_dimensaoX,}
+\DoxyCodeLine{68                 \textcolor{keywordtype}{int} \_dimensaoY,\textcolor{keywordtype}{int} ME\_verde\_min,\textcolor{keywordtype}{int} ME\_verde\_max,\textcolor{keywordtype}{int} ME\_amarelo\_min,\textcolor{keywordtype}{int} ME\_amarelo\_max,}
+\DoxyCodeLine{69                 \textcolor{keywordtype}{int} ME\_vermelho\_min,\textcolor{keywordtype}{int} ME\_vermelho\_max,\textcolor{keywordtype}{int} ME\_probAvaria,\textcolor{keywordtype}{int} MC\_verde\_min,\textcolor{keywordtype}{int} MC\_verde\_max,}
+\DoxyCodeLine{70                 \textcolor{keywordtype}{int} MC\_amarelo\_min,\textcolor{keywordtype}{int} MC\_amarelo\_max,\textcolor{keywordtype}{int} MC\_vermelho\_min,\textcolor{keywordtype}{int} MC\_vermelho\_max,\textcolor{keywordtype}{int} MC\_probAvaria,}
+\DoxyCodeLine{71                 \textcolor{keywordtype}{int} MI\_verde\_min,\textcolor{keywordtype}{int} MI\_verde\_max,\textcolor{keywordtype}{int} MI\_amarelo\_min,\textcolor{keywordtype}{int} MI\_amarelo\_max,\textcolor{keywordtype}{int} MI\_vermelho\_min,}
+\DoxyCodeLine{72                 \textcolor{keywordtype}{int} MI\_vermelho\_max,\textcolor{keywordtype}{int} MI\_probAvaria);}
+\DoxyCodeLine{73         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_fabrica_af6a37a28734e863a840ceb3d9d99097e}{\string~Fabrica}}();}
+\DoxyCodeLine{74         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a2cfd3fd3ed985379f4cbca0e39483478}{Load}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&ficheiro);}
+\DoxyCodeLine{75         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a51dd148f5fc1555228e6a517dfc86b1c}{Add}}(\mbox{\hyperlink{class_user}{User}} *ut);}
+\DoxyCodeLine{76         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a51dd148f5fc1555228e6a517dfc86b1c}{Add}}(\mbox{\hyperlink{class_motor}{Motor}} *m);}
+\DoxyCodeLine{77         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a51dd148f5fc1555228e6a517dfc86b1c}{Add}}(\mbox{\hyperlink{class_sensor}{Sensor}} *s);}
+\DoxyCodeLine{78         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_ae897875de200cfb535e1fdc0b0efd612}{Listar}}(ostream \&f = std::cout);}
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_ae5c87d9b8d514cb9f89734578a2b3e7e}{Desligar}}(\textcolor{keywordtype}{int} id\_motor);}
+\DoxyCodeLine{80         \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\_MOTOR}} \mbox{\hyperlink{class_fabrica_acbb2f31c1f2c9768920fda55567ad491}{Get\_ESTADO}}(\textcolor{keywordtype}{int} id\_motor);}
+\DoxyCodeLine{81         list<Motor *> \mbox{\hyperlink{class_fabrica_ace46f3c4fcbc8875872a22a67b8f2bbf}{Listar\_Tipo}}(\textcolor{keywordtype}{string} Tipo, ostream \&f);}
+\DoxyCodeLine{82         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a0a2bd9285d9d28e9f06eee642de081be}{Manutencao}}();}
+\DoxyCodeLine{83         list<string> \mbox{\hyperlink{class_fabrica_a2f5b270fbbac80a87777f76ac7330768}{Ranking\_Dos\_Fracos}}();}
+\DoxyCodeLine{84         list<Motor *> \mbox{\hyperlink{class_fabrica_ad66c13e480f9489c641e9117afd6240e}{Ranking\_Dos\_Mais\_Trabalhadores}}();}
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_ae0812cbdcf1dc5216b4082f6882b022b}{Relatorio}}(\textcolor{keywordtype}{string} fich\_xml);}
+\DoxyCodeLine{86         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a93eac17ade9170a83a304c80f668c938}{Aviso\_Humidade}}(list<Motor *> \&lm,\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\textcolor{keywordtype}{int} nVizinhanca);}
+\DoxyCodeLine{87         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a905a2d71e632f73341af9a966ab2c994}{Aviso\_Fumo}}(list<Motor *> \&lm, \textcolor{keywordtype}{string} fich\_video);}
+\DoxyCodeLine{88         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a71a0857582c348f42949ae835233cddd}{Aviso\_Luz}}(\textcolor{keywordtype}{string} fich\_video);}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_ae491286d891dbfd9c05c603a50b6a07c}{Aviso\_Missel}}(\textcolor{keywordtype}{string} fvideo, \textcolor{keywordtype}{string} festado = \textcolor{stringliteral}{"{}Estado.txt"{}});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92         \textcolor{comment}{//gets}}
+\DoxyCodeLine{93         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a93f30c5b8b3706a4f9cf9e8a2437c9c6}{getDIMENSAO\_FABRICA\_X}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_a645244873251fdb0f802ec2b1fafb7f0}{DIMENSAO\_FABRICA\_X}};\}}
+\DoxyCodeLine{94         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a733751bd4e68f7345faba83f1f36380d}{getDIMENSAO\_FABRICA\_Y}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_a98dd993652aa22b7fbaafd31670f8cc3}{DIMENSAO\_FABRICA\_Y}};\}}
+\DoxyCodeLine{95         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a3dfec015e6b0c949628d05fe920a5ee5}{getHoraInicio}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_a4ddcddfd54b5f37225d28cf812392663}{HORA\_INICIO}};\}}
+\DoxyCodeLine{96         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a03f1474bd20fb5f5a638afb82180b82f}{getHoraFecho}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_ab4eee5a0344325c307afe86e280d0227}{HORA\_FECHO}};\}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a8653156fa389035fda5e5fb08d9fede3}{getDefinicaoMEletrico}}(\textcolor{keywordtype}{int} n)\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_a6eb8ae965df33d929434f9ee08289a3e}{DEFI\_MELETRICO}}[n];\}}
+\DoxyCodeLine{99         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a111af51fa6ab3336d5740f5972578509}{getDefinicaoMCombustao}}(\textcolor{keywordtype}{int} n)\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_a2d5bceaadafa41e4abdc5331f8f73b10}{DEFI\_MCOMBUSTAO}}[n];\}}
+\DoxyCodeLine{100         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_fabrica_a5862941effb678a2f4710108fd5e54a8}{getDefinicaoMInducao}}(\textcolor{keywordtype}{int} n)\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_fabrica_abd544ced30f78583fae5b62c595acaf3}{DEFI\_MINDUCAO}}[n];\}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Funcoes Extras-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{105         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a70a8c0ee0327697d91cc2c8084cdc5d6}{Run}}();}
+\DoxyCodeLine{106         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a3fdf1317fb7e44a440febc5039c71699}{Stop}}();}
+\DoxyCodeLine{107         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_ae394671561a27bda53f92d15f11731f1}{LigarMotores}}();}
+\DoxyCodeLine{108         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_aff08b860eeea147ead3383715345ef35}{LigarSensores}}();}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_a10c8851d6c3b3f1843f14d157f764ff6}{Ligar}}(\textcolor{keywordtype}{int} id\_motor);}
+\DoxyCodeLine{110         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a699a747f3b25813d4617f8b5e0232345}{ESTOU\_QUENTE}}(\mbox{\hyperlink{class_motor}{Motor}} *m);}
+\DoxyCodeLine{111         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a079444e6d64fde282454c272808a7ada}{ESTOU\_AVARIADO\_MOTOR}}(\mbox{\hyperlink{class_motor}{Motor}} *m);}
+\DoxyCodeLine{112         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_abc7759fa667b49f23d7fb803bb64252c}{ESTOU\_AVARIADO\_SENSOR}}(\mbox{\hyperlink{class_sensor}{Sensor}} *s);}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_a9a47b8dc6a86f1c31249973bfa3c4eaf}{MostrarHoraAtual}}();}
+\DoxyCodeLine{114         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_ac31cb973c520311a09529707f575009b}{TempoFabrica}}();}
+\DoxyCodeLine{115         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_ad8fff2f9298dd286d5f741a9aee063bb}{UmaHora}}();}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_fabrica_a5f1450c29efc39ebbd7b7a0077366b27}{DesligarMotor}}(\textcolor{keywordtype}{int} id\_motor);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118         \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Menu-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{119         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a151659e1f9b9c0cec71421f3cc174387}{Menu}}();}
+\DoxyCodeLine{120         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a2c1ab202a49625650427703efdd14960}{MenuAddUser}}();}
+\DoxyCodeLine{121         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a7e100b7133bb9768fb9df1b9de69417a}{MenuAddMotor}}();}
+\DoxyCodeLine{122         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_aff73c378cd8d23ad206545ca6965fdb4}{MenuAddSensor}}();}
+\DoxyCodeLine{123         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a2db61a040a4ff9a404a08090a9d5a92a}{MenuListarMotorTipo}}();}
+\DoxyCodeLine{124         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_aea5498762a6f422daaf8d534f5d732d0}{MenuLigarMotorID}}();}
+\DoxyCodeLine{125         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_fabrica_a2f21c3280f9b43b35a738e369d73ed38}{MenuDesligarMotorID}}();}
+\DoxyCodeLine{126 \};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FABRICA\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,72 @@
+\hypertarget{_motor_8h}{}\doxysection{Motor.\+h File Reference}
+\label{_motor_8h}\index{Motor.h@{Motor.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Objetos.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_motor}{Motor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\+\_\+\+MOTOR}} \{ \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ad085165c80754a828e055f4155fb604e}{ESTADO\+\_\+\+PARADO}} = 0
+, \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9a77ea527caf886a0fe22b3243d4b9fc68}{ESTADO\+\_\+\+RUN}}
+, \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9add0fc2551359a92cd862ee8723760a9a}{ESTADO\+\_\+\+AVARIADO}}
+, \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ab26c25e5f95199c28f19d0704956e682}{SEM\+\_\+\+ESTADO}} =-\/1
+ \}
+\item 
+enum \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}{TEMPERATURA\+\_\+\+COR}} \{ \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6af9efd9e6bd17c0580d8a0432ba1b04a2}{VERDE}}
+, \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a968fd04270855d4f614b4650f33e5f9f}{AMARELO}}
+, \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a2f985094c4ea0066b0e04d47f38d2153}{VERMELHO}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}\label{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}} 
+\index{Motor.h@{Motor.h}!ESTADO\_MOTOR@{ESTADO\_MOTOR}}
+\index{ESTADO\_MOTOR@{ESTADO\_MOTOR}!Motor.h@{Motor.h}}
+\doxysubsubsection{\texorpdfstring{ESTADO\_MOTOR}{ESTADO\_MOTOR}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9}{ESTADO\+\_\+\+MOTOR}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_PARADO@{ESTADO\_PARADO}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!ESTADO\_PARADO@{ESTADO\_PARADO}}}\mbox{\Hypertarget{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ad085165c80754a828e055f4155fb604e}\label{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ad085165c80754a828e055f4155fb604e}} 
+ESTADO\+\_\+\+PARADO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_RUN@{ESTADO\_RUN}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!ESTADO\_RUN@{ESTADO\_RUN}}}\mbox{\Hypertarget{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9a77ea527caf886a0fe22b3243d4b9fc68}\label{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9a77ea527caf886a0fe22b3243d4b9fc68}} 
+ESTADO\+\_\+\+RUN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ESTADO\_AVARIADO@{ESTADO\_AVARIADO}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!ESTADO\_AVARIADO@{ESTADO\_AVARIADO}}}\mbox{\Hypertarget{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9add0fc2551359a92cd862ee8723760a9a}\label{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9add0fc2551359a92cd862ee8723760a9a}} 
+ESTADO\+\_\+\+AVARIADO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEM\_ESTADO@{SEM\_ESTADO}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!SEM\_ESTADO@{SEM\_ESTADO}}}\mbox{\Hypertarget{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ab26c25e5f95199c28f19d0704956e682}\label{_motor_8h_a4ca252a9cc1c860a9cfb5cda63ba36a9ab26c25e5f95199c28f19d0704956e682}} 
+SEM\+\_\+\+ESTADO&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}\label{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}} 
+\index{Motor.h@{Motor.h}!TEMPERATURA\_COR@{TEMPERATURA\_COR}}
+\index{TEMPERATURA\_COR@{TEMPERATURA\_COR}!Motor.h@{Motor.h}}
+\doxysubsubsection{\texorpdfstring{TEMPERATURA\_COR}{TEMPERATURA\_COR}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_motor_8h_a9742c33e0383365e6f0c68f3451563c6}{TEMPERATURA\+\_\+\+COR}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERDE@{VERDE}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!VERDE@{VERDE}}}\mbox{\Hypertarget{_motor_8h_a9742c33e0383365e6f0c68f3451563c6af9efd9e6bd17c0580d8a0432ba1b04a2}\label{_motor_8h_a9742c33e0383365e6f0c68f3451563c6af9efd9e6bd17c0580d8a0432ba1b04a2}} 
+VERDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AMARELO@{AMARELO}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!AMARELO@{AMARELO}}}\mbox{\Hypertarget{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a968fd04270855d4f614b4650f33e5f9f}\label{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a968fd04270855d4f614b4650f33e5f9f}} 
+AMARELO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERMELHO@{VERMELHO}!Motor.h@{Motor.h}}\index{Motor.h@{Motor.h}!VERMELHO@{VERMELHO}}}\mbox{\Hypertarget{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a2f985094c4ea0066b0e04d47f38d2153}\label{_motor_8h_a9742c33e0383365e6f0c68f3451563c6a2f985094c4ea0066b0e04d47f38d2153}} 
+VERMELHO&\\
+\hline
+
+\end{DoxyEnumFields}

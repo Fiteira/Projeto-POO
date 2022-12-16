@@ -1,6 +1,14 @@
 #include "MInducao.h"
 #include "Fabrica.h"
 
+
+/** \brief Construtor do MInducao
+ *
+ * \param  int ID, string marca , int posicao Y, int posicao X,int consumoHora e ponteiro Fabrica
+ * \author LD & GA
+ * \return MInducao
+ *
+ */
 MInducao::MInducao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
 :Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
 {
@@ -11,11 +19,23 @@ MInducao::MInducao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consum
     TEMPERATURA=Uteis::AleatorioDouble((double)minVerde,(double)maxVerde);
 }
 
+/** \brief Destrutor da MInducao
+ *
+ * \author LD & GA
+ *
+ */
 MInducao::~MInducao()
 {
 
 }
 
+/** \brief RUN
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MInducao::RUN()
 {
     if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
@@ -115,6 +135,13 @@ bool MInducao::RUN()
     return true;
 }
 
+/** \brief START
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MInducao::START()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
@@ -128,6 +155,13 @@ bool MInducao::START()
     return false;
 }
 
+/** \brief RESTART
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MInducao::RESTART()
 {
     if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
@@ -145,6 +179,13 @@ bool MInducao::RESTART()
     return false;
 }
 
+/** \brief STOP
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MInducao::STOP()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_PARADO)
@@ -159,3 +200,4 @@ bool MInducao::STOP()
         return false;
     }
 }
+

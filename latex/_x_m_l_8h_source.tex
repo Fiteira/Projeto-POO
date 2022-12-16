@@ -1,0 +1,169 @@
+\hypertarget{_x_m_l_8h_source}{}\doxysection{XML.\+h}
+\label{_x_m_l_8h_source}\index{XML.h@{XML.h}}
+\mbox{\hyperlink{_x_m_l_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef XML\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define XML\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_x_m_l}{XML}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}};}
+\DoxyCodeLine{17     map<string, string> \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}};}
+\DoxyCodeLine{18     list<XML *> \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_x_m_l_aa32d5dfc1c8475818e423a2b3a03006a}{Tabulacao}}(\textcolor{keywordtype}{int} n)}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{keywordtype}{string} s = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{23         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{24             s += \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{25         \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{class_x_m_l_a63fdd64dc1374200fdc2b74ca6f3eadd}{XML}}(\textcolor{keywordtype}{string} tit)}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}} = tit;}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_x_m_l_a3e5c392bc1cdba6c134d26429635966b}{Add}}(\mbox{\hyperlink{class_x_m_l}{XML}} *X)}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.push\_back(X);}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_x_m_l_af2f960a36993344bd30bd94b1927e838}{Add}}(\textcolor{keywordtype}{string} tag, \textcolor{keywordtype}{string} valor)}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}}[tag] = valor;}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_x_m_l_a4d43c8564aa26e7c25ba63f34d54039b}{GetAtributo}}(\textcolor{keywordtype}{string} tag)}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         \textcolor{keyword}{auto} iter = \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}}.find(tag);}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (iter != \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}}.end())}
+\DoxyCodeLine{48             \textcolor{keywordflow}{return} iter-\/>second;}
+\DoxyCodeLine{49         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_x_m_l_a3349a27c4f396f8226a55797584be16e}{GetTitulo}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}}; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_x_m_l_af25972156e2973db88a4e42d3284a845}{Show}}(\textcolor{keywordtype}{int} ntab = 0)}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         \textcolor{keywordtype}{string} tab = \mbox{\hyperlink{class_x_m_l_aa32d5dfc1c8475818e423a2b3a03006a}{Tabulacao}}(ntab);}
+\DoxyCodeLine{58        cout << tab << \textcolor{stringliteral}{"{}["{}} << \mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}} << \textcolor{stringliteral}{"{}]"{}} << endl;}
+\DoxyCodeLine{59         \textcolor{keywordflow}{for}(map<string, string>::const\_iterator it = \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}}.begin(); it != \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}}.end(); ++it)}
+\DoxyCodeLine{60             cout << tab << \textcolor{stringliteral}{"{}\(\backslash\)t["{}} << it-\/>first << \textcolor{stringliteral}{"{}] = ["{}} << it-\/>second << \textcolor{stringliteral}{"{}]"{}} << endl;}
+\DoxyCodeLine{61         \textcolor{keywordflow}{for} (list<XML *>::iterator it = \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.begin(); it != \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.end(); ++it)}
+\DoxyCodeLine{62         \{}
+\DoxyCodeLine{63             (*it)-\/>Show(ntab + 1);}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65         cout << tab << \textcolor{stringliteral}{"{}[/"{}} << \mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}} << \textcolor{stringliteral}{"{}]"{}} << endl;}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \mbox{\hyperlink{class_x_m_l_a823452593c9a6da33b83a0a3d06ec44a}{\string~XML}}()}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70         \mbox{\hyperlink{class_x_m_l_a85aaf56bcacc199ab4adf4d604c7aec2}{DADOS}}.clear();}
+\DoxyCodeLine{71         \textcolor{keywordflow}{for} (list<XML *>::iterator it = \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.begin(); it != \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.end(); ++it)}
+\DoxyCodeLine{72             \textcolor{keyword}{delete} (*it);}
+\DoxyCodeLine{73         \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.clear();}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \mbox{\hyperlink{class_x_m_l}{XML}} *\mbox{\hyperlink{class_x_m_l_a1c8ec396ddbe7da6998d6e7e2f6450b0}{GetNode}}(\textcolor{keywordtype}{string} tit)}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}}.compare(tit) == 0) \textcolor{keywordflow}{return} \textcolor{keyword}{this};}
+\DoxyCodeLine{79         \textcolor{keywordflow}{for} (list<XML *>::iterator it = \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.begin(); it != \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.end(); ++it)}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             \mbox{\hyperlink{class_x_m_l}{XML}} *F = *it;}
+\DoxyCodeLine{82             \textcolor{keywordflow}{if} (F-\/>\mbox{\hyperlink{class_x_m_l_a3349a27c4f396f8226a55797584be16e}{GetTitulo}}().compare(tit) == 0)}
+\DoxyCodeLine{83                 \textcolor{keywordflow}{return} F;}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_x_m_l_a52d8afbf441990643659ca2d0e911ca2}{GetNodes}}(\textcolor{keywordtype}{string} tit, list<XML *> \&lnodes)}
+\DoxyCodeLine{90     \{}
+\DoxyCodeLine{91         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_x_m_l_a0c91a2f62974ebf4e294bdd3399457f4}{TITULO}}.compare(tit) == 0) lnodes.push\_back(\textcolor{keyword}{this});}
+\DoxyCodeLine{92         \textcolor{keywordflow}{for} (list<XML *>::iterator it = \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.begin(); it != \mbox{\hyperlink{class_x_m_l_afdfffea31e2e0fe037fffd622161a8c4}{LFilhos}}.end(); ++it)}
+\DoxyCodeLine{93         \{}
+\DoxyCodeLine{94             \mbox{\hyperlink{class_x_m_l}{XML}} *F = *it;}
+\DoxyCodeLine{95             \textcolor{keywordflow}{if} (F-\/>\mbox{\hyperlink{class_x_m_l_a3349a27c4f396f8226a55797584be16e}{GetTitulo}}().compare(tit) == 0)}
+\DoxyCodeLine{96                 lnodes.push\_back(F);}
+\DoxyCodeLine{97             F-\/>\mbox{\hyperlink{class_x_m_l_a52d8afbf441990643659ca2d0e911ca2}{GetNodes}}(tit, lnodes);}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99         \textcolor{keywordflow}{return} lnodes.size();}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_x_m_l_a679ecb63babfe298cf1bc90458055945}{PartirString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *linhaSTR, \textcolor{keywordtype}{char} *StarTAG, \textcolor{keywordtype}{char} *TEX, \textcolor{keywordtype}{char} *EndTAG)}
+\DoxyCodeLine{104     \{}
+\DoxyCodeLine{105         strcpy(StarTAG, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{106         strcpy(TEX, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{107         strcpy(EndTAG, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{108         \textcolor{keywordtype}{int} ret = sscanf(linhaSTR, \textcolor{stringliteral}{"{}\(\backslash\)t<\%[\string^>]>\%[\string^</]</\%[\string^>]>"{}},StarTAG, TEX, EndTAG);}
+\DoxyCodeLine{109         \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keyword}{static} \mbox{\hyperlink{class_x_m_l}{XML}}* \mbox{\hyperlink{class_x_m_l_ad53c99d3c3d64777de6e68258a663261}{Processar\_Parser}}(\textcolor{keywordtype}{string} fich)}
+\DoxyCodeLine{114     \{}
+\DoxyCodeLine{115         ifstream F(fich);}
+\DoxyCodeLine{116         \textcolor{keywordflow}{if} (!F.is\_open()) \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{117         list<XML *> Pilha;}
+\DoxyCodeLine{118         \textcolor{keywordtype}{string} Linha;}
+\DoxyCodeLine{119         \textcolor{keywordtype}{char} StartTAG[50];}
+\DoxyCodeLine{120         \textcolor{keywordtype}{char} EndTAG[50];}
+\DoxyCodeLine{121         \textcolor{keywordtype}{char} Conteudo[250];}
+\DoxyCodeLine{122         \mbox{\hyperlink{class_x_m_l}{XML}} *Raiz = NULL;}
+\DoxyCodeLine{123         \mbox{\hyperlink{class_x_m_l}{XML}} *Obj\_Corrente = NULL;}
+\DoxyCodeLine{124         \textcolor{keywordflow}{while} (!F.eof())}
+\DoxyCodeLine{125         \{}
+\DoxyCodeLine{126             getline(F, Linha);}
+\DoxyCodeLine{127             \textcolor{keywordtype}{int} res = \mbox{\hyperlink{class_x_m_l_a679ecb63babfe298cf1bc90458055945}{XML::PartirString}}(Linha.c\_str(), StartTAG, Conteudo, EndTAG);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129             \textcolor{keywordflow}{if} (res == 1)}
+\DoxyCodeLine{130             \{}
+\DoxyCodeLine{131                 \textcolor{keywordtype}{char} *pch= strchr(StartTAG,\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{132                 \textcolor{keywordflow}{if} (pch == NULL)}
+\DoxyCodeLine{133                 \{}
+\DoxyCodeLine{134                     \mbox{\hyperlink{class_x_m_l}{XML}} *Filho = \textcolor{keyword}{new} \mbox{\hyperlink{class_x_m_l}{XML}}(StartTAG);}
+\DoxyCodeLine{135                     \textcolor{keywordflow}{if} (Obj\_Corrente)}
+\DoxyCodeLine{136                     \{}
+\DoxyCodeLine{137                         Obj\_Corrente-\/>\mbox{\hyperlink{class_x_m_l_a3e5c392bc1cdba6c134d26429635966b}{Add}}(Filho);}
+\DoxyCodeLine{138                     \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{139                     \{}
+\DoxyCodeLine{140                         Raiz = Filho;}
+\DoxyCodeLine{141                     \}}
+\DoxyCodeLine{142                     Obj\_Corrente = Filho;}
+\DoxyCodeLine{143                     Pilha.push\_front(Obj\_Corrente);}
+\DoxyCodeLine{144                 \}}
+\DoxyCodeLine{145                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{146                 \{}
+\DoxyCodeLine{147                     Pilha.pop\_front();}
+\DoxyCodeLine{148                     Obj\_Corrente = Pilha.front();}
+\DoxyCodeLine{149                 \}}
+\DoxyCodeLine{150             \}}
+\DoxyCodeLine{151             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{152                 Obj\_Corrente-\/>\mbox{\hyperlink{class_x_m_l_a3e5c392bc1cdba6c134d26429635966b}{Add}}(StartTAG, Conteudo);}
+\DoxyCodeLine{153         \}}
+\DoxyCodeLine{154         Pilha.clear();}
+\DoxyCodeLine{155         F.close();}
+\DoxyCodeLine{156         \textcolor{keywordflow}{return} Raiz;}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159 \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// XML\_H}}
+
+\end{DoxyCode}

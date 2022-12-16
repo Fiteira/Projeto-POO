@@ -1,6 +1,14 @@
 #include "Sfogo.h"
 #include "Fabrica.h"
 
+
+/** \brief Construtor do Sfogo
+ *
+ * \param  int ID, string marca , int posicao Y, int posicao X ,int probabilidade de avaria , int valor aviso e ponteiro para Fabrica
+ * \author LD & GA
+ * \return Sfogo
+ *
+ */
 Sfogo::Sfogo(int _id,string _marca,int _posicaoY,int _posicaoX,int _probAvaria,int _valorAviso,Fabrica *Pt)
     :Sensor(_id,_marca,_posicaoY,_posicaoX,_probAvaria,_valorAviso,Pt)
 {
@@ -8,10 +16,23 @@ Sfogo::Sfogo(int _id,string _marca,int _posicaoY,int _posicaoX,int _probAvaria,i
 
 }
 
+/** \brief Destrutor do Sfogo
+ *
+ * \author LD & GA
+ *
+ */
 Sfogo::~Sfogo()
 {
 
 }
+
+/** \brief Run
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Sfogo::Run()
 {
     int proAvaria=getProbAvaria();

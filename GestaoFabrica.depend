@@ -134,13 +134,13 @@
 1671108002 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
 	<User.h>
 
-1671145275 source:c:\users\leand\desktop\gestaofabrica\main.cpp
+1671197407 source:c:\users\leand\desktop\gestaofabrica\main.cpp
 	<iostream>
 	<sstream>
 	<ctime>
 	"Fabrica.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\admin.cpp
+1671198960 source:c:\users\leand\desktop\gestaofabrica\src\admin.cpp
 	"Admin.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\admin.h
@@ -192,14 +192,14 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\sensor.h
 	"Objetos.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
+1671199605 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
 	"MCombustao.h"
 	"Fabrica.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\mcombustao.h
 	"Motor.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
+1671199606 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
 	"MEletrico.h"
 	"Fabrica.h"
 
@@ -212,7 +212,7 @@
 1670590134 c:\users\leand\desktop\gestaofabrica\include\mindocao.h
 	"Motor.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
+1671199278 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
 	"Motor.h"
 	"Fabrica.h"
 
@@ -258,7 +258,7 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\visitante.h
 	<User.h>
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
+1671199348 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
 	"Objetos.h"
 
 1671197312 c:\users\leand\desktop\gestaofabrica\include\uteis.h
@@ -307,7 +307,7 @@
 	<iostream>
 	<time.h>
 
-1671140651 c:\users\leand\desktop\gestaofabrica\include\relogiofabrica.h
+1671198114 c:\users\leand\desktop\gestaofabrica\include\relogiofabrica.h
 	<iostream>
 	<time.h>
 
@@ -337,7 +337,7 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\minducao.h
 	"Motor.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\minducao.cpp
+1671199597 source:c:\users\leand\desktop\gestaofabrica\src\minducao.cpp
 	"MInducao.h"
 	"Fabrica.h"
 

@@ -4,15 +4,7 @@ using namespace std;
 #include <ctime>
 
 #include "Fabrica.h"
-/*
-void print(ostream &o) {
-    o << "Hello World!";
-    o << endl;
-    o << "Hello World!1";
-    o << endl;
-    o << "Hello World!2";
-}
-*/
+
 
 void teste()
 {

@@ -1,0 +1,38 @@
+\hypertarget{_m_combustao_8h_source}{}\doxysection{MCombustao.\+h}
+\label{_m_combustao_8h_source}\index{MCombustao.h@{MCombustao.h}}
+\mbox{\hyperlink{_m_combustao_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MCOMBUSTAO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MCOMBUSTAO\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_motor_8h}{Motor.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_m_combustao}{MCombustao}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_motor}{Motor}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{private}:}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_m_combustao}{MCombustao}}(\textcolor{keywordtype}{int} \_id,\textcolor{keywordtype}{string} \_marca,\textcolor{keywordtype}{int} \_posicaoY,\textcolor{keywordtype}{int} \_posicaoX,\textcolor{keywordtype}{int} \_consumoHora,\mbox{\hyperlink{class_fabrica}{Fabrica}} *Pt);}
+\DoxyCodeLine{15         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_m_combustao_ad91dabed6c17bbd058c47d8ba2215e22}{\string~MCombustao}}();}
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_m_combustao_ab7c342f4b8bd27360db9d9150425e7f3}{RUN}}();}
+\DoxyCodeLine{17         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_m_combustao_a22d75bfab0c534483f3d1cd5d4a523d7}{START}}();}
+\DoxyCodeLine{18         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_m_combustao_a80f0dd0926c42501d775ecffa5a0b06e}{RESTART}}();}
+\DoxyCodeLine{19         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_m_combustao_abb66753d12d5b7eda453af2205a191d0}{STOP}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_combustao_a22188de4be74b33f2ec5d8f9ab50153e}{show}}(ostream \&f = std::cout)}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{23             f << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{24             f << \mbox{\hyperlink{class_objetos_ae9a60cccb6b8f0941c22cb283b26a8fd}{Objetos::getTIPO}}() << endl;}
+\DoxyCodeLine{25             f << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{26             \mbox{\hyperlink{class_motor_a00e9d4be1090dc594c55ab74c3558f55}{Motor::show}}(f);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MCOMBUSTAO\_H}}
+
+\end{DoxyCode}

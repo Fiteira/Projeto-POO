@@ -1,0 +1,33 @@
+\hypertarget{_sluz_8h_source}{}\doxysection{Sluz.\+h}
+\label{_sluz_8h_source}\index{Sluz.h@{Sluz.h}}
+\mbox{\hyperlink{_sluz_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SLUZ\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SLUZ\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_sensor_8h}{Sensor.h}}>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_sluz}{Sluz}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_sensor}{Sensor}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{private}:}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_sluz}{Sluz}}(\textcolor{keywordtype}{int} \_id,\textcolor{keywordtype}{string} \_marca,\textcolor{keywordtype}{int} \_posicaoY,\textcolor{keywordtype}{int} \_posicaoX,\textcolor{keywordtype}{int} \_probAvaria,\textcolor{keywordtype}{int} \_valorAviso,\mbox{\hyperlink{class_fabrica}{Fabrica}} *Pt);}
+\DoxyCodeLine{15         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_sluz_ae54dc1471cb66981b83cedacba159b4b}{\string~Sluz}}();}
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sluz_aa4b24466af8f4b5208a393e7754e40d4}{Run}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sluz_a2bee65216a06e56cb8ebafd720d05d0e}{show}}(ostream \&f = std::cout)}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         f << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{21         f << \mbox{\hyperlink{class_objetos_ae9a60cccb6b8f0941c22cb283b26a8fd}{Objetos::getTIPO}}() << endl;}
+\DoxyCodeLine{22         f << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_sensor_a091b5716f9adad1f3ce1a0205e4e1da8}{Sensor::show}}(f);}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SLUZ\_H}}
+
+\end{DoxyCode}

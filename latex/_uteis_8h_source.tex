@@ -1,0 +1,119 @@
+\hypertarget{_uteis_8h_source}{}\doxysection{Uteis.\+h}
+\label{_uteis_8h_source}\index{Uteis.h@{Uteis.h}}
+\mbox{\hyperlink{_uteis_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UTEIS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UTEIS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{9 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <conio.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_uteis}{Uteis}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_uteis_a04fce852bedd5302b6b63047c085ebc7}{Uteis}}();}
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_uteis_a281b8da6e638a51b3870248868c3e54b}{\string~Uteis}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{33     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uteis_a51fb60c43aa640fb11a83fe3d0586c72}{Delay}}(\textcolor{keywordtype}{int} ms)}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \textcolor{keywordtype}{int} microsecond = 1000;}
+\DoxyCodeLine{36         usleep(ms * microsecond);}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{47     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uteis_a4bfb54801a00b46086515c5ccb8148a5}{Wait}}(\textcolor{keywordtype}{int} s)}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         clock\_t T0 = clock();}
+\DoxyCodeLine{50         clock\_t T1 = T0 + s * CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{51         \textcolor{keywordflow}{while} (clock() < T1);}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{64     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uteis_aa4d0c9094d680c243982727cb847f524}{HoraAtual}}(\textcolor{keywordtype}{int} \&hora)}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         time\_t t=time(0);}
+\DoxyCodeLine{67         tm* now = localtime(\&t);}
+\DoxyCodeLine{68         hora=now-\/>tm\_hour;}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{78     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uteis_ad69c93834d8e1b8b512a00a1f1dc07a3}{Aleatorio}}(\textcolor{keywordtype}{int} \_min,\textcolor{keywordtype}{int} \_max)}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80         srand(time(NULL)*getpid());}
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} \_min + rand()\%(\_max -\/ \_min + 1);}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{92     \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_uteis_a58fe2478f7eb747f8c8637d9c9aaf18e}{AleatorioDouble}}(\textcolor{keywordtype}{double} \_min,\textcolor{keywordtype}{double} \_max)}
+\DoxyCodeLine{93     \{}
+\DoxyCodeLine{94         srand(time(NULL)*getpid());}
+\DoxyCodeLine{95         \textcolor{keywordtype}{double} numero;}
+\DoxyCodeLine{96         numero=\_min + (rand() / (RAND\_MAX / (\_max -\/ \_min)));}
+\DoxyCodeLine{97         \textcolor{keywordflow}{return}  numero;}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{107     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uteis_a28932d5ae110a461bc9e89df9b3d3052}{Msg}}(\textcolor{keywordtype}{string} txt)}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109         cout << txt << endl;}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
+\DoxyCodeLine{120     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uteis_a70db2d99544248459e11f040d809012b}{LerInteiro}}(\textcolor{keywordtype}{string} txt)}
+\DoxyCodeLine{121     \{}
+\DoxyCodeLine{122         cout << txt;}
+\DoxyCodeLine{123         \textcolor{keywordtype}{int} X;}
+\DoxyCodeLine{124         cin >> X;}
+\DoxyCodeLine{125         \textcolor{keywordflow}{return} X;}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 }
+\DoxyCodeLine{136     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uteis_a68aec6c75e84efeae27e9904d405653f}{SepararStr}}(\textcolor{keywordtype}{string} \textcolor{keyword}{const} \&str, \textcolor{keyword}{const} \textcolor{keywordtype}{char} tipo,vector<string> \&out)}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         stringstream s(str);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \textcolor{keywordtype}{string} s2;}
+\DoxyCodeLine{141         \textcolor{keywordflow}{while} (getline(s, s2, tipo) )}
+\DoxyCodeLine{142         \{}
+\DoxyCodeLine{143             out.push\_back(s2);}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{154     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uteis_a28bb5996f7cb99779decdf94c6c9db21}{ProbabilidadeAcerto}}(\textcolor{keywordtype}{int} n)}
+\DoxyCodeLine{155     \{}
+\DoxyCodeLine{156         srand(time(NULL)*getpid());}
+\DoxyCodeLine{157         \textcolor{keywordtype}{int} numero=rand()\%100;}
+\DoxyCodeLine{158         \textcolor{keywordflow}{if}(numero <= (n-\/1))}
+\DoxyCodeLine{159             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{160         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{161             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{171     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{172     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uteis_ab39ac20469f0c3d32edfe2874a6986b5}{LiberarMemoria}}(list<T*>* lista)}
+\DoxyCodeLine{173     \{}
+\DoxyCodeLine{174         \textcolor{keyword}{auto} it = lista-\/>begin();}
+\DoxyCodeLine{175         \textcolor{keywordflow}{while} (it != lista-\/>end())}
+\DoxyCodeLine{176         \{}
+\DoxyCodeLine{177             \textcolor{keyword}{delete}(*it);}
+\DoxyCodeLine{178             ++it;}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180         lista-\/>clear();}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182 \};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// UTEIS\_H}}
+
+\end{DoxyCode}

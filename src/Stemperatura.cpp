@@ -1,17 +1,36 @@
 #include "Stemperatura.h"
 #include "Fabrica.h"
 
+/** \brief Construtor do Stemperatura
+ *
+ * \param  int ID, string marca , int posicao Y, int posicao X ,int probabilidade de avaria , int valor aviso e ponteiro para Fabrica
+ * \author LD & GA
+ * \return Stemperatura
+ *
+ */
 Stemperatura::Stemperatura(int _id,string _marca,int _posicaoY,int _posicaoX,int _probAvaria,int _valorAviso,Fabrica *Pt)
     :Sensor(_id,_marca,_posicaoY,_posicaoX,_probAvaria,_valorAviso,Pt)
 {
     Objetos::setTIPO("Stemperatura");
 }
 
+/** \brief Destrutor da Stemperatura
+ *
+ * \author LD & GA
+ *
+ */
 Stemperatura::~Stemperatura()
 {
 
 }
 
+/** \brief Run
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Stemperatura::Run()
 {
     int proAvaria=getProbAvaria();

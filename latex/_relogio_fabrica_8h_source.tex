@@ -1,0 +1,37 @@
+\hypertarget{_relogio_fabrica_8h_source}{}\doxysection{Relogio\+Fabrica.\+h}
+\label{_relogio_fabrica_8h_source}\index{RelogioFabrica.h@{RelogioFabrica.h}}
+\mbox{\hyperlink{_relogio_fabrica_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RELOGIOFABRICA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RELOGIOFABRICA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_relogio_fabrica}{RelogioFabrica}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     time\_t \mbox{\hyperlink{class_relogio_fabrica_ab49b7464c0d32edcd6e8829795aaf22a}{START}};}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_relogio_fabrica_a3ac96515413ed4b73f344b4c25b017f0}{VELOCIDADE}};}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{22     \mbox{\hyperlink{class_relogio_fabrica_afc4560ef8bcab55c47ed7c99953e1ecd}{RelogioFabrica}}(\textcolor{keywordtype}{int} Vel = 1)}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_relogio_fabrica_a3ac96515413ed4b73f344b4c25b017f0}{VELOCIDADE}} = Vel;}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_relogio_fabrica_ab49b7464c0d32edcd6e8829795aaf22a}{START}} = time(0);}
+\DoxyCodeLine{26     \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{35     time\_t \mbox{\hyperlink{class_relogio_fabrica_a46cc3238b84fb554f55259b4da03dc3b}{GetTime}}()}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         time\_t NOW = time(0);}
+\DoxyCodeLine{38         time\_t Simulada = \mbox{\hyperlink{class_relogio_fabrica_ab49b7464c0d32edcd6e8829795aaf22a}{START}} + (NOW -\/ \mbox{\hyperlink{class_relogio_fabrica_ab49b7464c0d32edcd6e8829795aaf22a}{START}}) * \mbox{\hyperlink{class_relogio_fabrica_a3ac96515413ed4b73f344b4c25b017f0}{VELOCIDADE}};}
+\DoxyCodeLine{39         \textcolor{keywordflow}{return} Simulada;}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RELOGIOFABRICA\_H}}
+
+\end{DoxyCode}

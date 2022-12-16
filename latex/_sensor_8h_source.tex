@@ -1,0 +1,47 @@
+\hypertarget{_sensor_8h_source}{}\doxysection{Sensor.\+h}
+\label{_sensor_8h_source}\index{Sensor.h@{Sensor.h}}
+\mbox{\hyperlink{_sensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SENSOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SENSOR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_objetos_8h}{Objetos.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{enum} \mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5f}{ESTADO\_SENSOR}} \{\mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5fa439c688a4e9ed31638d5922a50680a8e}{RUN}}, \mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5fa4afac0e0c88616c90b97fb3fdf460e60}{AVARIADO}},\mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5fab79a4513733d9855658550dce54e4b7c}{SEMESTADO}}=-\/1\};}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_sensor}{Sensor}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_objetos}{Objetos}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{private}:}
+\DoxyCodeLine{11         \mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5f}{ESTADO\_SENSOR}} \mbox{\hyperlink{class_sensor_ad70ceab49bb5353c59c2c5ede0d600d6}{ESTADO}};}
+\DoxyCodeLine{12         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a25a187a884fd7b754d33af60b1d2d0e5}{VALOR\_AVISO}};}
+\DoxyCodeLine{13         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_ad73e09c633cd476962739ca97ea346ba}{VALOR\_ATUAL}};}
+\DoxyCodeLine{14         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a56c0c7b10549978728ac8ee812e21cd2}{PROB\_AVARIA}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_sensor}{Sensor}}(\textcolor{keywordtype}{int} \_id,\textcolor{keywordtype}{string} \_marca,\textcolor{keywordtype}{int} \_posicaoY,\textcolor{keywordtype}{int} \_posicaoX,\textcolor{keywordtype}{int} \_probAvaria,\textcolor{keywordtype}{int} \_valorAviso,\mbox{\hyperlink{class_fabrica}{Fabrica}} *Pt);}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_sensor_aee8c70e7ef05ce65e7ee33686b5d7db2}{\string~Sensor}}();}
+\DoxyCodeLine{21         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sensor_aeeb610aef6599178bc85e101d666dc19}{Run}}() \{ cout << \textcolor{stringliteral}{"{}RUN ??"{}}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{22         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sensor_a52349ec7d40cfa05bc5f58ffbacc18b5}{ESTOU\_AVARIADO}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{comment}{//get}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a2f4371397d93cb12b120d70b04044393}{getVALOR\_AVISO}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_a25a187a884fd7b754d33af60b1d2d0e5}{VALOR\_AVISO}};\}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_ad1733569b441dc79f168a1907913eaee}{getVALOR\_ATUAL}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_ad73e09c633cd476962739ca97ea346ba}{VALOR\_ATUAL}};\}}
+\DoxyCodeLine{27     \mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5f}{ESTADO\_SENSOR}} \mbox{\hyperlink{class_sensor_a2f6ed1916917a69c402b2c83dd91ea49}{getESTADO}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_ad70ceab49bb5353c59c2c5ede0d600d6}{ESTADO}}; \}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sensor_a155b0cd3fa816f8008017ba1de05e14f}{getProbAvaria}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_sensor_a56c0c7b10549978728ac8ee812e21cd2}{PROB\_AVARIA}}; \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//sets}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_add3a7c40ff29ff422114b0b3a22caae6}{setVALOR\_AVISO}}(\textcolor{keywordtype}{int} valorAviso)\{\mbox{\hyperlink{class_sensor_a25a187a884fd7b754d33af60b1d2d0e5}{VALOR\_AVISO}} = valorAviso;\}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_a49e6a49ef8f64a23d9634b6eb21e6385}{setVALOR\_ATUAL}}(\textcolor{keywordtype}{int} valorAtual)\{\mbox{\hyperlink{class_sensor_ad73e09c633cd476962739ca97ea346ba}{VALOR\_ATUAL}} = valorAtual;\}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_abb779c9ebf1fa09c72af0dd5bed9eb01}{setESTADO}}(\mbox{\hyperlink{_sensor_8h_a029f5919d2d2b79d604dd59346dd4c5f}{ESTADO\_SENSOR}} EST) \{ \mbox{\hyperlink{class_sensor_ad70ceab49bb5353c59c2c5ede0d600d6}{ESTADO}} = EST; \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sensor_a091b5716f9adad1f3ce1a0205e4e1da8}{show}}(ostream \&f = std::cout)}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         \mbox{\hyperlink{class_objetos_a7a3f7c33aaea5be6ef8c9962e9ffe391}{Objetos::show}}(f);}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SENSOR\_H}}
+
+\end{DoxyCode}

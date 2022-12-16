@@ -1,6 +1,13 @@
 #include "MEletrico.h"
 #include "Fabrica.h"
 
+/** \brief Construtor do MEletrico
+ *
+ * \param  int ID, string marca , int posicao Y, int posicao X,int consumoHora e ponteiro Fabrica
+ * \author LD & GA
+ * \return MEletrico
+ *
+ */
 MEletrico::MEletrico(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
 :Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
 {
@@ -11,11 +18,23 @@ MEletrico::MEletrico(int _id,string _marca,int _posicaoY,int _posicaoX,int _cons
     TEMPERATURA=Uteis::AleatorioDouble((double)minVerde,(double)maxVerde);
 }
 
+/** \brief Destrutor da MEletrico
+ *
+ * \author LD & GA
+ *
+ */
 MEletrico::~MEletrico()
 {
 
 }
 
+/** \brief RUN
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MEletrico::RUN()
 {
     if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
@@ -115,6 +134,13 @@ bool MEletrico::RUN()
     return true;
 }
 
+/** \brief START
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MEletrico::START()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
@@ -128,6 +154,13 @@ bool MEletrico::START()
     return false;
 }
 
+/** \brief RESTART
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MEletrico::RESTART()
 {
     if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
@@ -145,6 +178,13 @@ bool MEletrico::RESTART()
     return false;
 }
 
+/** \brief RESTART
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MEletrico::STOP()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_PARADO)

@@ -1,0 +1,189 @@
+\hypertarget{class_m_combustao}{}\doxysection{MCombustao Class Reference}
+\label{class_m_combustao}\index{MCombustao@{MCombustao}}
+
+
+{\ttfamily \#include $<$MCombustao.\+h$>$}
+
+Inheritance diagram for MCombustao\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_m_combustao}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_combustao_a4e863a9ff9eb9c85eb274084686855f5}{MCombustao}} (int \+\_\+id, string \+\_\+marca, int \+\_\+posicaoY, int \+\_\+posicaoX, int \+\_\+consumo\+Hora, \mbox{\hyperlink{class_fabrica}{Fabrica}} $\ast$Pt)
+\begin{DoxyCompactList}\small\item\em Construtor do \mbox{\hyperlink{class_m_combustao}{MCombustao}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_m_combustao_ad91dabed6c17bbd058c47d8ba2215e22}{$\sim$\+MCombustao}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da \mbox{\hyperlink{class_m_combustao}{MCombustao}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_combustao_ab7c342f4b8bd27360db9d9150425e7f3}{RUN}} ()
+\begin{DoxyCompactList}\small\item\em RUN. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_combustao_a22d75bfab0c534483f3d1cd5d4a523d7}{START}} ()
+\begin{DoxyCompactList}\small\item\em START. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_combustao_a80f0dd0926c42501d775ecffa5a0b06e}{RESTART}} ()
+\begin{DoxyCompactList}\small\item\em RESTART. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_combustao_abb66753d12d5b7eda453af2205a191d0}{STOP}} ()
+\begin{DoxyCompactList}\small\item\em STOP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_combustao_a22188de4be74b33f2ec5d8f9ab50153e}{show}} (ostream \&f=std\+::cout)
+\begin{DoxyCompactList}\small\item\em show \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_combustao_a4e863a9ff9eb9c85eb274084686855f5}\label{class_m_combustao_a4e863a9ff9eb9c85eb274084686855f5}} 
+\index{MCombustao@{MCombustao}!MCombustao@{MCombustao}}
+\index{MCombustao@{MCombustao}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{MCombustao()}{MCombustao()}}
+{\footnotesize\ttfamily MCombustao\+::\+MCombustao (\begin{DoxyParamCaption}\item[{int}]{\+\_\+id,  }\item[{string}]{\+\_\+marca,  }\item[{int}]{\+\_\+posicaoY,  }\item[{int}]{\+\_\+posicaoX,  }\item[{int}]{\+\_\+consumo\+Hora,  }\item[{\mbox{\hyperlink{class_fabrica}{Fabrica}} $\ast$}]{Pt }\end{DoxyParamCaption})}
+
+
+
+Construtor do \mbox{\hyperlink{class_m_combustao}{MCombustao}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & ID, string marca , int posicao Y, int posicao X,int consumo\+Hora e ponteiro \mbox{\hyperlink{class_fabrica}{Fabrica}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+LD \& GA 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_m_combustao}{MCombustao}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_m_combustao_ad91dabed6c17bbd058c47d8ba2215e22}\label{class_m_combustao_ad91dabed6c17bbd058c47d8ba2215e22}} 
+\index{MCombustao@{MCombustao}!````~MCombustao@{$\sim$MCombustao}}
+\index{````~MCombustao@{$\sim$MCombustao}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{$\sim$MCombustao()}{~MCombustao()}}
+{\footnotesize\ttfamily MCombustao\+::$\sim$\+MCombustao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor da \mbox{\hyperlink{class_m_combustao}{MCombustao}}. 
+
+\begin{DoxyAuthor}{Author}
+LD \& GA 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_combustao_a80f0dd0926c42501d775ecffa5a0b06e}\label{class_m_combustao_a80f0dd0926c42501d775ecffa5a0b06e}} 
+\index{MCombustao@{MCombustao}!RESTART@{RESTART}}
+\index{RESTART@{RESTART}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{RESTART()}{RESTART()}}
+{\footnotesize\ttfamily bool MCombustao\+::\+RESTART (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+RESTART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+author LD \& GA \begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_motor_a6d022ec2d4d4987073a1a100b758d612}{Motor}}.
+
+\mbox{\Hypertarget{class_m_combustao_ab7c342f4b8bd27360db9d9150425e7f3}\label{class_m_combustao_ab7c342f4b8bd27360db9d9150425e7f3}} 
+\index{MCombustao@{MCombustao}!RUN@{RUN}}
+\index{RUN@{RUN}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{RUN()}{RUN()}}
+{\footnotesize\ttfamily bool MCombustao\+::\+RUN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+RUN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+author LD \& GA \begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_motor_a66b3545c43fac25bba312d3121d2fc83}{Motor}}.
+
+\mbox{\Hypertarget{class_m_combustao_a22188de4be74b33f2ec5d8f9ab50153e}\label{class_m_combustao_a22188de4be74b33f2ec5d8f9ab50153e}} 
+\index{MCombustao@{MCombustao}!show@{show}}
+\index{show@{show}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void MCombustao\+::show (\begin{DoxyParamCaption}\item[{ostream \&}]{f = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & tipo de saida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+LD \& GA 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_motor_a00e9d4be1090dc594c55ab74c3558f55}{Motor}}.
+
+\mbox{\Hypertarget{class_m_combustao_a22d75bfab0c534483f3d1cd5d4a523d7}\label{class_m_combustao_a22d75bfab0c534483f3d1cd5d4a523d7}} 
+\index{MCombustao@{MCombustao}!START@{START}}
+\index{START@{START}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{START()}{START()}}
+{\footnotesize\ttfamily bool MCombustao\+::\+START (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+START. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+author LD \& GA \begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_motor_ae8a0f9bf47b64a21f49a5730872883e9}{Motor}}.
+
+\mbox{\Hypertarget{class_m_combustao_abb66753d12d5b7eda453af2205a191d0}\label{class_m_combustao_abb66753d12d5b7eda453af2205a191d0}} 
+\index{MCombustao@{MCombustao}!STOP@{STOP}}
+\index{STOP@{STOP}!MCombustao@{MCombustao}}
+\doxysubsubsection{\texorpdfstring{STOP()}{STOP()}}
+{\footnotesize\ttfamily bool MCombustao\+::\+STOP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+STOP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+author LD \& GA \begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_motor_adddf5c9c09855f254aefb52e6d4a6265}{Motor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_m_combustao_8h}{MCombustao.\+h}}\item 
+\mbox{\hyperlink{_m_combustao_8cpp}{MCombustao.\+cpp}}\end{DoxyCompactItemize}

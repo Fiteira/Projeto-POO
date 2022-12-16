@@ -1,6 +1,15 @@
 #include "MCombustao.h"
 #include "Fabrica.h"
 
+
+
+/** \brief Construtor do MCombustao
+ *
+ * \param  int ID, string marca , int posicao Y, int posicao X,int consumoHora e ponteiro Fabrica
+ * \author LD & GA
+ * \return MCombustao
+ *
+ */
 MCombustao::MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _consumoHora,Fabrica *Pt)
     :Motor(_id,_marca,_posicaoY,_posicaoX,_consumoHora,Pt)
 {
@@ -11,12 +20,24 @@ MCombustao::MCombustao(int _id,string _marca,int _posicaoY,int _posicaoX,int _co
     TEMPERATURA=Uteis::AleatorioDouble((double)minVerde,(double)maxVerde);
 }
 
+/** \brief Destrutor da MCombustao
+ *
+ * \author LD & GA
+ *
+ */
 MCombustao::~MCombustao()
 {
 
 }
 
 
+/** \brief RUN
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MCombustao::RUN()
 {
     if(getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
@@ -116,6 +137,14 @@ bool MCombustao::RUN()
     return true;
 }
 
+
+/** \brief START
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MCombustao::START()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_RUN)
@@ -129,6 +158,13 @@ bool MCombustao::START()
     return false;
 }
 
+/** \brief RESTART
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MCombustao::RESTART()
 {
     if (getESTADO() == ESTADO_MOTOR::ESTADO_RUN)
@@ -146,6 +182,13 @@ bool MCombustao::RESTART()
     return false;
 }
 
+/** \brief STOP
+ *
+ * \param
+ * \author LD & GA
+ * \return true/false
+ *
+ */
 bool MCombustao::STOP()
 {
     if (getESTADO() != ESTADO_MOTOR::ESTADO_PARADO)
@@ -160,4 +203,3 @@ bool MCombustao::STOP()
         return false;
     }
 }
-
