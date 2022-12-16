@@ -22,18 +22,44 @@ public:
     Uteis();
     virtual ~Uteis();
 
+
+    /** \brief Delay
+     *
+     * \param int milissegundo
+     * \author Leandro Dias
+     * \return void
+     *
+     */
     static void Delay(int ms)
     {
         int microsecond = 1000;
         usleep(ms * microsecond);
     }
 
+
+    /** \brief Delay
+     *
+     * \param int milissegundo
+     * \author Professor Morgado
+     * \return void
+     *
+     */
     static void Wait(int s)
     {
-    clock_t T0 = clock();
-    clock_t T1 = T0 + s * CLOCKS_PER_SEC;
-    while (clock() < T1);
+        clock_t T0 = clock();
+        clock_t T1 = T0 + s * CLOCKS_PER_SEC;
+        while (clock() < T1);
     }
+
+
+
+    /** \brief HoraAtual
+     *
+     * \param int sai por parametro hora
+     * \author Leandro Dias
+     * \return void
+     *
+     */
 
     static void HoraAtual(int &hora)
     {
@@ -42,12 +68,27 @@ public:
         hora=now->tm_hour;
     }
 
+    /** \brief Numero inteiro Aleatorio
+     *
+     * \param int numero min e numero max
+     * \author Leandro Dias
+     * \return int
+     *
+     */
     static int Aleatorio(int _min,int _max)
     {
         srand(time(NULL)*getpid());
         return _min + rand()%(_max - _min + 1);
     }
 
+
+    /** \brief Numero double Aleatorio
+     *
+     * \param double numero min e numero max
+     * \author Leandro Dias
+     * \return double
+     *
+     */
     static double AleatorioDouble(double _min,double _max)
     {
         srand(time(NULL)*getpid());
@@ -56,37 +97,26 @@ public:
         return  numero;
     }
 
+    /** \brief Mensagem de texto para o ecra
+     *
+     * \param  texto
+     * \author Leandro Dias
+     * \return void
+     *
+     */
     static void Msg(string txt)
     {
         cout << txt << endl;
     }
 
-    static void CopiarVetor(int *x,int *y,int n)
-    {
-        for(int i=0; i<n; i++)
-        {
-            y[i]=x[i];
-        }
-    }
 
-    static void MostrarVector(int *V,int N)
-    {
-        cout << "{";
-        for(int i=0; i<N; i++)
-            cout << V[i] << ";";
-        cout << "}";
-    }
-
-    static bool GerarAleatorioVector(int *V,int N)
-    {
-        srand(time(NULL));
-        for(int i=0; i<N; i++)
-        {
-            V[i]=rand()%100;
-        }
-        return true;
-    }
-
+    /** \brief Ler inteiro mandando um texto como parametro
+     *
+     * \param  texto
+     * \author Leandro Dias
+     * \return int
+     *
+     */
     static int LerInteiro(string txt)
     {
         cout << txt;
@@ -95,6 +125,14 @@ public:
         return X;
     }
 
+
+    /** \brief Separar String
+     *
+     * \param  uma string completa, o tipo que separa a string e o output de vector de strings separadas
+     * \author Leandro Dias
+     * \return void
+     *
+     */
     static void SepararStr(string const &str, const char tipo,vector<string> &out)
     {
         stringstream s(str);
@@ -106,6 +144,13 @@ public:
         }
     }
 
+    /** \brief Probabilidade Acerto
+     *
+     * \param  int
+     * \author Leandro Dias
+     * \return true / false
+     *
+     */
     static bool ProbabilidadeAcerto(int n)
     {
         srand(time(NULL)*getpid());
@@ -116,16 +161,23 @@ public:
             return false;
     }
 
+    /** \brief Liberar_Memoria
+     *
+     * \param  lista com template
+     * \author Leandro Dias
+     * \return void
+     *
+     */
     template <class T>
-    static void Liberar_Memoria(list<T*>* Lista)
+    static void LiberarMemoria(list<T*>* lista)
     {
-        auto it = Lista->begin();
-        while (it != Lista->end())
+        auto it = lista->begin();
+        while (it != lista->end())
         {
             delete(*it);
             ++it;
         }
-        Lista->clear();
+        lista->clear();
     }
 };
 

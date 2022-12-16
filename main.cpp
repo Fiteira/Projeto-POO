@@ -65,19 +65,6 @@ void teste()
 
 int main()
 {
-    /*
-    stringstream ss;
-    print(ss);
-    string outputString = ss.str();
-    cout << outputString << endl;
-    */
-    /*
-    int hora;
-
-    Uteis::HoraAtual(hora);
-
-    cout << hora;
-    */
     teste();
     return 0;
 }

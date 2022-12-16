@@ -89,9 +89,9 @@ Fabrica::~Fabrica()
 
     cout << "Passei em <" << __FUNCTION__ << ">" << endl;
 
-    Uteis::Liberar_Memoria(&LUsers);
-    Uteis::Liberar_Memoria(&LMotores);
-    Uteis::Liberar_Memoria(&LSensores);
+    Uteis::LiberarMemoria(&LUsers);
+    Uteis::LiberarMemoria(&LMotores);
+    Uteis::LiberarMemoria(&LSensores);
 
     LMotoresAvariados.clear();
     LMotoresQuentes.clear();
@@ -1371,7 +1371,13 @@ bool Fabrica::MenuAddSensor()
     return true;
 }
 
-
+/** \brief Menu Listar Motor Por Tipo
+ *
+ * \param
+ * \author LD & GA
+ * \return true / false
+ *
+ */
 bool Fabrica::MenuListarMotorTipo()
 {
     system("cls");

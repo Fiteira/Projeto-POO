@@ -150,7 +150,7 @@
 	<iostream>
 	<string>
 
-1671146990 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
+1671197219 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
 	"Uteis.h"
 	<conio.h>
@@ -235,14 +235,14 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\sfogo.h
 	<Sensor.h>
 
-1671145677 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
+1671147009 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
 	"Smissel.h"
 	"Fabrica.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\smissel.h
 	<Sensor.h>
 
-1671145368 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
+1671197225 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
 	"Stemperatura.h"
 	"Fabrica.h"
 
@@ -261,7 +261,7 @@
 1671140651 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
 	"Objetos.h"
 
-1671140651 c:\users\leand\desktop\gestaofabrica\include\uteis.h
+1671197312 c:\users\leand\desktop\gestaofabrica\include\uteis.h
 	<iostream>
 	<string>
 	<sstream>
