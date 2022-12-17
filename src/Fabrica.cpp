@@ -533,7 +533,7 @@ int Fabrica::Aviso_Humidade(list<Motor *> &lm,int x,int y,int nVizinhanca)
     if(y2 < 0)
         y2=0;
 
-    cout << "x1:" << x1 << " x2:" << x2 << " --- y1:" << y1 << " y2:" << y2 << endl;
+//    cout << "x1:" << x1 << " x2:" << x2 << " --- y1:" << y1 << " y2:" << y2 << endl;
     list<Motor *>::iterator it;
     for (it = LMotores.begin(); it != LMotores.end(); ++it)
     {

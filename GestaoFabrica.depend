@@ -212,11 +212,11 @@
 1670590134 c:\users\leand\desktop\gestaofabrica\include\mindocao.h
 	"Motor.h"
 
-1671199278 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
+1671203677 source:c:\users\leand\desktop\gestaofabrica\src\motor.cpp
 	"Motor.h"
 	"Fabrica.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\normal.cpp
+1671204289 source:c:\users\leand\desktop\gestaofabrica\src\normal.cpp
 	"Normal.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\normal.h
@@ -224,41 +224,41 @@
 	<string>
 	<User.h>
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\sensor.cpp
+1671203511 source:c:\users\leand\desktop\gestaofabrica\src\sensor.cpp
 	"Sensor.h"
 	"Fabrica.h"
 
-1671145594 source:c:\users\leand\desktop\gestaofabrica\src\sfogo.cpp
+1671203744 source:c:\users\leand\desktop\gestaofabrica\src\sfogo.cpp
 	"Sfogo.h"
 	"Fabrica.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\sfogo.h
 	<Sensor.h>
 
-1671147009 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
+1671204202 source:c:\users\leand\desktop\gestaofabrica\src\smissel.cpp
 	"Smissel.h"
 	"Fabrica.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\smissel.h
 	<Sensor.h>
 
-1671197225 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
+1671204212 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
 	"Stemperatura.h"
 	"Fabrica.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\stemperatura.h
 	<Sensor.h>
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\user.cpp
+1671204250 source:c:\users\leand\desktop\gestaofabrica\src\user.cpp
 	"User.h"
 
-1671140651 source:c:\users\leand\desktop\gestaofabrica\src\visitante.cpp
+1671204272 source:c:\users\leand\desktop\gestaofabrica\src\visitante.cpp
 	"Visitante.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\visitante.h
 	<User.h>
 
-1671199348 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
+1671200039 source:c:\users\leand\desktop\gestaofabrica\src\objetos.cpp
 	"Objetos.h"
 
 1671197312 c:\users\leand\desktop\gestaofabrica\include\uteis.h
@@ -311,7 +311,7 @@
 	<iostream>
 	<time.h>
 
-1671145524 source:c:\users\leand\desktop\gestaofabrica\src\sluz.cpp
+1671204203 source:c:\users\leand\desktop\gestaofabrica\src\sluz.cpp
 	"Sluz.h"
 	"Fabrica.h"
 
