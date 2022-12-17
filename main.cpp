@@ -34,14 +34,14 @@ void teste()
     F->Add(M);
 
 
-    Sensor *S=new Stemperatura(200,"M1",20,12,1,50,F);
-    F->Add(S);
-    S=new Stemperatura(201,"M1",10,12,5,51,F);
-    F->Add(S);
-    S=new Sfogo(202,"M1",4,2,15,1,F);
-    F->Add(S);
-    S=new Smissel(300,"Molotof-Expresso",79,49,3,1,F);
-    F->Add(S);
+//    Sensor *S=new Stemperatura(200,"M1",20,12,1,50,F);
+//    F->Add(S);
+//    S=new Stemperatura(201,"M1",10,12,5,51,F);
+//    F->Add(S);
+//    S=new Sfogo(202,"M1",4,2,15,1,F);
+//    F->Add(S);
+//    S=new Smissel(300,"Molotof-Expresso",79,49,3,1,F);
+//    F->Add(S);
 
 //    S=new Sluz(8,"XPTO8",1,8,4,1,F);
 //    F->Add(S);
@@ -58,5 +58,14 @@ void teste()
 int main()
 {
     teste();
+//
+//    User *U;
+//    U=new Admin(0,"Admin");
+//    Fabrica *F=new Fabrica(U)
+//    F->Add(U);
+//    F->Load("Empresa1XML.xml");
+//    delete(F);
+
+
     return 0;
 }

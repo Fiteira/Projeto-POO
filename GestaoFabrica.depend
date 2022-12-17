@@ -134,7 +134,7 @@
 1671108002 c:\users\leandro dias\onedrive\ambiente de trabalho\eng. informática-estgv\2ano\1sem\poo\gestaofabrica\include\visitante.h
 	<User.h>
 
-1671197407 source:c:\users\leand\desktop\gestaofabrica\main.cpp
+1671318837 source:c:\users\leand\desktop\gestaofabrica\main.cpp
 	<iostream>
 	<sstream>
 	<ctime>
@@ -150,7 +150,7 @@
 	<iostream>
 	<string>
 
-1671197219 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
+1671318510 source:c:\users\leand\desktop\gestaofabrica\src\fabrica.cpp
 	"Fabrica.h"
 	"Uteis.h"
 	<conio.h>
@@ -192,14 +192,14 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\sensor.h
 	"Objetos.h"
 
-1671199605 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
+1671318918 source:c:\users\leand\desktop\gestaofabrica\src\mcombustao.cpp
 	"MCombustao.h"
 	"Fabrica.h"
 
 1671140651 c:\users\leand\desktop\gestaofabrica\include\mcombustao.h
 	"Motor.h"
 
-1671199606 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
+1671318927 source:c:\users\leand\desktop\gestaofabrica\src\meletrico.cpp
 	"MEletrico.h"
 	"Fabrica.h"
 
@@ -242,7 +242,7 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\smissel.h
 	<Sensor.h>
 
-1671204212 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
+1671318198 source:c:\users\leand\desktop\gestaofabrica\src\stemperatura.cpp
 	"Stemperatura.h"
 	"Fabrica.h"
 
@@ -337,7 +337,7 @@
 1671140651 c:\users\leand\desktop\gestaofabrica\include\minducao.h
 	"Motor.h"
 
-1671199597 source:c:\users\leand\desktop\gestaofabrica\src\minducao.cpp
+1671318934 source:c:\users\leand\desktop\gestaofabrica\src\minducao.cpp
 	"MInducao.h"
 	"Fabrica.h"
 

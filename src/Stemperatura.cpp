@@ -97,7 +97,7 @@ bool Stemperatura::Run()
 
         }
 
-        Uteis::LiberarMemoria(&listaMotores);
+//        Uteis::LiberarMemoria(&listaMotores);
 
         while(!kbhit());
         getPt_Fabrica()->Menu();

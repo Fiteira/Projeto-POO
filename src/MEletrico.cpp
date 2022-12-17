@@ -128,7 +128,7 @@ bool MEletrico::RUN()
     cout << fixed;
     cout.precision(2);
     cout << "\t\t" << TEMPERATURA<<endl;
-    TEMPERATURA += Uteis::AleatorioDouble(0.1,1);
+    TEMPERATURA += Uteis::AleatorioDouble(0.1,2);
     Uteis::Delay(100);
 
     return true;

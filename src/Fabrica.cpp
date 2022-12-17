@@ -115,6 +115,10 @@ bool Fabrica::Load(const string &ficheiro)
         return false;
     }
 
+
+
+
+
     cout << "Passei em <" << __FUNCTION__ << ">" << endl;
     return true;
 }
@@ -549,6 +553,7 @@ int Fabrica::Aviso_Humidade(list<Motor *> &lm,int x,int y,int nVizinhanca)
 
     return numMotores;
 }
+
 
 /** \brief Quando um sensor de FUMO envia um aviso, todos os motores devem ser desligados e deve ser
  *           invocado um video mostrando as zonas de saída da fábrica;
